@@ -1,0 +1,27 @@
+
+p {
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.linenos {
+  padding: 0!important;
+}
+
+.code {
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+code {
+  border-radius: 2px;
+}
+
+.codehilitetable > tbody {
+  background-color: #f3f6f6;
+}
+
+.codehilite > pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}

@@ -1,0 +1,15 @@
+site_name: Deep Blue Robotics
+theme: readthedocs
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - codehilite:
+      linenums: true
+extra_css: [extra.css]
+nav:
+  - Home: index.md
+  - Getting Started: start.md
+  - 1. Syntax, Variables, and Types: 
+    - Hello World: week-1/hello-world.md
+    - Variables: week-1/variables.md
+    - Types: week-1/types.md
