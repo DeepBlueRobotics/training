@@ -1,11 +1,15 @@
 site_name: Deep Blue Robotics
-theme: readthedocs
+theme: 
+  name: material
+  logo: images/logo.png
+  
 markdown_extensions:
   - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - codehilite:
       linenums: true
-extra_css: [extra.css]
+
 nav:
   - Home: index.md
   - Getting Started: start.md
@@ -13,3 +17,4 @@ nav:
     - Hello World: week-1/hello-world.md
     - Variables: week-1/variables.md
     - Types: week-1/types.md
+    - Additional Exercises: week-1/exercises.md

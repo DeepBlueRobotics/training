@@ -1,18 +1,4 @@
-There are four main data types we use in robotics: String, int, double, and boolean.
-
-## Strings
-Earlier, you were introduced to the `String` type. Here are a few more things you can do with Strings.
-
-String concatenation with the `+` sign:
-```java
-String hello = "Hello" + " world"; // results in "Hello world"
-```
-
-Inserting a new line with `\n`:
-```java
-String hello = "Hello\nworld"; // results in "Hello
-//                                            world"
-```
+There are four main data types we use in robotics: int, double, boolean, and String.
 
 ## Integers
 Integer types are pretty intuitive. Integer variables are created with the keyword `int`.
@@ -26,8 +12,14 @@ int three = five - 2;     // subtraction
 int nine = three * three; // multiplication
 int one = 9 / nine;       // division
 ```
+Operations also follow PEMDAS, except there's no exponent operation.
+```java
+3 + 2 * 5; // 13
+(3 + 2) * 5; // 25
+3 + (2 * 5); // 13
+```
 
-!!! warning
+!!! note
     When the result of a division between two ints is a fraction, the output will always round down.
     ```java
     int something = 9 / 2; // will result in 4
@@ -59,4 +51,25 @@ Here are a few comparison operators that we use:
 2 <= 2; // less than or equal
 3 >= 3; // greater than or equal
 ```
-These comparison operators can be used to compare ints, doubles, and booleans, but not Strings. We'll talk about why in the future.
+These comparison operators can be used to compare ints, doubles, and booleans, but not Strings. 
+
+## Strings
+Earlier, you were introduced to the `String` type. All the previous types we covered are called **primitive** types, but `String` is not a primitive type. For now, this distinction only affects two things: the type name is capitalized and you can't compare Strings directly with the comparison operators we mentioned above.
+
+
+Here are a few more things you can do with Strings.
+
+String concatenation with the `+` sign:
+```java
+"Hello" + " world"; // "Hello world"
+```
+You can also do this with Strings and other types:
+```java
+"Team " + 199; // "Team 199"
+```
+
+You can get the length of a string with `.length()`:
+```java
+String looong = "it took me a while to count the number of characters in this string";
+System.out.println(looong.length()); // 67
+```
