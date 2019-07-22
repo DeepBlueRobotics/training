@@ -2,7 +2,12 @@ site_name: Deep Blue Robotics
 theme: 
   name: material
   logo: images/logo.png
-  
+
+extra:
+  social:
+    - type: github
+      link: https://github.com/kevinzwang/training
+
 markdown_extensions:
   - admonition
   - pymdownx.details
