@@ -13,6 +13,8 @@ If you do not have VSCode on your computer, please install it here: <https://cod
 
 We'll be using the Code Runner extension:
 
-1. Once you finish installing VSCode, open the app and click on the extensions tab on the left side. (TODO: add image)
+1. Once you finish installing VSCode, open the app and click on the extensions tab on the left side.
+![extension tab](images/extension-tab.png)
 2. Search for "Code Runner" in the search bar and click **Install**.
+![install button](images/install-button.png)
 3. You're now ready to start!
