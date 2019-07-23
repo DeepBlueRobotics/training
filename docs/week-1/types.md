@@ -12,7 +12,7 @@ int three = five - 2;     // subtraction
 int nine = three * three; // multiplication
 int one = 9 / nine;       // division
 ```
-Operations also follow PEMDAS, except there's no exponent operation.
+Operations also follow [PEMDAS](https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics), except there's no exponent operation.
 ```java
 3 + 2 * 5; // 13
 (3 + 2) * 5; // 25

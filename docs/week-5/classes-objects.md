@@ -86,14 +86,13 @@ Where have you already used the `static` keyword before? In your main method of 
 ```java
 public static void main(String[] args) {
 ```
-Main methods are static because there should only be one instance of the main method running per execution.
 
 Let's take a look at how we would use the `static` keyword. For example, we might want to store the animal kingdom that cats are from, but all cats are part of the same kingdom, so we can use a static variable in Cat:
 
 _Cat.java_
 ```java hl_lines="2 15 16 17"
 class Cat {
-  static kingdom = "Animalia";
+  static String kingdom = "Animalia";
 
   public int lives = 9;
   public String name;
