@@ -112,7 +112,7 @@ class Cat {
 }
 ```
 
-You can then reference that method would an object's methods, but as a class:
+You can then call that method as you would an object's methods, but as a class:
 ```java
 System.out.println(Cat.getKingdom()); // "Animalia"
 ```
@@ -120,4 +120,4 @@ System.out.println(Cat.getKingdom()); // "Animalia"
 !!! note
     Instance methods can call both instance and static methods, and can use both instance and static variables. 
     
-    On the other hand, static methods can only reference static variables and call static methods. That's why you always had to put `static` in front of methods you were calling from the main method.
+    On the other hand, static methods can only access static variables and call static methods. That's why you always had to put `static` in front of methods you were calling from the main method.

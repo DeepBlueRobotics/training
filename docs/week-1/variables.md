@@ -16,11 +16,11 @@ If you were to run this program, you'd get the exact same thing as before. But t
 
 `hello` is what's called a **variable**, which are things that store data in a piece of code. In this case, the variable `hello` stores `"Hello world!"`. 
 
-Let's walk through how we use variables. On line 3, we **initialize** (aka create) the variable `hello` as a `String` type and set it to the value `"Hello world!"`. (We'll talk about `String` and other variable types on the next page.) And then on line 4, we **reference** the data that is stored in `hello` and print that data out. 
+Let's walk through how we use variables. On line 3, we declare (aka create) the variable `hello` as a `String` type and **initialize** it to the value `"Hello world!"`. (We'll talk about `String` and other variable types on the next page.) And then on line 4, we access the data that is stored in `hello` and print that data out. 
 
 ## Changing variables
 
-In addition to initializing and referencing variables, you can also change the values of already initialized variables. For example, try adding this line in between the initialization statement and the print statement:
+In addition to initializing and accesing variables, you can also change the values of already initialized variables. For example, try adding this line in between the initialization statement and the print statement:
 
 _HelloWorld.java_
 ```java hl_lines="4"

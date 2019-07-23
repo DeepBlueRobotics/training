@@ -1,7 +1,7 @@
-There are four main data types we use in robotics: int, double, boolean, and String.
+There are four main built-in data types we use in robotics: int, double, boolean, and String.
 
 ## Integers
-Integer types are pretty intuitive. Integer variables are created with the keyword `int`.
+Integer types are pretty intuitive. Integer variables are created with the keyword `int`. (There are other integer types in Java too but we'll focus on `int` because we rarely use the others.)
 ```java
 int four = 4;
 ```
@@ -20,7 +20,7 @@ Operations also follow PEMDAS, except there's no exponent operation.
 ```
 
 !!! note
-    When the result of a division between two ints is a fraction, the output will always round down.
+    When the result of a division between two ints is a fraction, the remainder is discarded.
     ```java
     int something = 9 / 2; // will result in 4
     ```
@@ -79,6 +79,11 @@ These comparison operators can be used to compare ints, doubles, and booleans, b
 ## Strings
 Earlier, you were introduced to the `String` type. All the previous types we covered are called **primitive** types, but `String` is not a primitive type. For now, this distinction only affects two things: the type name is capitalized and you can't compare Strings directly with the comparison operators we mentioned above.
 
+To compare Strings, you need to use `.equals()`:
+```java
+String hello = "h" + "i";
+System.out.println(hello.equals("hi")); // true
+```
 
 Here are a few more things you can do with Strings.
 

@@ -1,4 +1,3 @@
-
 ## Setting up Java
 If you do not have Java on your computer, please install Java 11 here: <https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html>
 
