@@ -19,3 +19,5 @@ nav:
     - Variables: week-1/variables.md
     - Types: week-1/types.md
     - Additional Exercises: week-1/exercises.md
+  - Other:
+    - Contributing: other/contributing.md
