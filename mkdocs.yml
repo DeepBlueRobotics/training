@@ -2,7 +2,12 @@ site_name: Deep Blue Robotics
 theme: 
   name: material
   logo: images/logo.png
-  
+
+extra:
+  social:
+    - type: github
+      link: https://github.com/kevinzwang/training
+
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -19,5 +24,9 @@ nav:
     - Variables: week-1/variables.md
     - Types: week-1/types.md
     - Additional Exercises: week-1/exercises.md
+  - 5. OOP and Robot Code:
+    - Introduction: week-5/intro.md
+    - Classes and Objects: week-5/classes-objects.md
   - Other:
     - Contributing: other/contributing.md
+

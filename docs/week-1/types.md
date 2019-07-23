@@ -25,6 +25,29 @@ Operations also follow PEMDAS, except there's no exponent operation.
     int something = 9 / 2; // will result in 4
     ```
 
+Java provides some shortcuts for operating on numbers. Say you want to add 2 to a number. You can do this in two different ways:
+```java
+num = num + 2; // long form
+num += 2; // short form
+```
+The same thing also works with subtraction, multiplication, and division.
+```java
+num -= 2;
+num *= 2;
+num /= 2;
+```
+
+When you want to only increment or decrement by one, Java provides an even easier solution: `++` and `--` respectively. Here's how you use it:
+```java
+num = num + 1; // long form
+num += 1; // short form
+num++; // even shorter form
+
+num = num - 1; // long form
+num -= 1; // short form
+num--; // even shorter form
+```
+
 ## Doubles
 But what if you wanted to use more than just whole numbers? For that purpose, we have the `double` data type. You can use it the same way you use ints.
 ```java
