@@ -101,3 +101,6 @@ You can get the length of a string with `.length()`:
 String looong = "it took me a while to count the number of characters in this string";
 System.out.println(looong.length()); // 67
 ```
+
+!!! info "Further Reading"
+    If you would like to learn more about Java primitive types, such as more ways to use them and other integer types, here is the official tutorial on primitives: <https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html>

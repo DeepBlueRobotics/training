@@ -92,7 +92,7 @@ Let's take a look at how we would use the `static` keyword. For example, we migh
 _Cat.java_
 ```java hl_lines="2 15 16 17"
 class Cat {
-  static String kingdom = "Animalia";
+  private static String kingdom = "Animalia";
 
   public int lives = 9;
   public String name;

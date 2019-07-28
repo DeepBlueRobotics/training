@@ -25,4 +25,4 @@ There's a lot going on in this program, but don't worry too much about it for no
 - The stuff between the curly braces after `public static void main(String[] args)` is what's run.
 - `System.out.println();` prints things to the console.
 - The line `System.out.println("Hello world!");` is a statement. In Java, we use semicolons to denote the end of statements.
-- Comments in Java code start with two forward slashes `// like this` and are not part of code execution.
+- Comments in Java code start with two forward slashes `// like this` and are not part of code execution. (You can also create multi-line comments by wrapping the comment with `/*` at the beginning and `*/` at the end.)
