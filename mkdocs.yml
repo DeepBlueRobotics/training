@@ -17,6 +17,8 @@ markdown_extensions:
   - pymdownx.superfences
   - codehilite:
       linenums: true
+  - toc:
+      permalink: true
 
 nav:
   - Home: index.md
