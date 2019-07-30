@@ -35,6 +35,9 @@ nav:
     - Packages and Access: week-5/packages-access.md
     - Robot Code: week-5/robot-code.md
     - Additional Exercises: week-5/exercises.md
+  - 6. Writing and Deploying Robot Code:
+    - Introduction: week-6/intro.md
+    - Setup: week-6/setup.md
   - Other:
     - Contributing: other/contributing.md
 
