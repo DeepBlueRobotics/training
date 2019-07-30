@@ -8,12 +8,17 @@ extra:
     - type: github
       link: https://github.com/kevinzwang/training
 
+repo_name: 'DeepBlueRobotics/training'
+repo_url: 'https://github.com/DeepBlueRobotics/training'
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - codehilite:
       linenums: true
+  - toc:
+      permalink: true
 
 nav:
   - Home: index.md
