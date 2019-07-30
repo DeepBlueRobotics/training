@@ -11,3 +11,11 @@ What's covered in this section:
 - What is Object Oriented Programming
 - How we use OOP in Java
 - An introduction to the structure of our robot code
+
+***
+
+>**xkcd #303: Compiling**
+>
+>![compiling](https://imgs.xkcd.com/comics/compiling.png "'Are you stealing those LCDs?' 'Yeah, but I'm doing it while my code compiles.'")
+>
+>_<https://xkcd.com/303/>_
