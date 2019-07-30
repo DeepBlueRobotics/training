@@ -1,4 +1,4 @@
-## What makes you... you?
+## 15 Data Points
 Did you know that [with just 15 data points, researchers were able to identify 99.98% of Americans](https://www.reddit.com/r/privacy/comments/cjbo37/using_15_data_points_researchers_can_identify/)? What 15 data points do you think can identify you?
 
 In this exercise, we'll just focus on three of data points: name, age, and favorite ice cream flavor. 
