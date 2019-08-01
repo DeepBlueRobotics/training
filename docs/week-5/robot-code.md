@@ -52,32 +52,32 @@ public final class Main {
 ```
 
 ## Robot.java
-This file is the control center of the robot. It initializes and contains the Objects for all the subsystems, and has the methods that are called to run the robot.
+This file is the control center of the robot. It initializes and contains the objects for all the subsystems, and has the methods that are called to run the robot.
 
 <!-- MOVE THIS TO THE NEXT SECTION
 There are two types of methods that are in `Robot.java`: 
 
-* Initializer methods end with `Init` and are called once a the start of a mode. Use it for code that needs to be run right when that mode starts, such as starting a timer.
-* Periodic methods end with `Periodic` and are called in a loop, around once per 20 milliseconds, when the robot is set to its respective mode. Use it for code that needs to be run continuously throughout a mode's execution, such as a scheduler loop for commands.
+* Initializer methods end with `Init` and are called once at the start of a mode. Use it for code that needs to be run right when that mode starts, such as starting a timer.
+* Periodic methods end with `Periodic` and are called in a loop, around once per 20 milliseconds (by default), when the robot is set to its respective mode. Use it for code that needs to be run regularly throughout a mode's execution.
 
 There are four robot modes: 
 
-* `autonomous`, when the robot is controlled autonomously. Occurs during the first 15 seconds of a match.
+* `autonomous`, when the robot runs autonomously. Occurs during the first 15 seconds of a match.
 * `teleop`, when the robot is teleoperated, AKA controlled by the drive team. Occurs during the remaining 2 minutes and 15 seconds of a match following the autonomous mode.
 * `disabled`, the state the robot is in before and after the match. During this period, all motors and pneumatic devices on the robot are disabled.
-* `test` is the mode that can be used for testing purposes (although we rarely use it since we can just set the robot to teleop when testing).
+* `test` is a mode that can be used for viewing the states of all sensors and actuators and tuning some parameters.
 
 Thus, methods look like `autonomousInit()`, `autonomousPeriodic()`, `teleopInit()`, `teleopPeriodic()`, etc.
 
 In addition, there are two more methods:
 
 * `robotInit()` is called once when the robot starts. Use it to initialize and store subsystem objects and other things.
-* `robotPeriodic()` is called every 20 milliseconds or so the entire time the robot is on. Typically not used for much but maybe you have some usecase for this method.
+* `robotPeriodic()` is called every 20 milliseconds or so (by default) the entire time the robot is on, no matter what mode it is in. Typically not used for much but maybe you have some usecase for this method.
 -->
 ## RobotMap.java
-This is where we create and store the objects for the motor controllers and solenoids that are used in the subsystems. Its primary use is to map the port numbers on the PDP, CAN bus, and solenoid(s) to specific Objects in the code. 
+This is where we create and store the objects for the motor controllers and solenoids that are used by the robot. Its primary use is to map the port numbers on the RoboRIO, CAN bus, and solenoid(s) to specific objects in the code. 
 
-For example, if our climber motor was a Victor SP that was plugged into port 2 of the PDP, the code would look something like this:
+For example, if our climber motor was a Victor SP that was plugged into port 2 of the RoboRIO, the code would look something like this:
 ```java
 VictorSP climberMotor = new VictorSP(2);
 ```
@@ -85,7 +85,7 @@ VictorSP climberMotor = new VictorSP(2);
 ## OI.java
 OI stands for Operator Interface. Like that makes its function any clearer. 
 
-The OI class is similar to RobotMap, but instead of connecting motor and solenoid ports to their Objects in the code, it connects joystick/controller buttons to commands and functionality in the code. 
+The OI class is similar to RobotMap, but instead of connecting motor and solenoid ports to their objects in the code, it connects joystick/controller buttons to commands and functionality in the code. 
 
 For example, if you want to run the intake when you press button 3 on your left joystick (which is plugged into USB port zero), here would be the code:
 ```java
@@ -95,14 +95,14 @@ intakeBtn.whenPressed(new RunIntake());
 ```
 
 ## Subsystems
-Subsystems are anoter name for robot mechanisms, such as a drivetrain, an elevator, an intake, or a climber. The subystem classes contain the Objects for the motor controllers and solenoids that are taken from `RobotMap` and have methods for controlling the subsystem, which are used by commands.
+Subsystems are another name for robot mechanisms, such as a drivetrain, an elevator, an intake, or a climber. Each subystem class contains methods that control a subsystem using the objects created by the `RobotMap` for the motor controllers, solenoids, and sensors that are part of that subsystem.
 
 ## Commands
-Commands are what run the robot. For example, there may be a `RunIntake` command that runs two motors to the wheels that intake a game piece. 
+Commands use subsystem methods to control what happens at the beginning of an action, during an action, and at the end of an action, as well as to determine  when an action should stop. For example, there may be a `RunIntake` command that starts the intake wheels spinning to grab a game piece and stops them when a an intkae sensor determines that the game piece has been grabbed. Once a command has been started, it runs periodically until it is interrupted or it determines that it has finished.
 
-In addition there are instant commands, which run instantly. For example, you might have an instant command called `ActuatePiston` that actuates a piston on the robot.
+Instant commands are a special kind of command that does not need to run periodically after it is started. It does something and then is considered done. For example, you might have an instant command called `ActuatePiston` that actuates a piston on the robot. Since the piston will automatically stay in its new position, there is no need to periodically actuate the piston to that piston.
 
-Finally, there are command groups. Command groups run a series of commands. You can mix and match whether you want to run a command right after the previous one (called running sequentially) or at the same time as the previos command (called running in parallel). 
+Finally, there are command groups. Command groups run a series of commands. You can mix and match whether you want to run commands one after the other (called running sequentially) or at the same time (called running in parallel). 
 
 ## Lib
-The `lib` folder is where we would store the complex calculations, wrappers, or other things that do not directly interact with the robot, but are rather called on by commands or subsystems to assist in their execution. Stuff in this folder would be valuable code that we would actually want to keep and develop on from one year to another, such as drivetrain characterization, motion profiling, or swerve drive code.
+The `lib` folder is where we would store the complex calculations, wrappers, or other things that do not directly interact with the robot, but are rather called on by commands or subsystems to assist in their execution. Stuff in this folder is code that we might actually want to keep and develop from one year to another, such as drivetrain characterization, motion profiling, or swerve drive code.

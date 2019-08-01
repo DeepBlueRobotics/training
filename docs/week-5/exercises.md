@@ -1,12 +1,12 @@
 ## 15 Data Points
-Did you know that [with just 15 data points, researchers were able to identify 99.98% of Americans](https://www.reddit.com/r/privacy/comments/cjbo37/using_15_data_points_researchers_can_identify/)? What 15 data points do you think can identify you?
+Did you know that [with just 15 pieces of personal information, researchers were able to identify 99.98% of Americans](https://www.reddit.com/r/privacy/comments/cjbo37/using_15_data_points_researchers_can_identify/)? What 15 pieces of personal information do you think can identify you?
 
-In this exercise, we'll just focus on three of data points: name, age, and favorite ice cream flavor. 
+In this exercise, we'll just focus on three pieces of information: name, age, and favorite ice cream flavor. 
 
-Write a `Person` class that takes those three things arguments in its constructor. In addition, the `Person` class should have these methods:
+Write a `Person` class that takes those three things as arguments to its constructor. In addition, the `Person` class should have these methods:
 
 * `introduction()` which prints out `Hi, my name is [name]!` where `[name]` is replaced by the person's name.
-* `isOlder()` which takes a `Person` object as its argument, and returns a boolean representing whether or not this person is older than the person who was passed into this method.
+* `isOlderThan()` which takes a `Person` object as its argument, and returns a boolean representing whether or not this person is older than the person who was passed into this method.
 * `isCompatible()` which takes a `Person` object as its argument, and returns a boolean representing whether or not the two people like the same ice cream flavor.
 
 Another requirement is that the person's name, age, and favorite ice cream flavor must not be directly accessible by any code outside of the `Person` class.
@@ -33,7 +33,7 @@ Another requirement is that the person's name, age, and favorite ice cream flavo
         System.out.println("Hi, my name is " + name + "!");
       }
 
-      public boolean isOlder(Person p) {
+      public boolean isOlderThan(Person p) {
         return age > p.age;
       }
 

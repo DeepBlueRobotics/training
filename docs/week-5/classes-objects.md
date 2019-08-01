@@ -2,16 +2,16 @@
 
 You've been using Java classes since week 1, with our first Hello World program, but what are classes, really?
 
-**Classes** are Java's way of grouping variables, methods, and other classes together. 
+**Classes** are Java's way of grouping related variables and methods together. 
 
 For example, you may have a Cat class:
 
 _Cat.java_
 ```java
 class Cat {
-  public int lives = 9;
+  int lives = 9;
 
-  public void bark() {
+  void bark() {
     System.out.println("woof");
   }
 }
@@ -32,21 +32,21 @@ System.out.println(marshmallow.lives); // 9
 ```
 
 ## Constructors
-Oftentimes, you may want to create an Object with a starting state, also called **initializing** an Object. To do that, you use what is called a **constructor**. Constructors are very similar to methods, and they are denoted by the name of the class they are part of.
+Oftentimes, you may want to create an object with a starting state, also called **initializing** an object. To do that, you use what is called a **constructor**. Constructors are very similar to methods, and they are denoted by the name of the class they are part of.
 
 Say we wanted to create a Cat object and set its name.
 
 _Cat.java_
 ```java hl_lines="3 5 6 7"
 class Cat {
-  public int lives = 9;
-  public String name;
+  int lives = 9;
+  String name;
 
-  public Cat(String n) {
+  Cat(String n) {
     name = n;
   }
 
-  public void bark() {
+  void bark() {
     System.out.println("woof");
   }
 }
@@ -60,27 +60,27 @@ Cat marshmallow = new Cat("Marshmallow");
 Similar to methods, you can also have multiple constructors with different arguments for each:
 ```java hl_lines="9 10 11"
 class Cat {
-  public int lives = 9;
-  public String name;
+  int lives = 9;
+  String name;
 
-  public Cat(String n) {
+  Cat(String n) {
     name = n;
   }
 
-  public Cat() {
+  Cat() {
     name = "idk";
   }
 
-  public void bark() {
+  void bark() {
     System.out.println("woof");
   }
 }
 ```
 
 ## Static methods and variables
-The methods and variables we've been using on this page have all been what are called **instance** methods and variables. That means that they are used with an instance of a class, AKA an Object. 
+The methods and variables we've been using on this page have all been what are called **instance** methods and variables. That means that using them requires an instance of a class, in other words an object. There is a separate set of instance variables associated with each instance of a class.
 
-**Static** methods and variables on the other hand, are called directly from the class itself, and there is only one instance of them. They are denoted with the keyword `static` before them. 
+**Static** methods and variables on the other hand, can be used without an instance of the class. They are called using the name of the class instead of an object, and there is only one set of static variables for each class no matter how many instances of that class exist. Static methods and variables are denoted with the keyword `static` before them. 
 
 Where have you already used the `static` keyword before? In your main method of course!
 ```java
@@ -92,26 +92,26 @@ Let's take a look at how we would use the `static` keyword. For example, we migh
 _Cat.java_
 ```java hl_lines="2 15 16 17"
 class Cat {
-  private static String kingdom = "Animalia";
+  static String kingdom = "Animalia";
 
-  public int lives = 9;
-  public String name;
+  int lives = 9;
+  String name;
 
-  public Cat(String n) {
+  Cat(String n) {
     name = n;
   }
 
-  public void bark() {
+  void bark() {
     System.out.println("woof");
   }
 
-  public static String getKingdom() {
+  static String getKingdom() {
     return kingdom;
   }
 }
 ```
 
-You can then call that method as you would an object's methods, but as a class:
+You can then call that method as you would an object's methods, but using the name of the class instead of an object:
 ```java
 System.out.println(Cat.getKingdom()); // "Animalia"
 ```

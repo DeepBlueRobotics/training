@@ -4,7 +4,7 @@
     **Do not feel afraid to ask questions and seek help, either on Mattermost or in person. This is difficult stuff and the programming team members are all here to help!**
 
 !!! question "Essential Question"
-    What are Java Objects and how do we use them?
+    What are Java objects and how do we use them?
 
 What's covered in this section:
 
