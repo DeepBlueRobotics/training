@@ -20,7 +20,7 @@ Let's walk through how we use variables. On line 3, we declare (aka create) the 
 
 ## Changing variables
 
-In addition to initializing and accesing variables, you can also change the values of already initialized variables. For example, try adding this line in between the initialization statement and the print statement:
+In addition to initializing and accessing variables, you can also change the values of already-initialized variables. For example, try adding this line in between the initialization statement and the print statement:
 
 _HelloWorld.java_
 ```java hl_lines="4"

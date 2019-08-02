@@ -74,7 +74,7 @@ Here are a few comparison operators that we use:
 2 <= 2; // less than or equal
 3 >= 3; // greater than or equal
 ```
-These comparison operators can be used to compare ints, doubles, and booleans, but not Strings. 
+From the computer's point of view, these comparison operators are essentially nice ways to write `true` or `false`. They can be used to compare ints, doubles, and booleans, but not Strings. 
 
 ## Strings
 Earlier, you were introduced to the `String` type. All the previous types we covered are called **primitive** types, but `String` is not a primitive type. For now, this distinction only affects two things: the type name is capitalized and you can't compare Strings directly with the comparison operators we mentioned above.

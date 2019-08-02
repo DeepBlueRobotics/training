@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Quack",
+            "request": "launch",
+            "mainClass": "Quack",
+            "projectName": "training_774c8c59"
+        }
+    ]
+}
