@@ -29,6 +29,13 @@ nav:
     - Variables: week-1/variables.md
     - Types: week-1/types.md
     - Additional Exercises: week-1/exercises.md
+  - 2. Logic and Loops:
+    - Introduction: week-2/intro.md
+    - If Statements: week-2/if-else.md
+    - Else If: week-2/else-if.md
+    - While Loops: week-2/while-loops.md
+    - For Loops: week-2/for-loops.md
+    - Additional Exercises: week-2/exercises.md
   - 5. OOP and Robot Code:
     - Introduction: week-5/intro.md
     - Classes and Objects: week-5/classes-objects.md
