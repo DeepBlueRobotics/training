@@ -22,19 +22,13 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting Started: start.md
-  - 1. Syntax, Variables, and Types: 
-    - Introduction: week-1/intro.md
-    - Hello World: week-1/hello-world.md
-    - Variables: week-1/variables.md
-    - Types: week-1/types.md
-    - Additional Exercises: week-1/exercises.md
-  - 5. OOP and Robot Code:
-    - Introduction: week-5/intro.md
-    - Classes and Objects: week-5/classes-objects.md
-    - Packages and Access: week-5/packages-access.md
-    - Robot Code: week-5/robot-code.md
-    - Additional Exercises: week-5/exercises.md
+  - 0. Java Basics: section-0/index.md
+  - 2. Robot Code and Version Control:
+    - Introduction: section-2/intro.md
+    - Setup: section-2/setup.md
+    - Robot Code: section-2/robot-code.md
+    - Version Control: section-2/version-control.md
+    - Additional Exercises: section-2/exercises.md
   - Other:
     - Contributing: other/contributing.md
 

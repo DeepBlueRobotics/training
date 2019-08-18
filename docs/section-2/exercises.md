@@ -1,0 +1,1 @@
+No exercises this week, just take your time to digest everything that you've learned. Everything in this section is very important for developing code, so it's essential that you understand it.
