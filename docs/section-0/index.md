@@ -1,4 +1,4 @@
-If you are not yet proficient enough to pass the AP Computer Science test, you should take the Codecademy Java course found here: <https://www.codecademy.com/learn/learn-java>
+If you are not yet proficient enough to pass the AP Computer Science A test, you should take the Codecademy Java course found here: <https://www.codecademy.com/learn/learn-java>
 
 This course will walk you through the basics of Java and Object Oriented Programming that you will need for FRC programming. It will take approximately three weeks of worksession time, split up into the following sections:
 
