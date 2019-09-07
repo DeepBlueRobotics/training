@@ -23,6 +23,10 @@ markdown_extensions:
 nav:
   - Home: index.md
   - 0. Java Basics: section-0/index.md
+  - 1. Electronics and Pneumatics:
+    - Introduction: section-1/intro.md
+    - Electronics: section-1/electronics.md
+    - Pneumatics: section-1/pneumatics.md
   - 2. Robot Code and Version Control:
     - Introduction: section-2/intro.md
     - Setup: section-2/setup.md
