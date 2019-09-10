@@ -12,6 +12,7 @@ repo_name: 'DeepBlueRobotics/training'
 repo_url: 'https://github.com/DeepBlueRobotics/training'
 
 markdown_extensions:
+  - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -32,7 +33,11 @@ nav:
     - Setup: section-2/setup.md
     - Robot Code: section-2/robot-code.md
     - Version Control: section-2/version-control.md
-    - Additional Exercises: section-2/exercises.md
-  - Other:
-    - Contributing: other/contributing.md
+  - 3. Developing Robot Code:
+    - Introduction: section-3/intro.md
+    - JavaDocs and WPILib: section-3/wpilib.md
+    - Commands and Subsystems: section-3/commands-subsystems.md
+    - Advanced Version Control: section-3/version-control2.md
+  - Resources: resources.md
+  - Contributing: contributing.md
 
