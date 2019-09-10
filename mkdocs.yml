@@ -33,6 +33,9 @@ nav:
     - Robot Code: section-2/robot-code.md
     - Version Control: section-2/version-control.md
     - Additional Exercises: section-2/exercises.md
+  - 4. Drivetrain code:
+    - Introduction: section-4/intro.md
+    - Let's do it!: section-4/doing-it.md
   - Other:
     - Contributing: other/contributing.md
 
