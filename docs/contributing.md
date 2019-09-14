@@ -24,7 +24,7 @@ Here are some conventions that this project follow:
     1. The intro page contains an "Essential Question" that the section attempts to answer, along with a brief description of what will be covered in this section.
     3. The additional exercises page is for optional/challenge problems that apply the content of the section and sections before it. Answers/solutions are hidden under dropdowns that show when you click on them.
 
-!!! question "Essentail Question"
+!!! question "Essential Question"
     Example question?
 
 ??? example "Solution"
