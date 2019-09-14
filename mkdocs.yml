@@ -38,6 +38,9 @@ nav:
     - JavaDocs and WPILib: section-3/wpilib.md
     - Commands and Subsystems: section-3/commands-subsystems.md
     - Advanced Version Control: section-3/version-control2.md
+  - 4. Drivetrain code:
+    - Introduction: section-4/intro.md
+    - Let's do it!: section-4/doing-it.md
   - Resources: resources.md
   - Contributing: contributing.md
 
