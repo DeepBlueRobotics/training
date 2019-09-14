@@ -10,7 +10,7 @@ Once you're done, we'll do some exercises to see if you've got it.
 ## Practice
 VS Code is the text editor we will be using to write and run our code, and should have been installed with the WPILib suite during setup. Open up VS Code and follow [the VS Code git tutorial](https://code.visualstudio.com/docs/editor/versioncontrol) clone this repo: <https://github.com/DeepBlueRobotics/training/>
 
-Navigate to this file in the repo (`docs/week-2/version-control.md`) and add your name to the list below.
+Navigate to this file in the repo (`docs/section-2/version-control.md`) and add your name to the list below.
 
 !!! success "People who have added their name"
     Kevin Wang,
