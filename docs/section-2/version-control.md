@@ -13,7 +13,7 @@ VS Code is the text editor we will be using to write and run our code, and shoul
 Navigate to this file in the repo (`docs/week-2/version-control.md`) and add your name to the list below.
 
 !!! success "People who have added their name"
-    Kevin Wang
+    Kevin Wang,
     Adam Kalayjian
 
 Now stage and commit your changes with the message `add [your name]`, and then push your changes. Refer to the [Git tutorial](https://guides.github.com/introduction/git-handbook/) and [VS Code tutorial](https://code.visualstudio.com/docs/editor/versioncontrol) if needed.
