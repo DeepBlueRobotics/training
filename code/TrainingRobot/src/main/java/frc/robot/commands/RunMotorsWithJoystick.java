@@ -7,15 +7,18 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Motors;
 
-public class RunMotor extends Command {
+public class RunMotorsWithJoystick extends Command {
+
   private Motors motors;
-  public RunMotor(Motors motors) {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+  private Joystick joystick;
+
+  public RunMotorsWithJoystick(Motors motors, Joystick joystick) {
     requires(this.motors = motors);
+    this.joystick = joystick;
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +29,7 @@ public class RunMotor extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    motors.run(1);
+    motors.run(joystick.getY());
   }
 
   // Make this return true when this Command no longer needs to run execute()
