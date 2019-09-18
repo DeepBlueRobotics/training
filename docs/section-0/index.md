@@ -19,3 +19,6 @@ Week 3:
 - (Optional) String methods
 - Inheritance and Polymorphism
 - Debugging
+
+!!! warning
+    Do not do the "Pro" sections, they're not necessary and will slow you down.

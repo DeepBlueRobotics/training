@@ -20,12 +20,27 @@ WPILib is the name of the library FRC provides us to control the robot with. Its
 
 You should have already cloned this repo in the last section. Open up the `TrainingRobot` project inside the `code/` directory of this repo. Now connect to the RoboRIO of the practice board with a USB cable, click on the WPILib logo on the top right of VSCode which looks like this: ![wpilib](https://avatars1.githubusercontent.com/u/19267233?s=400&v=4){: style="height:25px;width:25px"}, and then choose "Deploy Robot Code". It should take a minute to deploy the code before displaying "Build Successful" in green. 
 
+!!! note
+    Deploying code to the RoboRIO only works on a Windows computer, however you can still build your code to see if it compiles correctly, before moving onto a Windows computer to complete this part.
+
 Once you have that, connect a driver station computer to the RoboRIO and a motor to the Talon, enable, and press the X key on the controller. If the motor runs, then you're all set!
 
 ## Using WPILib
 
-You may have noticed that the motor only runs for one brief second. Let's change the code so that it runs as long as you press the button.
+You may have noticed that the motor does not stop running when you release the button. Let's change the code so that it runs as long as you press the button.
+
+**Step 1: Change the button to trigger the command continuously while it's held rather than once when it's pressed**
 
 In the `TrainingRobot` project, find the `OI.java` file (`src/main/java/frc/robot/OI.java`). Currently, the `whenPressed()` method of `runMotorButton` is pressed. Refer to the WPILib JavaDocs to determine what you need to change `whenPressed()` to in order to run the command continuously. (Hint: `runMotorButton` is an instance of the `JoystickButton` class.)
+
+**Step 2: Stop the motors when the command ends**
+
+In the same project, you'll find the `RunMotor.java` file in the `commands` directory. In the `RunMotor` class, the `end()` method is currently empty. Add code to it that stops the motors. (Hint: you might want to write something similar to what's in `execute()`.)
+
+**Step 3: End the command when interrupted**
+
+Rather than calling `end()` when the button is released, `Button.whileHeld()` inconveniently calls `interrupted()`. Add code to the `interrupted()` method in `RunMotor` so that it calls `end()`.
+
+**Step 4: Deploy!**
 
 Once you think you figured it out, follow the above "Deploying robot code" section again to deploy, and see if your code worked!

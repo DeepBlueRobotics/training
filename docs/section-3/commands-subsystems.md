@@ -14,10 +14,12 @@ FRC has a pretty good write-up on command-based programming, so we'll just read 
 First order of business is to add the two other motor controllers (Victor SPX and Victor SP) on the practice board to the code. That involves three steps:
 
 1. Creating instances of them in `RobotMap.java`
-2. Adding them as constructor parameters to the `Motors.java` subsystem and calling their `set()` methods in `Motors.drive()`
+2. Adding them as constructor parameters to the `Motors.java` subsystem and calling their `set()` methods in `Motors.run()`
 3. Accessing them from the RobotMap and passing them into the Motors subsystem when they're created in `Robot.java`
 
 Use the `talon` object as an example. The Victor SPX class is called `WPI_VictorSPX` and is located in the `com.ctre.phoenix.motorcontrol.can` package, while the Victor SP class is called `VictorSP` and is located in the `edu.wpi.first.wpilibj` package. 
+
+Once you're done with that, do not deploy from your computer. Follow the instructions in the next page, `Advanced Version Control`, and then pull your branch onto the driver station computer that should be set up and deploy from there.
 
 Now, when you deploy the robot code to the practice board and execute the `RunMotor` command, do all of the motor controllers run?
 
@@ -36,4 +38,4 @@ Pass the `Motors` subsystem and a `Joystick` object into the command and have it
 
 Once you are done writing the command, make it the default command of the `Motors` subsystem. Do that by calling `motors.setDefaultCommand()` in `OI.java` and pass in the left joystick.
 
-Deploy it again and try it out!
+Again, commit and push your changes, then pull on the driver station computer and deploy!
