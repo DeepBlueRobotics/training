@@ -7,10 +7,17 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.subsystems.LeftDrive;
+import frc.robot.subsystems.RightDrive;
 
 public class TankDrive extends Command {
-  public TankDrive() {
+  private LeftDrive driveL;
+  private RightDrive driveR;
+  private Joystick leftJoy;
+  private Joystick rightJoy;
+  public TankDrive(LeftDrive driveL, RightDrive driveR) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
