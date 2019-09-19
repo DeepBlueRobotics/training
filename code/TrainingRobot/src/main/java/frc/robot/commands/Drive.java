@@ -9,21 +9,19 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.LeftDrive;
-import frc.robot.subsystems.RightDrive;
+import frc.robot.subsystems.Drivetrain;
 
-public class ArcadeDrive extends Command {
-  private LeftDrive driveL;
-  private RightDrive driveR;
+public class Drive extends Command {
+  private Drivetrain drivetrain;
   private Joystick leftJoy;
   private Joystick rightJoy;
-  public ArcadeDrive(LeftDrive driveL, RightDrive driveR, Joystick leftJoy, Joystick rightJoy) {
+
+  public Drive(Drivetrain drivetrain, Joystick leftJoy, Joystick rightJoy) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(this.driveL = driveL);
-    requires(this.driveR = driveR);
+    requires(this.drivetrain = drivetrain);
     this.leftJoy = leftJoy;
-    this.rightJoy = rightJoy;
+    this.rightJoy = rightJoy; 
   }
 
   // Called just before this Command runs the first time
@@ -34,11 +32,7 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    final double DIFF = 0.2;
-    double speed = rightJoy.getY();
-    double rotation = leftJoy.getX();
-    driveL.run(speed+(rotation*DIFF));
-    driveR.run(speed-(rotation*DIFF));
+    drivetrain.run(leftJoy, rightJoy);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -50,8 +44,7 @@ public class ArcadeDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    driveL.run(0);
-    driveR.run(0);
+    drivetrain.stop();
   }
 
   // Called when another command which requires one or more of the same

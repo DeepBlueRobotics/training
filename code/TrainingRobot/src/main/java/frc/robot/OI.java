@@ -11,9 +11,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.RunMotor;
 import frc.robot.commands.RunMotorsWithJoystick;
-import frc.robot.subsystems.LeftDrive;
-import frc.robot.subsystems.RightDrive;
-import frc.robot.commands.ArcadeDrive;
+import frc.robot.commands.Drive;
+import frc.robot.commands.SwapMode;
+import frc.robot.subsystems.Drivetrain;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -22,16 +22,17 @@ import frc.robot.commands.ArcadeDrive;
 public class OI {
     Joystick leftJoy, rightJoy, controller;
     
-    private JoystickButton runMotorButton;
+    private JoystickButton swapButton;
 
-    OI(LeftDrive driveL, RightDrive driveR) {
-        leftJoy = new Joystick(0);
-        rightJoy = new Joystick(1);
-        controller = new Joystick(2);
+    OI(Drivetrain drivetrain) {
+        leftJoy = RobotMap.leftJoy;
+        rightJoy = RobotMap.rightJoy;
+        controller = RobotMap.controller;
 
-        driveL.setDefaultCommand(new ArcadeDrive(driveL, driveR, leftJoy, rightJoy));
-        driveR.setDefaultCommand(new ArcadeDrive(driveL, driveR, leftJoy, rightJoy));
-        //runMotorButton = new JoystickButton(controller, 2);
+        drivetrain.setDefaultCommand(new Drive(drivetrain, leftJoy, rightJoy));
+
+        swapButton = new JoystickButton(controller, 2);
+        swapButton.whenPressed(new SwapMode(drivetrain));
         //runMotorButton.whileHeld(new RunMotor(motors));
         //motors.setDefaultCommand(new RunMotorsWithJoystick(motors, leftJoy));
     }

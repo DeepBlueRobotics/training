@@ -27,6 +27,7 @@ public class RobotMap {
     static WPI_VictorSPX victorSPX2R;
     static Joystick leftJoy;
     static Joystick rightJoy;
+    static Joystick controller;
 
     static {
         talonL = new WPI_TalonSRX(1);
@@ -37,5 +38,6 @@ public class RobotMap {
         victorSPX2R = new WPI_VictorSPX(6);
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
+        controller = new Joystick(2);
     }
 }

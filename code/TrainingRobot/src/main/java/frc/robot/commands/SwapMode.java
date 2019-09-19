@@ -7,24 +7,22 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.LeftDrive;
-import frc.robot.subsystems.RightDrive;
+import frc.robot.subsystems.Drivetrain;
 
-public class TankDrive extends Command {
-  private LeftDrive driveL;
-  private RightDrive driveR;
-  private Joystick leftJoy;
-  private Joystick rightJoy;
-  public TankDrive(LeftDrive driveL, RightDrive driveR) {
+public class SwapMode extends Command {
+  private Drivetrain drivetrain;
+
+  public SwapMode(Drivetrain drivetrain) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
+    requires(this.drivetrain = drivetrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    drivetrain.swapMode();
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -35,7 +33,7 @@ public class TankDrive extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
   // Called once after isFinished returns true
