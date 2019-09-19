@@ -11,7 +11,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.RunMotor;
 import frc.robot.commands.RunMotorsWithJoystick;
-import frc.robot.subsystems.Motors;
+import frc.robot.subsystems.LeftDrive;
+import frc.robot.subsystems.RightDrive;
+import frc.robot.commands.ArcadeDrive;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -22,13 +24,15 @@ public class OI {
     
     private JoystickButton runMotorButton;
 
-    OI(Motors motors) {
+    OI(LeftDrive driveL, RightDrive driveR) {
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);
 
+        driveL.setDefaultCommand(new ArcadeDrive(driveL, driveR, leftJoy, rightJoy));
+        driveR.setDefaultCommand(new ArcadeDrive(driveL, driveR, leftJoy, rightJoy));
         //runMotorButton = new JoystickButton(controller, 2);
         //runMotorButton.whileHeld(new RunMotor(motors));
-        motors.setDefaultCommand(new RunMotorsWithJoystick(motors, leftJoy));
+        //motors.setDefaultCommand(new RunMotorsWithJoystick(motors, leftJoy));
     }
 }

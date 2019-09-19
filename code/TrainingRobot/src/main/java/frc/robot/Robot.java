@@ -11,7 +11,8 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.subsystems.Motors;
+import frc.robot.subsystems.LeftDrive;
+import frc.robot.subsystems.RightDrive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,7 +27,9 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  private static Motors motors;
+  //private static Motors motors;
+  private static LeftDrive leftDrive;
+  private static RightDrive rightDrive;
   private static OI oi;
 
   /**
@@ -35,8 +38,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    motors = new Motors(RobotMap.talon, RobotMap.victorSPX, RobotMap.victorSP);
-    oi = new OI(motors);
+    //motors = new Motors(RobotMap.talon, RobotMap.victorSPX, RobotMap.victorSP);
+    oi = new OI(leftDrive,rightDrive);
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
