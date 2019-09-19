@@ -22,16 +22,11 @@ public class Motors extends Subsystem {
   private VictorSP      vicSP;
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public Motors(WPI_TalonSRX talon) {
+  public Motors(WPI_TalonSRX talon, WPI_VictorSPX vicSPX, VictorSP vicSP) {
     this.talon = talon;
-  }
-  public Motors(WPI_VictorSPX vicSPX){
     this.vicSPX = vicSPX;
-  }
-  public Motors(VictorSP vicSP){
     this.vicSP = vicSP;
   }
-
   public void run(double speed) {
     talon.set(speed);
     vicSPX.set(speed);
