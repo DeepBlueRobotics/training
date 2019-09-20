@@ -48,9 +48,9 @@ public class Drivetrain extends Subsystem {
       talonLeft.set(speed + speedDiff);
       victor1Left.set(speed + speedDiff);
       victor2Left.set(speed + speedDiff);
-      talonRight.set(-speed - speedDiff);
-      victor1Right.set(-speed - speedDiff);
-      victor2Right.set(-speed - speedDiff);
+      talonRight.set(-speed + speedDiff);
+      victor1Right.set(-speed + speedDiff);
+      victor2Right.set(-speed + speedDiff);
     } else {
       double speedLeft = leftJoy.getY();
       double speedRight = rightJoy.getY();
