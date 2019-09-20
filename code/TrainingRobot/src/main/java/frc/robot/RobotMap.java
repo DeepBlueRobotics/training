@@ -30,12 +30,12 @@ public class RobotMap {
     static Joystick controller;
 
     static {
-        talonL = new WPI_TalonSRX(1);
-        victorSPX1L = new WPI_VictorSPX(2);
-        victorSPX2L = new WPI_VictorSPX(3);
-        talonR = new WPI_TalonSRX(4);
-        victorSPX1R = new WPI_VictorSPX(5);
-        victorSPX2R = new WPI_VictorSPX(6);
+        talonL = new WPI_TalonSRX(8);
+        victorSPX1L = new WPI_VictorSPX(9);
+        victorSPX2L = new WPI_VictorSPX(10);
+        talonR = new WPI_TalonSRX(5);
+        victorSPX1R = new WPI_VictorSPX(6);
+        victorSPX2R = new WPI_VictorSPX(7);
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);
