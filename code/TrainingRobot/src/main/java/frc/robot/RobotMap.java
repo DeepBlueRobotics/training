@@ -20,22 +20,22 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class RobotMap {
     static WPI_TalonSRX talonL;
-    static WPI_VictorSPX victorSPX1L;
-    static WPI_VictorSPX victorSPX2L;
+    static WPI_TalonSRX talonL2;
+    static WPI_VictorSPX victorSPXL;
     static WPI_TalonSRX talonR;
-    static WPI_VictorSPX victorSPX1R;
-    static WPI_VictorSPX victorSPX2R;
+    static WPI_TalonSRX talonR2;
+    static WPI_VictorSPX victorSPXR;
     static Joystick leftJoy;
     static Joystick rightJoy;
     static Joystick controller;
 
     static {
         talonL = new WPI_TalonSRX(8);
-        victorSPX1L = new WPI_VictorSPX(9);
-        victorSPX2L = new WPI_VictorSPX(10);
+        talonL2 = new WPI_TalonSRX(9);
+        victorSPXL = new WPI_VictorSPX(10);
         talonR = new WPI_TalonSRX(5);
-        victorSPX1R = new WPI_VictorSPX(6);
-        victorSPX2R = new WPI_VictorSPX(7);
+        talonR2 = new WPI_TalonSRX(6);
+        victorSPXR = new WPI_VictorSPX(7);
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);
