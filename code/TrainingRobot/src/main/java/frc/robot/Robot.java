@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.commands.AutoDrive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,6 +30,7 @@ public class Robot extends TimedRobot {
   //private static Motors motors;
   private static Drivetrain drivetrain;
   private static OI oi;
+  private static AutoDrive auto;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -40,6 +42,7 @@ public class Robot extends TimedRobot {
     drivetrain = new Drivetrain(RobotMap.talonL, RobotMap.victorSPX1L, RobotMap.victorSPX2L,
                                 RobotMap.talonR, RobotMap.victorSPX1R, RobotMap.victorSPX2R);
     oi = new OI(drivetrain);
+    auto = new AutoDrive(drivetrain);
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
@@ -71,6 +74,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    if (auto != null) auto.start();
     m_autoSelected = m_chooser.getSelected();
     // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     System.out.println("Auto selected: " + m_autoSelected);

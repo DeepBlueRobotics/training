@@ -63,6 +63,16 @@ public class Drivetrain extends Subsystem {
     }
   }
 
+  public void run(double speedL, double speedR)
+  {
+    talonLeft.set(speedL);
+    victor1Left.set(speedL);
+    victor2Left.set(speedL);
+    talonRight.set(-speedR);
+    victor1Right.set(-speedR);
+    victor2Right.set(-speedR);
+  }
+
   public void stop() {
     talonLeft.set(0);
     victor1Left.set(0);
