@@ -3,7 +3,9 @@
 
 What's covered in this section:
 
-- Coding a drivetrain
+- Applying everything you've learned to build a final project
+- Communicating with other team members and proactively finding answers
+- Writing basic autonomous code
 
 ***
 
