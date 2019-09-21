@@ -11,6 +11,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -25,6 +27,7 @@ public class RobotMap {
     static WPI_TalonSRX talonR;
     static WPI_TalonSRX talonR2;
     static WPI_VictorSPX victorSPXR;
+    static Encoder autoEnc;
     static Joystick leftJoy;
     static Joystick rightJoy;
     static Joystick controller;
@@ -36,6 +39,8 @@ public class RobotMap {
         talonR = new WPI_TalonSRX(5);
         talonR2 = new WPI_TalonSRX(6);
         victorSPXR = new WPI_VictorSPX(7);
+        autoEnc = new Encoder(new DigitalInput(0),new DigitalInput(1)); //TODO: get encoder ports
+        autoEnc.setDistancePerPulse(1.0); //TODO: get actual value for this
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);

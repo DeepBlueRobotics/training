@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.commands.Auto;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -69,9 +70,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autoSelected = m_chooser.getSelected();
-    // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
-    System.out.println("Auto selected: " + m_autoSelected);
+    Scheduler.getInstance().add(new Auto(drivetrain, RobotMap.autoEnc));
+    /*m_autoSelected = m_chooser.getSelected();
+    m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
+    System.out.println("Auto selected: " + m_autoSelected);*/
   }
 
   /**
@@ -79,7 +81,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    switch (m_autoSelected) {
+    Scheduler.getInstance().run();
+    /*switch (m_autoSelected) {
       case kCustomAuto:
         // Put custom auto code here
         break;
@@ -87,7 +90,12 @@ public class Robot extends TimedRobot {
       default:
         // Put default auto code here
         break;
-    }
+    }*/
+  }
+
+  @Override
+  public void teleopInit() {
+    drivetrain.run(0,0);
   }
 
   /**
