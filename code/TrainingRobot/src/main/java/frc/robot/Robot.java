@@ -40,9 +40,10 @@ public class Robot extends TimedRobot {
                                 RobotMap.talonR, RobotMap.talonR2, RobotMap.victorSPXR);
     oi = new OI(drivetrain);
 
-    m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
-    m_chooser.addOption("My Auto", kCustomAuto);
-    SmartDashboard.putData("Auto choices", m_chooser);
+    //m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
+    //m_chooser.addOption("My Auto", kCustomAuto);
+    //SmartDashboard.putData("Auto choices", m_chooser);
+    SmartDashboard.putData("Encoder",RobotMap.autoEnc);
   }
 
   /**
@@ -95,6 +96,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+    Scheduler.getInstance().removeAll();
     drivetrain.run(0,0);
   }
 

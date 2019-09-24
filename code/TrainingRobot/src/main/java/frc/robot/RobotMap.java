@@ -39,8 +39,8 @@ public class RobotMap {
         talonR = new WPI_TalonSRX(5);
         talonR2 = new WPI_TalonSRX(6);
         victorSPXR = new WPI_VictorSPX(7);
-        autoEnc = new Encoder(new DigitalInput(0),new DigitalInput(1)); //TODO: get encoder ports
-        autoEnc.setDistancePerPulse(1.0); //TODO: get actual value for this
+        autoEnc = new Encoder(new DigitalInput(2),new DigitalInput(3)); //TODO: get encoder ports
+        autoEnc.setDistancePerPulse(5.0/256 * Math.PI); //TODO: get actual value for this
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);

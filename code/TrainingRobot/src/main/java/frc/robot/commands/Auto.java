@@ -19,8 +19,8 @@ public class Auto extends CommandGroup {
 
   public Auto(Drivetrain drivetrain, Encoder encoder) {
     requires(this.drivetrain = drivetrain);
-    addSequential(new AutoDrive(drivetrain, 2, encoder));
-    addSequential(new AutoSpin(drivetrain, 0.5));
+    addSequential(new AutoDrive(drivetrain, 24.0, encoder));
+    addSequential(new AutoSpin(drivetrain, 0.3)); //probably need to change these
 
     // Add Commands here:
     // e.g. addSequential(new Command1());
