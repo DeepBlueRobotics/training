@@ -26,7 +26,7 @@ public class OI {
         rightJoy = new Joystick(1);
         controller = new Joystick(2);
 
-        runMotorButton = new JoystickButton(controller, 1);
+        runMotorButton = new JoystickButton(leftJoy, 1);
         runMotorButton.whileHeld(new RunMotorsWithJoystick(motors, leftJoy));
     }
 }

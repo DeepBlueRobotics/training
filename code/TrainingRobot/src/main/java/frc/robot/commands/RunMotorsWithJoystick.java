@@ -18,6 +18,7 @@ public class RunMotorsWithJoystick extends Command {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(this.motors = motors);
+    this.joystick = joystick;
   }
 
   // Called just before this Command runs the first time
