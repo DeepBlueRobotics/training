@@ -42,6 +42,9 @@ nav:
     - Introduction: section-4/intro.md
     - Teleoperated Period: section-4/teleop.md
     - Autonomous Period: section-4/auton.md
+  - 5. Advanced Programming:
+    - Introduction: section-5/intro.md
+    - Additional Topics: section-5/additional-topics.md
   - Resources: resources.md
   - Contributing: contributing.md
 
