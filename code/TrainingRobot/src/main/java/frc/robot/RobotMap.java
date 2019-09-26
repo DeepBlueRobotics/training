@@ -9,7 +9,6 @@ package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import edu.wpi.first.wpilibj.VictorSP;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -18,13 +17,16 @@ import edu.wpi.first.wpilibj.VictorSP;
  * floating around.
  */
 public class RobotMap {
-    static WPI_TalonSRX talon;
-    static WPI_VictorSPX vSpx;
-    static VictorSP vSp;
+    static WPI_TalonSRX LTalon, RTalon;
+    static WPI_VictorSPX LVictor1, LVictor2, RVictor1, RVictor2;
 
     static {
-        talon = new WPI_TalonSRX(1);
-        vSpx = new WPI_VictorSPX(3);
-        vSp = new VictorSP(9);
+        LTalon = new WPI_TalonSRX(8);
+        LVictor1 = new WPI_VictorSPX(9);
+        LVictor2 = new WPI_VictorSPX(10);
+
+        RTalon = new WPI_TalonSRX(5);
+        RVictor1 = new WPI_VictorSPX(6);
+        RVictor2 = new WPI_VictorSPX(7);
     }
 }
