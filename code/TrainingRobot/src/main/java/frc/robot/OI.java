@@ -9,8 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.RunDrivetrainArcade;
-import frc.robot.subsystems.LeftMotors;
-import frc.robot.subsystems.RightMotors;
+import frc.robot.subsystems.Drivetrain;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,12 +18,11 @@ import frc.robot.subsystems.RightMotors;
 public class OI {
     Joystick leftJoy, rightJoy, controller;
 
-    OI(LeftMotors leftMotors, RightMotors rightMotors) {
+    OI(Drivetrain dt) {
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);
 
-        leftMotors.setDefaultCommand(new RunDrivetrainArcade(leftJoy, rightJoy, leftMotors, rightMotors));
-        rightMotors.setDefaultCommand(new RunDrivetrainArcade(leftJoy, rightJoy, leftMotors, rightMotors));
+        dt.setDefaultCommand(new RunDrivetrainArcade(leftJoy, rightJoy, dt));
     }
 }

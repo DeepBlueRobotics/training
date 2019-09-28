@@ -17,16 +17,16 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
  * floating around.
  */
 public class RobotMap {
-    static WPI_TalonSRX LTalon, RTalon;
-    static WPI_VictorSPX LVictor1, LVictor2, RVictor1, RVictor2;
+    static WPI_TalonSRX LTalon1, LTalon2, RTalon1, RTalon2;
+    static WPI_VictorSPX LVictor1, RVictor1;
 
     static {
-        LTalon = new WPI_TalonSRX(8);
-        LVictor1 = new WPI_VictorSPX(9);
-        LVictor2 = new WPI_VictorSPX(10);
+        LTalon1 = new WPI_TalonSRX(8);
+        LTalon2 = new WPI_TalonSRX(9);
+        LVictor1 = new WPI_VictorSPX(10);
 
-        RTalon = new WPI_TalonSRX(5);
-        RVictor1 = new WPI_VictorSPX(6);
-        RVictor2 = new WPI_VictorSPX(7);
+        RTalon1 = new WPI_TalonSRX(5);
+        RTalon2 = new WPI_TalonSRX(6);
+        RVictor1 = new WPI_VictorSPX(7);
     }
 }
