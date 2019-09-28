@@ -25,7 +25,6 @@ public class Robot extends TimedRobot {
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
-
   private static Motors motors;
   private static OI oi;
 
@@ -35,7 +34,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    motors = new Motors(RobotMap.talon);
+    motors = new Motors(RobotMap.talon, RobotMap.vicSPX, RobotMap.vicSP);
     oi = new OI(motors);
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
