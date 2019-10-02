@@ -8,7 +8,7 @@ If you want to understand how PID works mathematically, you'll need to know basi
 Resources:
 
 - [PID Control - FRC Programming Done Right](https://frc-pdr.readthedocs.io/en/latest/control/pid_control.html)
-- [Testing and Tuning PID Loops - Official WPILib docs](https://docs.wpilib.org/en/latest/docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-tuning-pid.html?highlight=pid)
+- [Testing and Tuning PID Loops - Official WPILib docs](https://docs.wpilib.org/en/latest/docs/software/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-tuning-pid.html)
 
 ## Motion Profiling (hard difficulty)
 One problem with PID is that moving and turning are independent actions, effectively limiting your robot to either moving in a straight line or turning around its center at any given moment. Motion profiling is a solution to that, allowing the robot to move around faster and more elegantly. It is highly suggested that you develop a working PID system first before jumping into motion profiling.
