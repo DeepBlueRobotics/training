@@ -23,7 +23,7 @@ Navigate to this file in the repo (`docs/section-2/version-control.md`) and add 
     Ethan Htun,
     Mia Vasquez,
     Kevin Bachelor,
-    Megan Li
+    Megan Li,
     Kasey Liu,
     Garrett Maslyar,
     Anita Beroza,
