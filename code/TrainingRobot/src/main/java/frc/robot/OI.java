@@ -29,5 +29,6 @@ public class OI {
         runMotorButton = new JoystickButton(controller, 1);
         //i changed whenPressed to toggleWhenPressed
         runMotorButton.whileHeld(new RunMotor(motors));
+        motors.setDefaultCommand(RunMotorsWithJoystick(leftJoy));
     }
 }
