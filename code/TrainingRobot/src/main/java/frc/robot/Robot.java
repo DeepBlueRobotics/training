@@ -35,7 +35,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    motors = new Motors(RobotMap.talon);
+    motors = new Motors(RobotMap.talon,RobotMap.talon2,RobotMap.victor);
     oi = new OI(motors);
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
