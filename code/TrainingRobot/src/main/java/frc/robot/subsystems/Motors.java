@@ -26,6 +26,7 @@ public class Motors extends Subsystem {
     this.talon = talon;
     this.talon2 =talon2;
     this.victor=victor;
+    //hopefully this works
   }
 
   public void run(double speed) {
