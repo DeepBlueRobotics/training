@@ -8,19 +8,16 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.LeftMotors;
-import frc.robot.subsystems.RightMotors;
+import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.Joystick;
 
 public class RunDrivetrainTank extends Command {
-  private LeftMotors leftMotors;
-  private RightMotors rightMotors;
+  private Drivetrain dt;
   private Joystick joystick1, joystick2;
-  public RunDrivetrainTank(Joystick joystick1, Joystick joystick2, LeftMotors leftMotors, RightMotors rightMotors) {
+  public RunDrivetrainTank(Joystick joystick1, Joystick joystick2, Drivetrain dt) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(this.leftMotors = leftMotors);
-    requires(this.rightMotors = rightMotors);
+    requires(this.dt = dt);
     this.joystick1 = joystick1;
     this.joystick2 = joystick2;
   }
@@ -33,9 +30,7 @@ public class RunDrivetrainTank extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    leftMotors.run(joystick1.getY());
-    rightMotors.run(joystick2.getY());
-
+    dt.run(joystick1.getY(), joystick2.getY());
   }
 
   // Make this return true when this Command no longer needs to run execute()

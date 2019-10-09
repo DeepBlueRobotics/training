@@ -8,7 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import frc.robot.commands.RunDrivetrainArcade;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.SwitchDrivemode;
 import frc.robot.subsystems.Drivetrain;
 
 /**
@@ -17,12 +18,14 @@ import frc.robot.subsystems.Drivetrain;
  */
 public class OI {
     Joystick leftJoy, rightJoy, controller;
+    JoystickButton switchButton;
 
     OI(Drivetrain dt) {
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);
+        switchButton = new JoystickButton(leftJoy, 6);
 
-        dt.setDefaultCommand(new RunDrivetrainArcade(leftJoy, rightJoy, dt));
+        switchButton.whenPressed(new SwitchDrivemode(dt, leftJoy, rightJoy));
     }
 }

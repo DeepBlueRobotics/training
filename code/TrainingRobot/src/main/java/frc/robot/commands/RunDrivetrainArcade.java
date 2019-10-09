@@ -30,7 +30,7 @@ public class RunDrivetrainArcade extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    dt.run(joystick1.getY()+joystick2.getX(), joystick1.getX()-joystick2.getY());
+    dt.run(joystick1.getY()-joystick2.getX(), joystick1.getY()+joystick2.getX());
   }
 
   // Make this return true when this Command no longer needs to run execute()

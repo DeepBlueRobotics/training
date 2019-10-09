@@ -30,9 +30,9 @@ public class Drivetrain extends Subsystem {
   }
 
   public void run(double LSpeed, double RSpeed) {
-    LTalon1.set(LSpeed);
-    LTalon2.set(LSpeed);
-    LVictor1.set(LSpeed);
+    LTalon1.set(-LSpeed);
+    LTalon2.set(-LSpeed);
+    LVictor1.set(-LSpeed);
     RTalon1.set(RSpeed);
     RTalon2.set(RSpeed);
     RVictor1.set(RSpeed);
