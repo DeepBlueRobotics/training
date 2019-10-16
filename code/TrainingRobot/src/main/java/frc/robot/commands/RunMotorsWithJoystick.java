@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.Joystick;
 public class RunMotor extends Command {
   private Motors motors;
   private Joystick joystick;
-  public RunMotor(Motors motors,Joystick joystick) {
+  public RunMotor(Motors motors,Joystick lJoy,Joystick rJoy) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(this.motors = motors);
@@ -22,7 +22,10 @@ public class RunMotor extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    motors.run(this.joystick.getY());
+    
+    double y=this.lJoy.getY();
+    double x=this.lJoy.getX();
+    motors.run(y+x/2,y-x/2);
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -21,10 +21,22 @@ public class RobotMap {
     static WPI_TalonSRX talon;
     static WPI_TalonSPX talon2;
     static Victor_SP victor;
+    
+    static WPI_TalonSRX talon3;
+    static WPI_TalonSPX talon4;
+    static Victor_SP victor2;
+    
 
     static {
-        talon = new WPI_TalonSRX(1);
-        talon2 = new WPI_TalonSPX(2);
-        victor= new VictorSP(3);
+        talon = new WPI_TalonSRX(8);
+        talon2 = new WPI_TalonSPX(9);
+        victor= new VictorSP(10);
+
+        talon3 = new WPI_TalonSRX(5);
+        talon4 = new WPI_TalonSPX(6);
+        victor2= new VictorSP(7);
+
+
+        
     }
 }
