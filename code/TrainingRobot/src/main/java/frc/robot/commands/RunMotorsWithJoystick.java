@@ -4,10 +4,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Motors;
 import edu.wpi.first.wpilibj.Joystick;
 
-public class RunMotor extends Command {
+public class RunMotorsWithJoystick extends Command {
   private Motors motors;
   private Joystick joystick;
-  public RunMotor(Motors motors,Joystick lJoy,Joystick rJoy) {
+  public RunMotorsWithJoystick(Motors motors,Joystick lJoy,Joystick rJoy) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(this.motors = motors);
@@ -23,10 +23,34 @@ public class RunMotor extends Command {
   @Override
   protected void execute() {
     
-    double y=this.lJoy.getY();
-    double x=this.lJoy.getX();
-    motors.run(y+x/2,y-x/2);
+    //0 is arcade mode, 1 is tank
+
+    if (SmartDashboard.getNumber("yeet",0)==0){arcadeDrive();}
+    else
+    {
+      tankDrive();
+    }
+    
   }
+
+  private void arcadeDrive() {
+    double y=this.lJoy.getY();
+    double x=this.rJoy.getX();
+    double left=y+x;
+    double right=y-x;
+    
+    
+    
+//this part has big boi errors
+    motors.run(y+x,y-x);
+  }
+
+   private void tankDrive(){
+     double l=this.lJoy.getY();
+     double r=this.rJoy.getY();
+     motors.run(l,r)
+
+   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override

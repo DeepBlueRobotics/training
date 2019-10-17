@@ -19,16 +19,14 @@ import frc.robot.subsystems.Motors;
 public class OI {
     Joystick leftJoy, rightJoy, controller;
     
-    private JoystickButton runMotorButton;
+    private JoystickButton switchModeButton;
 
     OI(Motors motors) {
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);
 
-        runMotorButton = new JoystickButton(controller, 1);
-        //i changed whenPressed to toggleWhenPressed
-        runMotorButton.whileHeld(new RunMotor(motors));
-        motors.setDefaultCommand(RunMotorsWithJoystick(motors, leftJoy,rightJoy));
+        switchModeButton = new JoystickButton(controller, 1);
+        switchModeButton.whilePressed(new SwitchMode());
     }
 }

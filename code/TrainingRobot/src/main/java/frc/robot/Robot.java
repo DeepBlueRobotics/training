@@ -38,6 +38,10 @@ public class Robot extends TimedRobot {
     motors = new Motors(RobotMap.talon,RobotMap.talon2,RobotMap.victor);
     oi = new OI(motors);
 
+    //0 is arcade mode, 1 is tank
+    SmartDashboard.putNumber("yeet",0);
+    motors.setDefaultCommand(RunMotorsWithJoystick(motors, oi.leftJoy, oi.rightJoy));
+
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
