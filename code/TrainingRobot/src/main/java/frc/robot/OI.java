@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.RunMotor;
+import frc.robot.commands.RunMotorsWithJoystick;
 import frc.robot.subsystems.Motors;
 
 /**
@@ -28,5 +29,6 @@ public class OI {
 
         runMotorButton = new JoystickButton(controller, 1);
         runMotorButton.whileHeld(new RunMotor(motors));
+        motors.setDefaultCommand(new RunMotorsWithJoystick(motors, leftJoy));
     }
 }
