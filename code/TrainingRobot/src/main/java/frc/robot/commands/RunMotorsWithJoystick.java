@@ -34,15 +34,24 @@ public class RunMotorsWithJoystick extends Command {
   }
 
   private void arcadeDrive() {
-    double y=this.lJoy.getY();
-    double x=this.rJoy.getX();
-    double left=y+x;
-    double right=y-x;
+
+    //This system/math decides how much power to give to each set of motors
+    //Its really dumb but I think it will work pretty cool
+    //It favors going straight over turning
+    //so if you have max turn and max forward
+    //it will do 2/3 of going max forward and 1/3 turning
+    //Also adam said i dont need to import math, if it doesn't work blame him lol
+    double push=this.lJoy.getY();
+    double turn=this.rJoy.getX();
+    double weight=Math.abs(push)+Math.abs(turn)+0.00001;
+    if (weight<1.0)
+    {
+      weight=1;
+    }
+    double left=(push-turn)/weight;
+    double right=(push+turn)/weight;
     
-    
-    
-//this part has big boi errors
-    motors.run(y+x,y-x);
+    motors.run(left,right);
   }
 
    private void tankDrive(){
