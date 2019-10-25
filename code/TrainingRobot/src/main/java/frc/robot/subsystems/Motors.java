@@ -8,7 +8,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSPX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.VictorSP;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -18,11 +18,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Motors extends Subsystem {
   private WPI_TalonSRX talon;
-  private WPI_TalonSPX talon2;
+  private WPI_VictorSPX talon2;
   private VictorSP victor;
 
   private WPI_TalonSRX talon3;
-  private WPI_TalonSPX talon4;
+  private WPI_VictorSPX talon4;
   private VictorSP victor2;
 
 
@@ -30,7 +30,7 @@ public class Motors extends Subsystem {
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public Motors(WPI_TalonSRX talon,WPI_TalonSPX talon2,VictorSP victor,WPI_TalonSRX talon3,WPI_TalonSPX talon4,VictorSP victor2) {
+  public Motors(WPI_TalonSRX talon,WPI_VictorSPX talon2,VictorSP victor,WPI_TalonSRX talon3,WPI_VictorSPX talon4,VictorSP victor2) {
     this.talon = talon;
     this.talon2 =talon2;
     this.victor=victor;

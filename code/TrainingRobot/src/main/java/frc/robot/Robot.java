@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.RunMotorsWithJoystick;
 import frc.robot.subsystems.Motors;
 
 /**
@@ -35,12 +36,12 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    motors = new Motors(RobotMap.talon,RobotMap.talon2,RobotMap.victor);
+    motors = new Motors(RobotMap.talon,RobotMap.talon2,RobotMap.victor,RobotMap.talon3,RobotMap.talon4,RobotMap.victor2);
     oi = new OI(motors);
 
     //0 is arcade mode, 1 is tank
     SmartDashboard.putNumber("yeet",0);
-    motors.setDefaultCommand(RunMotorsWithJoystick(motors, oi.leftJoy, oi.rightJoy));
+    motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy, oi.rightJoy));
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);

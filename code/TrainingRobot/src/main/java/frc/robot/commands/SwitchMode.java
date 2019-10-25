@@ -10,8 +10,12 @@ public class SwitchMode extends InstantCommand {
   }
   // Called just before this Command runs the first time
   @Override
-  protected void initialize() {
-  SmartDashboard.put("yeet",1-SmartDashboard.get("yeet",0));
+  protected void execute() {
+  SmartDashboard.putNumber("yeet",1-SmartDashboard.getNumber("yeet",0));
+  }
+  @Override
+  protected boolean isFinished(){
+    return true;
   }
 
   }

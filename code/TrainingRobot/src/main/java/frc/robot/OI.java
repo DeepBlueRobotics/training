@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.RunMotor;
+import frc.robot.commands.SwitchMode;
 import frc.robot.subsystems.Motors;
 
 /**
@@ -27,6 +28,6 @@ public class OI {
         controller = new Joystick(2);
 
         switchModeButton = new JoystickButton(controller, 1);
-        switchModeButton.whilePressed(new SwitchMode());
+        switchModeButton.whenPressed(new SwitchMode());
     }
 }

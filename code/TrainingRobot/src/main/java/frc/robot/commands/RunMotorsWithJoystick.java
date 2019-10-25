@@ -1,17 +1,21 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Motors;
 import edu.wpi.first.wpilibj.Joystick;
 
 public class RunMotorsWithJoystick extends Command {
   private Motors motors;
-  private Joystick joystick;
+  private Joystick lJoy;
+  private Joystick rJoy;
   public RunMotorsWithJoystick(Motors motors,Joystick lJoy,Joystick rJoy) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(this.motors = motors);
-    requires(this.joystick=joystick)
+    this.lJoy=lJoy;
+    this.rJoy=rJoy;
+
   }
 
   // Called just before this Command runs the first time
@@ -57,7 +61,7 @@ public class RunMotorsWithJoystick extends Command {
    private void tankDrive(){
      double l=this.lJoy.getY();
      double r=this.rJoy.getY();
-     motors.run(l,r)
+     motors.run(l,r);
 
    }
 
@@ -70,7 +74,7 @@ public class RunMotorsWithJoystick extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    motors.run(0);
+    motors.run(0,0);
   }
 
   // Called when another command which requires one or more of the same
