@@ -7,26 +7,27 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * Add your docs here.
  */
 public class Drivetrain extends Subsystem {
-  private WPI_TalonSRX LTalon1, LTalon2, RTalon1, RTalon2;
-  private WPI_VictorSPX LVictor1, RVictor1;
+  private SpeedController LTalon1, LTalon2, RTalon1, RTalon2, LVictor1, RVictor1;
+  private Encoder encoder;
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public Drivetrain(WPI_TalonSRX LTalon1, WPI_TalonSRX LTalon2, WPI_VictorSPX LVictor1, WPI_TalonSRX RTalon1, WPI_TalonSRX RTalon2, WPI_VictorSPX RVictor1) {
+  public Drivetrain(SpeedController LTalon1, SpeedController LTalon2, SpeedController LVictor1, SpeedController RTalon1, SpeedController RTalon2, SpeedController RVictor1, Encoder encoder) {
     this.LTalon1 = LTalon1;
     this.LTalon2 = LTalon2;
     this.LVictor1 = LVictor1;
     this.RTalon1 = RTalon1;
     this.RTalon2 = RTalon2;
     this.RVictor1 = RVictor1;
+    this.encoder = encoder;
+    encoder.setDistancePerPulse(1./256.); // Set to actual number
   }
 
   public void run(double LSpeed, double RSpeed) {
@@ -36,6 +37,13 @@ public class Drivetrain extends Subsystem {
     RTalon1.set(RSpeed);
     RTalon2.set(RSpeed);
     RVictor1.set(RSpeed);
+  }
+
+  public void runDistance(double dist) {
+    if (encoder.getDistance() < dist)
+      run(0.5, 0.5);
+    else
+      run(0, 0);
   }
 
   @Override

@@ -11,7 +11,9 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.commands.AutoDance;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,6 +28,8 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
+  private Command myAutoCommand;
+
   private static OI oi;
 
   /**
@@ -34,12 +38,15 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    Drivetrain drivetrain = new Drivetrain(RobotMap.LTalon1, RobotMap.LTalon2, RobotMap.LVictor1, RobotMap.RTalon1, RobotMap.RTalon2, RobotMap.RVictor1);
+    Drivetrain drivetrain = new Drivetrain(RobotMap.LTalon1, RobotMap.LTalon2, RobotMap.LVictor1, RobotMap.RTalon1, RobotMap.RTalon2, RobotMap.RVictor1, RobotMap.encoder);
+    
     oi = new OI(drivetrain);
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
+
+    myAutoCommand = new AutoDance(drivetrain);
   }
 
   /**
@@ -80,6 +87,7 @@ public class Robot extends TimedRobot {
     switch (m_autoSelected) {
       case kCustomAuto:
         // Put custom auto code here
+        myAutoCommand.start();
         break;
       case kDefaultAuto:
       default:
