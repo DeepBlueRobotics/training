@@ -8,7 +8,6 @@
 package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.VictorSP;
 
 /**
@@ -19,22 +18,22 @@ import edu.wpi.first.wpilibj.VictorSP;
  */
 public class RobotMap {
     static WPI_TalonSRX talon;
-    static WPI_VictorSPX victor;
-    static VictorSP victor2;
-    
     static WPI_TalonSRX talon2;
-    static WPI_VictorSPX victor3;
-    static VictorSP victor4;
+    static VictorSP victor;
+    
+    static WPI_TalonSRX talon3;
+    static WPI_TalonSRX talon4;
+    static VictorSP victor2;
     
 
     static {
         talon = new WPI_TalonSRX(8);
-        victor = new WPI_VictorSPX(9);
-        victor2= new VictorSP(10);
+        talon2 = new WPI_TalonSRX(9);
+        victor= new VictorSP(10);
 
-        talon2 = new WPI_TalonSRX(5);
-        victor3 = new WPI_VictorSPX(6);
-        victor4= new VictorSP(7);
+        talon3 = new WPI_TalonSRX(5);
+        talon4 = new WPI_TalonSRX(6);
+        victor2= new VictorSP(7);
 
 
         

@@ -8,7 +8,6 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.VictorSP;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -18,26 +17,26 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Motors extends Subsystem {
   private WPI_TalonSRX talon;
-  private WPI_VictorSPX victor;
-  private VictorSP victor2;
-
   private WPI_TalonSRX talon2;
-  private WPI_VictorSPX victor3;
-  private VictorSP victor4;
+  private VictorSP victor;
+
+  private WPI_TalonSRX talon3;
+  private WPI_TalonSRX talon4;
+  private VictorSP victor2;
 
 
 
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public Motors(WPI_TalonSRX talon,WPI_VictorSPX victor,VictorSP victor2,WPI_TalonSRX talon2,WPI_VictorSPX victor3,VictorSP victor4) {
+  public Motors(WPI_TalonSRX talon,WPI_TalonSRX talon2,VictorSP victor,WPI_TalonSRX talon3,WPI_TalonSRX talon4,VictorSP victor2) {
     this.talon =talon;
+    this.talon2=talon2;
     this.victor=victor;
-    this.victor2=victor2;
 
-    this.talon2 =talon2;
-    this.victor3 =victor3;
-    this.victor4=victor4;
+    this.talon3 =talon3;
+    this.talon4 =talon4;
+    this.victor2=victor2;
 
     
     //hopefully this works
@@ -45,12 +44,12 @@ public class Motors extends Subsystem {
 
   public void run(double lSpeed, double rSpeed) {
     talon.set(lSpeed);
+    talon2.set(lSpeed);
     victor.set(lSpeed);
-    victor2.set(lSpeed);
 
-    talon2.set(rSpeed);
-    victor3.set(rSpeed);
-    victor4.set(rSpeed);
+    talon3.set(rSpeed);
+    talon4.set(rSpeed);
+    victor2.set(rSpeed);
 
     
   }

@@ -55,13 +55,13 @@ public class RunMotorsWithJoystick extends Command {
     double left=(push-turn)/weight;
     double right=(push+turn)/weight;
     
-    motors.run(left,right);
+    motors.run(-left,right);
   }
 
    private void tankDrive(){
      double l=this.lJoy.getY();
      double r=this.rJoy.getY();
-     motors.run(l,r);
+     motors.run(-l,r);
 
    }
 
