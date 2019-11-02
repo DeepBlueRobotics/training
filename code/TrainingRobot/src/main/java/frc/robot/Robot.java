@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrain;
-
+import frc.robot.commands.RunMotorsWithJoystick;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -36,7 +36,8 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     motors = new DriveTrain(RobotMap.lefttalon,RobotMap.leftVictorSPX1, RobotMap.leftVictorSPX2,RobotMap.righttalon,RobotMap.rightVictorSPX1,RobotMap.rightVictorSPX2);
-    
+    motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy,oi.rightJoy));
+
     oi = new OI(motors);
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
@@ -105,3 +106,4 @@ public class Robot extends TimedRobot {
   public void testPeriodic() {
   }
 }
+

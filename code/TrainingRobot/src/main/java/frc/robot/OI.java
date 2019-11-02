@@ -29,8 +29,6 @@ public class OI {
         
         tankorArcadeButton = new JoystickButton(controller,2);
         tankorArcadeButton.whenPressed(new TankorArcade(motors));
-        runMotorButton = new JoystickButton(controller, 1);
-        runMotorButton.whileHeld(new RunMotor(motors));
-        /*motors.setDefaultCommand(new RunMotorsWithJoystick(motors, leftJoy));*/ 
+
     }
 }
