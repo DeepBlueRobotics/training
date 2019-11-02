@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.subsystems.Motors;
+import frc.robot.subsystems.DriveTrain;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,7 +26,7 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  private static Motors motors;
+  private static DriveTrain motors;
   private static OI oi;
 
   /**
@@ -35,7 +35,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    motors = new Motors(RobotMap.talon,RobotMap.VictorSPX,RobotMap.VictorSP);
+    motors = new DriveTrain(RobotMap.lefttalon,RobotMap.leftVictorSPX1, RobotMap.leftVictorSPX2,RobotMap.righttalon,RobotMap.rightVictorSPX1,RobotMap.rightVictorSPX2);
     
     oi = new OI(motors);
 
@@ -95,7 +95,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    Scheduler.getInstance().run();
+    Scheduler.getInstance().run(); 
   }
 
   /**
