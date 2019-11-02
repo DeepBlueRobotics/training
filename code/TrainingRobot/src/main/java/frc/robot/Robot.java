@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.RunMotorsWithJoystick;
 import frc.robot.subsystems.Motors;
+import frc.robot.commands.AutoMove;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -39,13 +40,14 @@ public class Robot extends TimedRobot {
     motors = new Motors(RobotMap.talon,RobotMap.talon2,RobotMap.victor,RobotMap.talon3,RobotMap.talon4,RobotMap.victor2);
     oi = new OI(motors);
 
-    //0 is arcade mode, 1 is tank
+    //yeet stores teleop mode -- 0 is arcade mode, 1 is tank
     SmartDashboard.putNumber("yeet",0);
     motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy, oi.rightJoy));
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
+    SmartDashboard.putString("AutoMode", "forward");
   }
 
   /**
@@ -76,6 +78,10 @@ public class Robot extends TimedRobot {
     m_autoSelected = m_chooser.getSelected();
     // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     System.out.println("Auto selected: " + m_autoSelected);
+    RobotMap.lEncoder.reset();
+    RobotMap.rEncoder.reset();
+
+    Scheduler.getInstance().add(new AutoMove(motors));
   }
 
   /**
@@ -83,15 +89,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    switch (m_autoSelected) {
-      case kCustomAuto:
-        // Put custom auto code here
-        break;
-      case kDefaultAuto:
-      default:
-        // Put default auto code here
-        break;
-    }
+    Scheduler.getInstance().run();
+    //check if the numbers need to be in ft or inches, currently they are in feet
+        if (SmartDashboard.getString("AutoMode","forward").equals("turn") || RobotMap.lEncoder.getDistance()<=2 || RobotMap.rEncoder.getDistance()<=2)
+          {
+           SmartDashboard.putString("AutoMode", "turn");
+          }
+
   }
 
   /**

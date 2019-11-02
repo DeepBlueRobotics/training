@@ -28,5 +28,6 @@ public class OI {
 
         switchModeButton = new JoystickButton(controller, 1);
         switchModeButton.whenPressed(new SwitchMode());
+
     }
 }
