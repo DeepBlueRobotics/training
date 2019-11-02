@@ -81,7 +81,7 @@ public class Robot extends TimedRobot {
     RobotMap.lEncoder.reset();
     RobotMap.rEncoder.reset();
 
-    Scheduler.getInstance().add(new AutoMove(motors));
+    Scheduler.getInstance().add(new AutoMove(motors,RobotMap.lEncoder,RobotMap.rEncoder));
   }
 
   /**

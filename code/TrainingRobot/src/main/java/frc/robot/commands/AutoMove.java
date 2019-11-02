@@ -1,17 +1,22 @@
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.subsystems.Motors;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class AutoMove extends Command {
   private Motors motors;
-  private double l;
-  private double r;
-
-  public AutoMove(Motors motors) {
+  private Encoder lEncoder;
+  private Encoder rEncoder;
+  
+  public AutoMove(Motors motors,Encoder lEncoder,Encoder rEncoder) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(this.motors = motors);
+    this.lEncoder=lEncoder;
+    this.rEncoder=rEncoder;
 
   }
 
@@ -23,14 +28,22 @@ public class AutoMove extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
-    motors.run(l,r);
+    if (lEncoder.getDistance()>2 || rEncoder.getDistance()>=2){
+        SmartDashboard.putString("AutoMode","turn");
+    }
+    if (SmartDashboard.getString("AutoMode","turn").equals("forward"))
+    {
+      motors.run(1,1);
+    }
+    else if (SmartDashboard.getString("AutoMode","turn").equals("turn")){
+      motors.run(1,-1);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return true;
+    return false;
   }
 
   // Called once after isFinished returns true
