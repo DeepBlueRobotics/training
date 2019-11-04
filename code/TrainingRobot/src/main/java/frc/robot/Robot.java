@@ -90,11 +90,11 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
-    //check if the numbers need to be in ft or inches, currently they are in feet
+    /*//check if the numbers need to be in ft or inches, currently they are in feet
         if (SmartDashboard.getString("AutoMode","forward").equals("turn") || RobotMap.lEncoder.getDistance()<=2 || RobotMap.rEncoder.getDistance()<=2)
           {
            SmartDashboard.putString("AutoMode", "turn");
-          }
+          }*/
 
   }
 

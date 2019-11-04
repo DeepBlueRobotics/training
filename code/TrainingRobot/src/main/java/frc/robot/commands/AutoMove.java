@@ -1,12 +1,10 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.subsystems.Motors;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class AutoMove extends Command {
+public class AutoMove extends CommandGroup {
   private Motors motors;
   private Encoder lEncoder;
   private Encoder rEncoder;
@@ -28,15 +26,10 @@ public class AutoMove extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (lEncoder.getDistance()>2 || rEncoder.getDistance()>=2){
-        SmartDashboard.putString("AutoMode","turn");
-    }
-    if (SmartDashboard.getString("AutoMode","turn").equals("forward"))
+    addSequential(new Forward(motors));
+    if (lEncoder.getDistance()>2 || rEncoder.getDistance()>=2)
     {
-      motors.run(1,1);
-    }
-    else if (SmartDashboard.getString("AutoMode","turn").equals("turn")){
-      motors.run(1,-1);
+      addParallel(new TurnRight(motors));
     }
   }
 
