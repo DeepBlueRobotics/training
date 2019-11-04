@@ -27,7 +27,7 @@ public class AutoMove extends CommandGroup {
   @Override
   protected void execute() {
     addSequential(new Forward(motors));
-    if (lEncoder.getDistance()>2 || rEncoder.getDistance()>=2)
+    if (lEncoder.getDistance()<=-2 || rEncoder.getDistance()>=2)
     {
       addParallel(new TurnRight(motors));
     }
