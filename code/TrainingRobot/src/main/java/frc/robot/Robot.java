@@ -35,10 +35,11 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    oi = new OI(motors);
+
     motors = new DriveTrain(RobotMap.lefttalon,RobotMap.leftVictorSPX1, RobotMap.leftVictorSPX2,RobotMap.righttalon,RobotMap.rightVictorSPX1,RobotMap.rightVictorSPX2);
     motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy,oi.rightJoy));
 
-    oi = new OI(motors);
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
