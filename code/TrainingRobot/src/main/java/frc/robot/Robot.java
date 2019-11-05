@@ -40,6 +40,8 @@ public class Robot extends TimedRobot {
     motors = new DriveTrain(RobotMap.lefttalon,RobotMap.leftVictorSPX1, RobotMap.leftVictorSPX2,RobotMap.righttalon,RobotMap.rightVictorSPX1,RobotMap.rightVictorSPX2);
     motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy,oi.rightJoy));
 
+  
+    
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);

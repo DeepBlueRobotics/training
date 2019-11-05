@@ -9,9 +9,9 @@ package frc.robot;
 import frc.robot.commands.TankorArcade;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.command.Command;
+/**import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.commands.RunMotor;
-import frc.robot.commands.RunMotorsWithJoystick;
+import frc.robot.commands.RunMotorsWithJoystick;**/
 import frc.robot.subsystems.DriveTrain;
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,7 +20,7 @@ import frc.robot.subsystems.DriveTrain;
 public class OI {
     Joystick leftJoy, rightJoy, controller;
     
-    private JoystickButton runMotorButton;
+    /*private JoystickButton runMotorButton;*/
     private JoystickButton tankorArcadeButton;
     OI(DriveTrain motors) {
         leftJoy = new Joystick(0);

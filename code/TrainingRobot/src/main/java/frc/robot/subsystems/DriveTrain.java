@@ -47,9 +47,9 @@ public class DriveTrain extends Subsystem {
   }
   
   public void run(double leftspeed,double rightspeed) {
-    lefttalon.set(leftspeed);
-    leftVictorSPX1.set(leftspeed);
-    leftVictorSPX2.set(leftspeed);
+    lefttalon.set(-leftspeed);
+    leftVictorSPX1.set(-leftspeed);
+    leftVictorSPX2.set(-leftspeed);
 
     righttalon.set(rightspeed);
     rightVictorSPX1.set(rightspeed);

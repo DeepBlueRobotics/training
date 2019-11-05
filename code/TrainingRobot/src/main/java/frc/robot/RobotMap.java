@@ -27,13 +27,13 @@ public class RobotMap {
     static WPI_VictorSPX rightVictorSPX2;
 
     static {
-        lefttalon = new WPI_TalonSRX(1);
-        leftVictorSPX1 = new WPI_VictorSPX(3);
-        leftVictorSPX2 = new WPI_VictorSPX(9);
+        lefttalon = new WPI_TalonSRX(8);
+        leftVictorSPX1 = new WPI_VictorSPX(9);
+        leftVictorSPX2 = new WPI_VictorSPX(10);
 
-        righttalon = new WPI_TalonSRX(1);
-        rightVictorSPX1 = new WPI_VictorSPX(3);
-        rightVictorSPX2 = new WPI_VictorSPX(9);
+        righttalon = new WPI_TalonSRX(5);
+        rightVictorSPX1 = new WPI_VictorSPX(6);
+        rightVictorSPX2 = new WPI_VictorSPX(7);
 
 
 
