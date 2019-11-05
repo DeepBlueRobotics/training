@@ -9,9 +9,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.RunMotor;
+
 import frc.robot.commands.RunMotorsWithJoystick;
-import frc.robot.subsystems.Motors;
+import frc.robot.subsystems.Drivetrain;
+import frc.robot.commands.SwitchModes;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,15 +21,14 @@ import frc.robot.subsystems.Motors;
 public class OI {
     Joystick leftJoy, rightJoy, controller;
     
-    private JoystickButton runMotorButton;
-
-    OI(Motors motors) {
+    private JoystickButton modebutton;
+    OI(Drivetrain drivetrain) {
         leftJoy = new Joystick(0);
         rightJoy = new Joystick(1);
         controller = new Joystick(2);
 
-        runMotorButton = new JoystickButton(controller, 1);
-        runMotorButton.whileHeld(new RunMotor(motors));
-        motors.setDefaultCommand(new RunMotorsWithJoystick(motors, leftJoy));
+        modebutton = new JoystickButton(controller, 3);
+        modebutton.whenPressed(new SwitchModes(drivetrain));
+        drivetrain.setDefaultCommand(new RunMotorsWithJoystick(drivetrain, leftJoy, rightJoy));
     }
 }
