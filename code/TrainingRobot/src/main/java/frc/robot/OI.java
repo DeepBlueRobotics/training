@@ -23,8 +23,8 @@ public class OI {
     /*private JoystickButton runMotorButton;*/
     private JoystickButton tankorArcadeButton;
     OI(DriveTrain motors) {
-        leftJoy = new Joystick(0);
-        rightJoy = new Joystick(1);
+        leftJoy = new Joystick(1);
+        rightJoy = new Joystick(0);
         controller = new Joystick(2);
         
         tankorArcadeButton = new JoystickButton(controller,2);
