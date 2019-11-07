@@ -17,11 +17,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Motors extends Subsystem {
   private WPI_TalonSRX talon;
-  private WPI_TalonSRX talon2;
+  private VictorSP talon2;
   private VictorSP victor;
 
   private WPI_TalonSRX talon3;
-  private WPI_TalonSRX talon4;
+  private VictorSP talon4;
   private VictorSP victor2;
 
 
@@ -29,7 +29,7 @@ public class Motors extends Subsystem {
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public Motors(WPI_TalonSRX talon,WPI_TalonSRX talon2,VictorSP victor,WPI_TalonSRX talon3,WPI_TalonSRX talon4,VictorSP victor2) {
+  public Motors(WPI_TalonSRX talon,VictorSP talon2,VictorSP victor,WPI_TalonSRX talon3,VictorSP talon4,VictorSP victor2) {
     this.talon =talon;
     this.talon2=talon2;
     this.victor=victor;
@@ -43,9 +43,9 @@ public class Motors extends Subsystem {
   }
 
   public void run(double lSpeed, double rSpeed) {
-    talon.set(lSpeed);
-    talon2.set(lSpeed);
-    victor.set(lSpeed);
+    talon.set(-lSpeed);
+    talon2.set(-lSpeed);
+    victor.set(-lSpeed);
 
     talon3.set(rSpeed);
     talon4.set(rSpeed);

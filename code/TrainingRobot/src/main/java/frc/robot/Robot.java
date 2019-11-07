@@ -60,6 +60,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    SmartDashboard.putNumber("lEncoder distance",-RobotMap.lEncoder.getDistance());
+    SmartDashboard.putNumber("rEncoder distance",RobotMap.rEncoder.getDistance());
+
   }
 
   /**
@@ -81,7 +84,7 @@ public class Robot extends TimedRobot {
     RobotMap.lEncoder.reset();
     RobotMap.rEncoder.reset();
 
-    Scheduler.getInstance().add(new AutoMove(motors,RobotMap.lEncoder,RobotMap.rEncoder));
+    Scheduler.getInstance().add(new AutoMove(motors));
   }
 
   /**

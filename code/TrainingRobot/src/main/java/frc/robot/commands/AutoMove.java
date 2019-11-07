@@ -1,20 +1,16 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Motors;
 
 public class AutoMove extends CommandGroup {
   private Motors motors;
-  private Encoder lEncoder;
-  private Encoder rEncoder;
   
-  public AutoMove(Motors motors,Encoder lEncoder,Encoder rEncoder) {
+  public AutoMove(Motors motors) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(this.motors = motors);
-    this.lEncoder=lEncoder;
-    this.rEncoder=rEncoder;
 
   }
 
@@ -27,7 +23,7 @@ public class AutoMove extends CommandGroup {
   @Override
   protected void execute() {
     addSequential(new Forward(motors));
-    if (lEncoder.getDistance()<=-2 || rEncoder.getDistance()>=2)
+    if (SmartDashboard.getNumber("lEncoder distance",0)<=24 || SmartDashboard.getNumber("rEncoder distance",0)>=24)
     {
       addParallel(new TurnRight(motors));
     }

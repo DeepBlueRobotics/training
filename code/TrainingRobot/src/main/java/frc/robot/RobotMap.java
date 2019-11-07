@@ -19,11 +19,11 @@ import edu.wpi.first.wpilibj.Encoder;
  */
 public class RobotMap {
     static WPI_TalonSRX talon;
-    static WPI_TalonSRX talon2;
+    static VictorSP talon2;
     static VictorSP victor;
     
     static WPI_TalonSRX talon3;
-    static WPI_TalonSRX talon4;
+    static VictorSP talon4;
     static VictorSP victor2;
     
     static Encoder lEncoder;
@@ -31,11 +31,11 @@ public class RobotMap {
 
     static {
         talon = new WPI_TalonSRX(8);
-        talon2 = new WPI_TalonSRX(9);
+        talon2 = new VictorSP(9);
         victor= new VictorSP(10);
 
         talon3 = new WPI_TalonSRX(5);
-        talon4 = new WPI_TalonSRX(6);
+        talon4 = new VictorSP(6);
         victor2= new VictorSP(7);
 
         lEncoder=new Encoder(0,1);

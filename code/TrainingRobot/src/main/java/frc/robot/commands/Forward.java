@@ -17,7 +17,7 @@ public class Forward extends Command {
 
   @Override
   protected void execute() {
-    motors.run(-1,1);
+    motors.run(1,1);
   }
 
   @Override
