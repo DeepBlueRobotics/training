@@ -10,6 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.commands.RunDrivetrain;
 
 /**
  * Add your docs here.
@@ -18,30 +19,22 @@ public class SwitchDrivemode extends InstantCommand {
   /**
    * Add your docs here.
    */
+  private Joystick joystick1, joystick2;
   private Drivetrain dt;
-  private Joystick leftJoy, rightJoy;
-  private static Boolean tank = false;
-
-  public SwitchDrivemode(Drivetrain dt, Joystick leftJoy, Joystick rightJoy) {
+  public SwitchDrivemode(Joystick joystick1, Joystick joystick2, Drivetrain dt) {
     super();
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    this.dt = dt;
-    this.leftJoy = leftJoy;
-    this.rightJoy = rightJoy;
+    requires(this.dt = dt);
+    this.joystick1 = joystick1;
+    this.joystick2 = joystick2;
+
   }
 
   // Called once when the command executes
   @Override
   protected void initialize() {
-    tank = !tank;
-    if (tank) {
-      dt.setDefaultCommand(new RunDrivetrainTank(leftJoy, rightJoy, dt));
-      System.out.println("tank mode");
-    } else {
-      dt.setDefaultCommand(new RunDrivetrainArcade(leftJoy, rightJoy, dt));
-      System.out.println("arcade mode");
-    }
+    (new RunDrivetrain(joystick1, joystick2, dt)).switchMode();
   }
 
 }

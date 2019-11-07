@@ -20,7 +20,7 @@ import edu.wpi.first.wpilibj.Encoder;
 public class RobotMap {
     static WPI_TalonSRX LTalon1, RTalon1;
     static WPI_VictorSPX  LTalon2, RTalon2, LVictor1, RVictor1;
-    static Encoder encoder;
+    static Encoder LEncoder, REncoder;
 
     static {
         LTalon1 = new WPI_TalonSRX(8);
@@ -31,6 +31,7 @@ public class RobotMap {
         RTalon2 = new WPI_VictorSPX(6);
         RVictor1 = new WPI_VictorSPX(7);
 
-        encoder = new Encoder(0,1); // change to actual ports
+        LEncoder = new Encoder(0, 1);
+        REncoder = new Encoder(2, 3);
     }
 }

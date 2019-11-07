@@ -8,14 +8,18 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.Motors;
+import frc.robot.subsystems.Drivetrain;
+import edu.wpi.first.wpilibj.Joystick;
 
-public class RunMotor extends Command {
-  private Motors motors;
-  public RunMotor(Motors motors) {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
-    requires(this.motors = motors);
+public class RunDrivetrain extends Command {
+  private static boolean tankMode;
+  private Drivetrain dt;
+  private Joystick joystick1, joystick2;
+  public RunDrivetrain(Joystick joystick1, Joystick joystick2, Drivetrain dt) {
+    requires(this.dt = dt);
+    this.joystick1 = joystick1;
+    this.joystick2 = joystick2; 
+    tankMode = false;
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +30,10 @@ public class RunMotor extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    motors.run(0.5);
+    if (tankMode)
+      dt.run(joystick1.getY(), joystick2.getY());
+    else 
+      dt.run(joystick1.getY()-joystick2.getX(), joystick1.getY()+joystick2.getX());
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -38,13 +45,16 @@ public class RunMotor extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    motors.run(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
+  }
+
+  // Called in code to switch between arcade and tank mode
+  public void switchMode() {
+    tankMode = !tankMode;
   }
 }

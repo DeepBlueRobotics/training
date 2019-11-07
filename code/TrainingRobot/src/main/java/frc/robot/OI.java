@@ -9,8 +9,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.SwitchDrivemode;
+import frc.robot.commands.RunDrivetrain;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.commands.SwitchDrivemode;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -26,6 +27,7 @@ public class OI {
         controller = new Joystick(2);
         switchButton = new JoystickButton(leftJoy, 6);
 
-        switchButton.whenPressed(new SwitchDrivemode(dt, leftJoy, rightJoy));
+        dt.setDefaultCommand(new RunDrivetrain(leftJoy, rightJoy, dt));
+        switchButton.whenPressed(new SwitchDrivemode(leftJoy, rightJoy, dt));
     }
 }
