@@ -11,7 +11,7 @@ public class SwitchMode extends InstantCommand {
   // Called just before this Command runs the first time
   @Override
   protected void execute() {
-  SmartDashboard.putNumber("yeet",1-SmartDashboard.getNumber("yeet",0));
+  SmartDashboard.putNumber("TeleopMode",1-SmartDashboard.getNumber("TeleopMode",0));
   }
   @Override
   protected boolean isFinished(){

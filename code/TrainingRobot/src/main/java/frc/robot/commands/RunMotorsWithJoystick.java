@@ -29,7 +29,7 @@ public class RunMotorsWithJoystick extends Command {
     
     //0 is arcade mode, 1 is tank
 
-    if (SmartDashboard.getNumber("yeet",0)==0){arcadeDrive();}
+    if (SmartDashboard.getNumber("TeleopMode",0)==0){arcadeDrive();}
     else
     {
       tankDrive();

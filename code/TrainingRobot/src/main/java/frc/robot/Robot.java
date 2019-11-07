@@ -40,8 +40,8 @@ public class Robot extends TimedRobot {
     motors = new Motors(RobotMap.talon,RobotMap.talon2,RobotMap.victor,RobotMap.talon3,RobotMap.talon4,RobotMap.victor2);
     oi = new OI(motors);
 
-    //yeet stores teleop mode -- 0 is arcade mode, 1 is tank
-    SmartDashboard.putNumber("yeet",0);
+    //0 is arcade mode, 1 is tank
+    SmartDashboard.putNumber("TeleopMode",0);
     motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy, oi.rightJoy));
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
