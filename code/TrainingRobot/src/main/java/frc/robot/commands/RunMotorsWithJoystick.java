@@ -9,15 +9,15 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Drivetrain;
 
 public class RunMotorsWithJoystick extends Command {
-  private DriveTrain motors;
+  private Drivetrain motors;
   private Joystick leftJoystick;
   private Joystick rightJoystick;
     
 
-  public RunMotorsWithJoystick(DriveTrain motors, Joystick leftJoystick, Joystick rightJoystick) {
+  public RunMotorsWithJoystick(Drivetrain motors, Joystick leftJoystick, Joystick rightJoystick) {
     this.motors = motors;
     this.leftJoystick = leftJoystick;
     this.rightJoystick = rightJoystick;

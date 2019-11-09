@@ -8,11 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Drivetrain;
 
 public class RunMotor extends Command {
-  private DriveTrain motors;
-  public RunMotor(DriveTrain motors) {
+  private Drivetrain motors;
+  public RunMotor(Drivetrain motors) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(this.motors = motors);

@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 /**import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.commands.RunMotor;
 import frc.robot.commands.RunMotorsWithJoystick;**/
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Drivetrain;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -22,10 +22,10 @@ public class OI {
     
     /*private JoystickButton runMotorButton;*/
     private JoystickButton tankorArcadeButton;
-    OI(DriveTrain motors) {
-        leftJoy = new Joystick(1);
-        rightJoy = new Joystick(0);
-        controller = new Joystick(2);
+    OI(Drivetrain motors) {
+        leftJoy = new Joystick(0);
+        rightJoy = new Joystick(2);
+        controller = new Joystick(1);
         
         tankorArcadeButton = new JoystickButton(controller,2);
         tankorArcadeButton.whenPressed(new TankorArcade(motors));

@@ -1,12 +1,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.InstantCommand;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Drivetrain;
 
 public class TankorArcade extends InstantCommand {
-    DriveTrain motors;
+    Drivetrain motors;
 
-    public TankorArcade(DriveTrain motors){
+    public TankorArcade(Drivetrain motors){
         this.motors = motors;
 
     }
