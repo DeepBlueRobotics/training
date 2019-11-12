@@ -23,7 +23,7 @@ public class AutoMove extends CommandGroup {
   @Override
   protected void execute() {
     addSequential(new Forward(motors));
-    if (SmartDashboard.getNumber("lEncoder distance",0)<=24 || SmartDashboard.getNumber("rEncoder distance",0)>=24)
+    if (SmartDashboard.getNumber("lEncoder distance",0)>=24 || SmartDashboard.getNumber("rEncoder distance",0)>=24)
     {
       addParallel(new TurnRight(motors));
     }
