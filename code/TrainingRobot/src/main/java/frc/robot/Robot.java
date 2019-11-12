@@ -40,10 +40,7 @@ public class Robot extends TimedRobot {
     motors = new Motors(RobotMap.talon,RobotMap.talon2,RobotMap.victor,RobotMap.talon3,RobotMap.talon4,RobotMap.victor2);
     oi = new OI(motors);
 
-    //0 is arcade mode, 1 is tank
-    SmartDashboard.putNumber("TeleopMode",0);
-    motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy, oi.rightJoy));
-
+    
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
@@ -56,12 +53,11 @@ public class Robot extends TimedRobot {
    * autonomous, teleoperated and test.
    *
    * <p>This runs after the mode specific periodic functions, but before
-   * LiveWindow and SmartDashboard integrated updating.
+   * LiveWindow and SmartDashboard irated updating.
    */
   @Override
   public void robotPeriodic() {
-    SmartDashboard.putNumber("lEncoder distance",-RobotMap.lEncoder.getDistance());
-    SmartDashboard.putNumber("rEncoder distance",RobotMap.rEncoder.getDistance());
+    
 
   }
 
@@ -78,6 +74,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    SmartDashboard.putNumber("Gets to execute",0);
+    SmartDashboard.putNumber("Gets to forward",0);
+      
     m_autoSelected = m_chooser.getSelected();
     // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     System.out.println("Auto selected: " + m_autoSelected);
@@ -93,6 +92,8 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
+    SmartDashboard.putNumber("lEncoder distance",-RobotMap.lEncoder.getDistance());
+    SmartDashboard.putNumber("rEncoder distance",RobotMap.rEncoder.getDistance());
     /*//check if the numbers need to be in ft or inches, currently they are in feet
         if (SmartDashboard.getString("AutoMode","forward").equals("turn") || RobotMap.lEncoder.getDistance()<=2 || RobotMap.rEncoder.getDistance()<=2)
           {
@@ -104,6 +105,14 @@ public class Robot extends TimedRobot {
   /**
    * This function is called periodically during operator control.
    */
+  @Override
+  public void teleopInit(){
+    //0 is arcade mode, 1 is tank
+    SmartDashboard.putNumber("TeleopMode",0);
+    motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy, oi.rightJoy));
+
+
+  }
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();

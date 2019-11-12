@@ -7,6 +7,7 @@
 
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Motors;
 
 public class Forward extends Command {
@@ -17,21 +18,28 @@ public class Forward extends Command {
 
   @Override
   protected void execute() {
-    motors.run(1,1);
+    SmartDashboard.putNumber("Forward gets here",1);
+    motors.run(-0.5,-0.5);
   }
 
   @Override
   protected boolean isFinished() {
+    SmartDashboard.putNumber("Forward gets here2",1);
+    
     return true;
   }
 
   @Override
   protected void end() {
-    motors.run(0,0);
+    SmartDashboard.putNumber("Forward gets here3",1);
+    
+    //motors.run(0,0);
   }
 
   @Override
   protected void interrupted() {
+    SmartDashboard.putNumber("Forward gets here4",1);
+    
     end();
   }
 }

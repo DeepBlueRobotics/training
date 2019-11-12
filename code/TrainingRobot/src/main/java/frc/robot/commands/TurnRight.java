@@ -17,7 +17,7 @@ public class TurnRight extends Command {
 
   @Override
   protected void execute() {
-    motors.run(-0.5,0.5);
+    motors.run(0.5,-0.5);
   }
 
   @Override
