@@ -50,13 +50,11 @@ public class Drivetrain extends Subsystem {
 
   public void runDistance(double dist) {
     if (LEncoder.getDistance() < dist && REncoder.getDistance() < dist)
-      run(0.5, 0.5);
-    else if (LEncoder.getDistance() < dist)
-      run(0.5, 0);
-    else if (REncoder.getDistance() < dist)
-      run(0, 0.5);
-    else
-      run(0, 0);
+      run(-0.5, -0.5);
+    //else if (LEncoder.getDistance() < dist)
+    //  run(-0.5, 0);
+    //else if (REncoder.getDistance() < dist)
+    //  run(0, -0.5);
   }
 
   public void switchMode() {

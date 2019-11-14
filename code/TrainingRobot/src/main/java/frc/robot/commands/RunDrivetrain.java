@@ -12,14 +12,13 @@ import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.Joystick;
 
 public class RunDrivetrain extends Command {
-  private static boolean tankMode;
+  private static boolean tankMode = false;
   private Drivetrain dt;
   private Joystick joystick1, joystick2;
   public RunDrivetrain(Joystick joystick1, Joystick joystick2, Drivetrain dt) {
     requires(this.dt = dt);
     this.joystick1 = joystick1;
     this.joystick2 = joystick2; 
-    tankMode = false;
   }
 
   // Called just before this Command runs the first time
