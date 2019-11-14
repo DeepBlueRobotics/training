@@ -8,16 +8,16 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.Encoder;
 import frc.robot.subsystems.Drivetrain;
 
 public class MoveForward extends Command {
-  Encoder encoder;
-  Drivetrain dt;
+  private Drivetrain dt;
+  private boolean done;
   public MoveForward(Drivetrain dt) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(this.dt = dt);
+    done = false;
   }
 
   // Called just before this Command runs the first time
@@ -28,12 +28,14 @@ public class MoveForward extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    dt.runDistance(2.0);
+    done = dt.runDistance(2.0);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
+    if (done)
+      return true;
     return false;
   }
 

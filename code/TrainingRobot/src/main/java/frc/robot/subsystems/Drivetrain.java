@@ -48,14 +48,20 @@ public class Drivetrain extends Subsystem {
     RVictor1.set(RSpeed);
   }
 
-  public void runDistance(double dist) {
+  public boolean runDistance(double dist) {
     if (LEncoder.getDistance() < dist && REncoder.getDistance() < dist)
       run(-0.5, -0.5);
     //else if (LEncoder.getDistance() < dist)
     //  run(-0.5, 0);
     //else if (REncoder.getDistance() < dist)
     //  run(0, -0.5);
+    else {
+      run(0,0);
+      return true;
+    }
+    return false;
   }
+  
 
   public void switchMode() {
     tankMode = !tankMode;
