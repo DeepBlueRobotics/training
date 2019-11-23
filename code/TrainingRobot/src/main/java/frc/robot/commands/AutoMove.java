@@ -22,18 +22,13 @@ public class AutoMove extends CommandGroup {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //SmartDashboard.putNumber("Gets to forward",0);
-    SmartDashboard.putNumber("Gets to execute",1);
     if (SmartDashboard.getNumber("lEncoder distance",0)>=24 || SmartDashboard.getNumber("rEncoder distance",0)>=24)
     {
       addSequential(new TurnRight(motors));
-      
     }
     else{
-      SmartDashboard.putNumber("Gets to forward",1);
+      
       addSequential(new Forward(motors));
-      //motors.run(0.5,0.5);
-      SmartDashboard.putNumber("Gets to forward",2);
     }
   }
 

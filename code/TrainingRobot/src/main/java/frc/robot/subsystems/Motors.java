@@ -26,8 +26,8 @@ public class Motors extends Subsystem {
   private VictorSP victor3;
   private VictorSP victor4;
 
-  private Encoder lEncoder;
-  private Encoder rEncoder;
+  public Encoder lEncoder;
+  public Encoder rEncoder;
   
 
 
@@ -46,7 +46,7 @@ public class Motors extends Subsystem {
     this.rEncoder=rEncoder;
 
     final double wheelDiameter=5; //in inches
-    final double pulseFraction=1/256; //cool number i picked from robot2019 code. I have no idea wtf this means
+    final double pulseFraction=1.0/256; //cool number i picked from robot2019 code. I have no idea wtf this means
     lEncoder.setDistancePerPulse(wheelDiameter*pulseFraction*Math.PI);
     rEncoder.setDistancePerPulse(wheelDiameter*pulseFraction*Math.PI);
   }

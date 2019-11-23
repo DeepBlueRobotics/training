@@ -92,8 +92,8 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
-    SmartDashboard.putNumber("lEncoder distance",-RobotMap.lEncoder.getDistance());
-    SmartDashboard.putNumber("rEncoder distance",RobotMap.rEncoder.getDistance());
+    SmartDashboard.putNumber("lEncoder distance",motors.lEncoder.getDistance());
+    SmartDashboard.putNumber("rEncoder distance",motors.rEncoder.getDistance());
 
 
   }
