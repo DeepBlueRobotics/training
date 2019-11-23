@@ -8,6 +8,8 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.VictorSP;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -24,12 +26,14 @@ public class Motors extends Subsystem {
   private VictorSP victor3;
   private VictorSP victor4;
 
-
+  private Encoder lEncoder;
+  private Encoder rEncoder;
+  
 
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public Motors(WPI_TalonSRX talon,VictorSP victor,VictorSP victor2,WPI_TalonSRX talon2,VictorSP victor3,VictorSP victor4) {
+  public Motors(WPI_TalonSRX talon,VictorSP victor,VictorSP victor2,WPI_TalonSRX talon2,VictorSP victor3,VictorSP victor4,Encoder lEncoder,Encoder rEncoder) {
     this.talon =talon;
     this.victor=victor;
     this.victor2=victor2;
@@ -38,8 +42,13 @@ public class Motors extends Subsystem {
     this.victor3 =victor3;
     this.victor4=victor4;
 
-    
-    //hopefully this works
+    this.lEncoder=lEncoder;
+    this.rEncoder=rEncoder;
+
+    final double wheelDiameter=5; //in inches
+    final double pulseFraction=1/256; //cool number i picked from robot2019 code. I have no idea wtf this means
+    lEncoder.setDistancePerPulse(wheelDiameter*pulseFraction*Math.PI);
+    rEncoder.setDistancePerPulse(wheelDiameter*pulseFraction*Math.PI);
   }
 
   public void run(double lSpeed, double rSpeed) {

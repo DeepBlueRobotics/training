@@ -37,7 +37,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    motors = new Motors(RobotMap.talon,RobotMap.victor,RobotMap.victor2,RobotMap.talon2,RobotMap.victor3,RobotMap.victor4);
+    motors = new Motors(RobotMap.talon,RobotMap.victor,RobotMap.victor2,RobotMap.talon2,RobotMap.victor3,RobotMap.victor4,RobotMap.lEncoder,RobotMap.rEncoder);
     oi = new OI(motors);
 
     
@@ -94,11 +94,7 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
     SmartDashboard.putNumber("lEncoder distance",-RobotMap.lEncoder.getDistance());
     SmartDashboard.putNumber("rEncoder distance",RobotMap.rEncoder.getDistance());
-    /*//check if the numbers need to be in ft or inches, currently they are in feet
-        if (SmartDashboard.getString("AutoMode","forward").equals("turn") || RobotMap.lEncoder.getDistance()<=2 || RobotMap.rEncoder.getDistance()<=2)
-          {
-           SmartDashboard.putString("AutoMode", "turn");
-          }*/
+
 
   }
 

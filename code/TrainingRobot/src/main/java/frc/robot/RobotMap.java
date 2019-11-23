@@ -40,10 +40,7 @@ public class RobotMap {
 
         lEncoder=new Encoder(0,1);
         rEncoder=new Encoder(2,3);
-        final double wheelDiameter=5; //in inches
-        final double pulseFraction=1/256; //cool number i picked from robot2019 code. I have no idea wtf this means
-        lEncoder.setDistancePerPulse(wheelDiameter*pulseFraction*Math.PI);
-        rEncoder.setDistancePerPulse(wheelDiameter*pulseFraction*Math.PI);
+
 
 
 
