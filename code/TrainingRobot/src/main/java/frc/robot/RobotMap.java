@@ -10,6 +10,8 @@ package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 
 
@@ -26,6 +28,8 @@ public class RobotMap {
     static WPI_TalonSRX talon2;
     static WPI_VictorSPX VictorSPX3;
     static WPI_VictorSPX VictorSPX4;
+    static Encoder leftEncoder;
+    static Encoder rightEncoder;
     static {
         talon = new WPI_TalonSRX(8);
         VictorSPX = new WPI_VictorSPX(9);
@@ -33,5 +37,9 @@ public class RobotMap {
         talon2 = new WPI_TalonSRX(5);
         VictorSPX3 = new WPI_VictorSPX(6);
         VictorSPX4 = new WPI_VictorSPX(7);
+
+        leftEncoder = new Encoder(new DigitalInput(0), new DigitalInput(1));
+        rightEncoder = new Encoder(new DigitalInput(2), new DigitalInput(3));
+
     }
 }
