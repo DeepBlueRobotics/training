@@ -36,7 +36,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     
-    motors = new Drivetrain(RobotMap.lefttalon,RobotMap.leftVictorSPX1, RobotMap.leftVictorSPX2,RobotMap.righttalon,RobotMap.rightVictorSPX1,RobotMap.rightVictorSPX2, Encoder.leftEnc, Encoder.rightEnc);
+    motors = new Drivetrain(RobotMap.lefttalon,RobotMap.leftVictorSPX1, RobotMap.leftVictorSPX2,RobotMap.righttalon,RobotMap.rightVictorSPX1,RobotMap.rightVictorSPX2, RobotMap.leftEnc, RobotMap.rightEnc);
     oi = new OI(motors);
 
     motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy,oi.rightJoy));

@@ -10,7 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.Encoder;
-import frc.robot.RobotMap;
+
 
 public class AutonomousForward extends Command {
   private Encoder leftEnc, rightEnc;
@@ -20,6 +20,13 @@ public class AutonomousForward extends Command {
     this.leftEnc = leftEnc;
     this.leftEnc = rightEnc;
     this.motors = motors;
+
+    double pulseFraction = 1.0 / 256;
+    double wheelDiameter = 5;
+    leftEnc.setDistancePerPulse(pulseFraction * Math.PI * wheelDiameter);
+    rightEnc.setDistancePerPulse(pulseFraction * Math.PI * wheelDiameter);
+
+    rightEnc.setReverseDirection(true);
     requires(motors);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -31,7 +38,8 @@ public class AutonomousForward extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    
+    leftEnc.reset();
+    rightEnc.reset();
   }
 
   // Called repeatedly when this Command is scheduled to run
