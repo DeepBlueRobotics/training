@@ -72,7 +72,7 @@ public class Drivetrain extends Subsystem {
   }
 
   public void arcaderun(double xspeed, double zrotation) {
-    lefttalon.set(-xspeed + 86n);
+    lefttalon.set(-xspeed + zrotation);
     leftVictorSPX1.set(-xspeed + zrotation);
     leftVictorSPX2.set(-xspeed + zrotation);
     System.out.println("Arcade mode left: " + lefttalon.get());

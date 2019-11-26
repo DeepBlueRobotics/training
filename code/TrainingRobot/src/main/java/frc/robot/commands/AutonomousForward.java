@@ -27,7 +27,7 @@ public class AutonomousForward extends Command {
   }
   
 
-  }
+  
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
@@ -43,8 +43,7 @@ public class AutonomousForward extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return leftEnc.get() > 24;
-    return rightEnc.get() > 24;
+    return leftEnc.get() > 24 && rightEnc.get() > 24;
   }
 
   // Called once after isFinished returns true
