@@ -9,8 +9,8 @@ package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
-
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.DigitalInput;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -26,6 +26,9 @@ public class RobotMap {
     static WPI_VictorSPX rightVictorSPX1;
     static WPI_VictorSPX rightVictorSPX2;
 
+    static Encoder leftEnc;
+    static Encoder rightEnc;
+
     static {
         lefttalon = new WPI_TalonSRX(8);
         leftVictorSPX1 = new WPI_VictorSPX(9);
@@ -34,6 +37,11 @@ public class RobotMap {
         righttalon = new WPI_TalonSRX(5);
         rightVictorSPX1 = new WPI_VictorSPX(6);
         rightVictorSPX2 = new WPI_VictorSPX(7);
+
+        leftEnc = new Encoder(new DigitalInput(0), new DigitalInput(1));
+        rightEnc = new Encoder(new DigitalInput(2), new DigitalInput(3));
+
+
 
 
 
