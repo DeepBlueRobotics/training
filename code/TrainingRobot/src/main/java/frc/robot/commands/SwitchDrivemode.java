@@ -34,7 +34,9 @@ public class SwitchDrivemode extends InstantCommand {
   // Called once when the command executes
   @Override
   protected void initialize() {
-    (new RunDrivetrain(joystick1, joystick2, dt)).switchMode();
+    RunDrivetrain runDt = (new RunDrivetrain(joystick1, joystick2, dt));
+    runDt.switchMode();
+    runDt.close();
   }
 
 }
