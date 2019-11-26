@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.subsystems.DriveTrain;
-
+import frc.robot.subsystems.Drivetrain;
+import frc.robot.commands.RunMotorsWithJoystick;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -26,7 +26,7 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  private static DriveTrain motors;
+  private static Drivetrain motors;
   private static OI oi;
 
   /**
@@ -35,9 +35,14 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    motors = new DriveTrain(RobotMap.lefttalon,RobotMap.leftVictorSPX1, RobotMap.leftVictorSPX2,RobotMap.righttalon,RobotMap.rightVictorSPX1,RobotMap.rightVictorSPX2);
     
+    motors = new Drivetrain(RobotMap.lefttalon,RobotMap.leftVictorSPX1, RobotMap.leftVictorSPX2,RobotMap.righttalon,RobotMap.rightVictorSPX1,RobotMap.rightVictorSPX2);
     oi = new OI(motors);
+
+    motors.setDefaultCommand(new RunMotorsWithJoystick(motors, oi.leftJoy,oi.rightJoy));
+
+  
+    
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
@@ -115,3 +120,4 @@ public class Robot extends TimedRobot {
 
   }
 }
+

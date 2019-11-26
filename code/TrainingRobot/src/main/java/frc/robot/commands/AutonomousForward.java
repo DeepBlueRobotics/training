@@ -7,46 +7,44 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.Drivetrain;
+import edu.wpi.first.wpilibj.Encoder;
+import frc.robot.RobotMap;
 
-public class RunMotorsWithJoystick extends Command {
+public class AutonomousForward extends Command {
+  private Encoder leftEnc, rightEnc;
   private Drivetrain motors;
-  private Joystick leftJoystick;
-  private Joystick rightJoystick;
-    
 
-  public RunMotorsWithJoystick(Drivetrain motors, Joystick leftJoystick, Joystick rightJoystick) {
+  public AutonomousForward(Encoder leftEnc, Encoder rightEnc,Drivetrain motors) {
+    this.leftEnc = leftEnc;
+    this.leftEnc = rightEnc;
     this.motors = motors;
-    this.leftJoystick = leftJoystick;
-    this.rightJoystick = rightJoystick;
     requires(motors);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-  }
 
+  }
+  
+
+  }
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (motors.arcadeMode()){
-      motors.arcaderun(leftJoystick.getY(),rightJoystick.getX());
-    }
-    else {
-      motors.run(leftJoystick.getY(),rightJoystick.getY());
-    }
-    
+      motors.arcaderun(0.5,0.5);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return leftEnc.get() > 24;
+    return rightEnc.get() > 24;
   }
 
   // Called once after isFinished returns true
@@ -59,4 +57,5 @@ public class RunMotorsWithJoystick extends Command {
   @Override
   protected void interrupted() {
   }
+  
 }
