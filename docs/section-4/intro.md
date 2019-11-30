@@ -1,4 +1,4 @@
-!!! question "Essential Question"
+!!! question
     How do you code a drivetrain?
 
 What's covered in this section:

@@ -45,6 +45,10 @@ nav:
   - 5. Advanced Programming:
     - Introduction: section-5/intro.md
     - Additional Topics: section-5/additional-topics.md
+  - Contributing: 
+    - Introduction: contributing/intro.md
+    - With Python: contributing/with-python.md
+    - With Docker: contributing/with-docker.md
+    - Yearly Checklist: contributing/yearly-checklist.md
+    - Resources: contributing/resources.md
   - Resources: resources.md
-  - Contributing: contributing.md
-

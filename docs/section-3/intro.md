@@ -1,4 +1,4 @@
-!!! question "Essential Question"
+!!! question
     But really, how _do_ we code the robot?
 
 What's covered in this section:
