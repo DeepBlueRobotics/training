@@ -5,10 +5,10 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package org.team199.trainingrobot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.Motors;
+import org.team199.trainingrobot.subsystems.Motors;
 
 public class RunMotor extends Command {
   private Motors motors;

@@ -31,7 +31,7 @@ nav:
   - 2. Robot Code and Version Control:
     - Introduction: section-2/intro.md
     - Setup: section-2/setup.md
-    - Robot Code: section-2/robot-code.md
+    - Code Structure: section-2/code-structure.md
     - Version Control: section-2/version-control.md
   - 3. Developing Robot Code:
     - Introduction: section-3/intro.md
@@ -42,9 +42,11 @@ nav:
     - Introduction: section-4/intro.md
     - Teleoperated Period: section-4/teleop.md
     - Autonomous Period: section-4/auton.md
-  - 5. Advanced Programming:
+  - 5. Unit Testing:
     - Introduction: section-5/intro.md
-    - Additional Topics: section-5/additional-topics.md
+  - 7. Advanced Programming:
+    - Introduction: section-7/intro.md
+    - Additional Topics: section-7/additional-topics.md
   - Contributing: 
     - Introduction: contributing/intro.md
     - With Python: contributing/with-python.md

@@ -1,29 +1,30 @@
-It's finally time to dive into robot code!
+Let's look at how our robot code project is structured.
 
 !!! note
     We'll be assuming that our robot code package is `frc199.robot` and our code lives in `src/main/java/frc199/robot` but honestly the package naming scheme varies by year and by team, and it doesn't matter as long as you keep it consistent for a project.
 
 A robot project structure generally looks something like this:
 ```
-src/main/java/frc199/robot/
-  |   Main.java
-  |   Robot.java
-  |   RobotMap.java
-  |   OI.java
-  |
-  └── subsystems/
-  |   |   Drivetrain.java
-  |   |   Intake.java
-  |   |   Climber.java
-  |   |   Lift.java
-  |
-  └── commands/
-  |   |   Drive.java
-  |   |   Climb.java
-  |   |   RunIntake.java
-  |   |   RunEject.java
-  |   |   MoveLift.java
-  |   |   Autonomous.java
+src/main/java/org/team199/
+  |   robot2019/
+  |   |   Main.java
+  |   |   Robot.java
+  |   |   RobotMap.java
+  |   |   OI.java
+  |   |
+  |   └── subsystems/
+  |   |   |   Drivetrain.java
+  |   |   |   Intake.java
+  |   |   |   Climber.java
+  |   |   |   Lift.java
+  |   |
+  |   └── commands/
+  |       |   Drive.java
+  |       |   Climb.java
+  |       |   RunIntake.java
+  |       |   RunEject.java
+  |       |   MoveLift.java
+  |       |   Autonomous.java
   |
   └── lib/
       |   Characterization.java
