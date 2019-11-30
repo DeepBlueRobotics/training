@@ -1,4 +1,4 @@
-!!! question "Essential Question"
+!!! question
     What's next?
 
 What's covered in this section:
