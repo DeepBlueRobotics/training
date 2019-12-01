@@ -76,3 +76,9 @@ Now, it's your time to write some tests. The `quadraticFormula()` method in `Mys
 ??? success "Click for answers"
     1. If your test inputs coefficients for an equation that has no efficients (ex: `x^2+x+1`), the program is going to throw an exception.
     2. To fix this, the `quadraticFormula()` method should first check if `b*b-4*a*c` is non-negative before doing the calculation. If it's negative, it should just return -1.
+
+## More on Unit Tests
+We've only used a very small set of Java unit testing capabilities thus far. You can read up on more of JUnit 4's capabilities in the [JUnit documentation](https://junit.org/junit4/javadoc/latest/index.html) (also found in the "Resources" section of this site). In addition to JUnit, we may also use:
+
+- [Mockito](https://site.mockito.org/) - used to simulate other parts of the code that is being accessed, so that a unit test won't be impacted by how other parts of the code run
+- [Hamcrest](http://hamcrest.org/JavaHamcrest/tutorial) - used to create more advanced match rules to test if classes have the correct state

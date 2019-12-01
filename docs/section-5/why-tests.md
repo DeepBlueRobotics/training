@@ -10,3 +10,9 @@ Examples of code that we should write unit tests for:
 - vision math
 - swerve drive code
 - custom log file encoding and parsing 
+
+Examples of code that we should not write unit tests for:
+
+- basic drivetrain teleop code
+- basic subsystem or command code
+- PID code that directly uses motor controllers

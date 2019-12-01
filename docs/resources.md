@@ -8,4 +8,4 @@
 - [WPILib JavaDocs](https://first.wpi.edu/FRC/roborio/release/docs/java/index.html)
 - [CTRE JavaDocs (TalonSRX, VictorSPX)](http://www.ctr-electronics.com/downloads/api/java/html/index.html)
 - [REV Robotics JavaDocs (SPARK)](http://www.revrobotics.com/content/sw/max/sw-docs/java/index.html)
-- [JUnit JacaDocs](https://junit.org/junit4/javadoc/latest/index.html)
+- [JUnit 4 JacaDocs](https://junit.org/junit4/javadoc/latest/index.html)
