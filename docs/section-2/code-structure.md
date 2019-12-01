@@ -6,7 +6,7 @@ Let's look at how our robot code project is structured.
 A robot project structure generally looks something like this:
 ```
 src/main/java/org/team199/
-  |   robot2019/
+  └── robot2019/
   |   |   Main.java
   |   |   Robot.java
   |   |   RobotMap.java

@@ -25,19 +25,16 @@ public class MysteryMathTest {
 
     @Test
     public void testInverseAbsPositive() {
-        assertEquals(MysteryMath.inverseAbs(1), -1.0);
-        assertEquals(MysteryMath.inverseAbs(2.5), -2.5);
-    }
+        // positive
+        assertEquals(MysteryMath.inverseAbs(1), -1.0, 0);
+        assertEquals(MysteryMath.inverseAbs(2.5), -2.5, 0);
 
-    @Test
-    public void testInverseAbsNegative() {
-        assertEquals(MysteryMath.inverseAbs(-1), -1.0);
-        assertEquals(MysteryMath.inverseAbs(-2.5), -2.5);
-    }
+        // negative
+        assertEquals(MysteryMath.inverseAbs(-1), -1.0, 0);
+        assertEquals(MysteryMath.inverseAbs(-2.5), -2.5, 0);
 
-    @Test
-    public void testInverseAbsZero() {
-        assertEquals(MysteryMath.inverseAbs(0), 0.0);
+        // zero
+        assertEquals(MysteryMath.inverseAbs(0), 0.0, 0);
     }
 
     @Test
