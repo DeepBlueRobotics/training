@@ -45,6 +45,11 @@ nav:
     - Why Unit Tests?: section-5/why-tests.md
     - Writing Tests: section-5/writing-tests.md
     - Continuous Integration: section-5/ci.md
+  - 6. Build Season Process:
+    - Introduction: section-6/intro.md
+    - Project Organization: section-6/organization.md
+    - Task Delegation: section-6/delegation.md
+    - PRs and Code Reviews: section-6/pull-requests.md
   - 7. Advanced Programming:
     - Introduction: section-7/intro.md
     - Additional Topics: section-7/additional-topics.md
