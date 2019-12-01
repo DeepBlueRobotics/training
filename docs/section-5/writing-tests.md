@@ -67,14 +67,14 @@ Now look in the code, both the test class and the class being tested. Can you fi
 
 ??? success "Click for answers"
     1. Line 21 of `MysteryMathTest.java`, in `testFour()`, should be asserting equals `MysteryMath.four()` to `4`, not `2`
-    2. Line 25 of `MysteryMath.java` should be testing if the input is less than zero, not greater.
+    2. Line 25 of `MysteryMath.java`, in `inverseAbs()`, should absolute value the input if it's less than zero, not greater.
 
 ## MysteryMath2
 
 Now, it's your time to write some tests. The `quadraticFormula()` method in `MysteryMath2.java` looks like it works, or does it? Write `MysteryMath2Test.java` to test the code with different coefficients. What inputs make the tests fail? Once you figure it out, you should also fix the code.
 
 ??? success "Click for answers"
-    1. If your test inputs coefficients for an equation that has no efficients (ex: `x^2+x+1`), the program is going to throw an exception.
+    1. If your test inputs coefficients for an equation that has no solutions (ex: `x^2+x+1`), the program is going to throw an exception.
     2. To fix this, the `quadraticFormula()` method should first check if `b*b-4*a*c` is non-negative before doing the calculation. If it's negative, it should just return -1.
 
 ## More on Unit Tests
