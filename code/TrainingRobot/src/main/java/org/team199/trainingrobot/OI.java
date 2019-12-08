@@ -5,12 +5,12 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot;
+package org.team199.trainingrobot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.RunMotor;
-import frc.robot.subsystems.Motors;
+import org.team199.trainingrobot.commands.RunMotor;
+import org.team199.trainingrobot.subsystems.Motors;
 
 /**
  * This class is the glue that binds the controls on the physical operator

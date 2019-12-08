@@ -6,7 +6,7 @@ On top of a JavaDoc contains a description of the class, its package, what it in
 
 ## WPILib
 
-WPILib is the name of the library FRC provides us to control the robot with. Its JavaDocs are located here: <https://first.wpi.edu/FRC/roborio/release/docs/java/index.html>. We will be mostly using the library's edu.wpi.first.wpilibj package, and you can search for a class or method using the search bar located on the top right corner of your screen.
+WPILib is the name of the library FRC provides us to control the robot with. [Its JavaDocs are located here](https://first.wpi.edu/FRC/roborio/release/docs/java/index.html) (and you can also find a link to them in the [Resources](/resources/) page of this site). We will be mostly using the library's `edu.wpi.first.wpilibj` package, and you can search for a class or method using the search bar located on the top right corner of your screen.
 
 ## Deploying robot code
 

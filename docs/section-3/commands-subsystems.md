@@ -1,13 +1,11 @@
 ## Command-based programming
 
-FRC has a pretty good write-up on command-based programming, so we'll just read that. Once you're done, we'll get to some fun stuff.
-
-<https://frc-docs.readthedocs.io/en/latest/docs/software/old-commandbased/index.html>
+FRC has [a pretty good write-up on command-based programming](https://frc-docs.readthedocs.io/en/latest/docs/software/old-commandbased/index.html), so we'll just read that. Once you're done, we'll get to some fun stuff.
 
 !!! note
     FRC is currently making major revisions to the command-based system that will be released for the 2020 build season. The general concepts will be the same, but don't take all the class names and details to heart since they are most likely going to change.
 
-## Let's get our hands dirty
+## Let's write some robot code!
 
 ### Adding motor controllers
 
@@ -29,7 +27,7 @@ It's a little boring right now, since you can only run the motors at a certain s
 
 To create a command, right click on the `commands` directory in VSCode and select "Create a new class/command". After that, select "Command" and name it `RunMotorsWithJoystick`. 
 
-Pass the `Motors` subsystem and a `Joystick` object into the command and have it drive the motors to the Y-value of the joystick when executed. Use the prewritten code, the command-based programming tutorial on the top of this page, and the WPILib JavaDocs (which can be found in the "Resources" section of this site) for help. 
+Pass the `Motors` subsystem and a `Joystick` object into the command and have it drive the motors to the Y-value of the joystick when executed. Use the prewritten code, the command-based programming tutorial on the top of this page, and the WPILib JavaDocs for help. 
 
 !!! tip
     Remember, if you need help, don't be afraid to ask! We're throwing you in the deep end right now because it's the fastest way to learn. You're not expected to immediately know what to do.

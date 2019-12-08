@@ -1,14 +1,16 @@
 !!! question
-    What's next?
+    How do you test code without a robot?
 
 What's covered in this section:
 
-- well you gotta figure it out yourself now :)
+- What unit tests are and how to use them
+- Unit testing conventions and when to write tests
+- Continuous integration and more about Pull Requests
 
 ***
 
->**xkcd #979: Wisdom of the Ancients**
+>**xkcd #844: Good Code**
 >
->![wisdom_of_the_ancients](https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png "All long help threads should have a sticky globally-editable post at the top saying 'DEAR PEOPLE FROM THE FUTURE: Here's what we've figured out so far ...'")
+>![good_code](https://imgs.xkcd.com/comics/good_code.png "You can either hang out in the Android Loop or the HURD loop.")
 >
->_<https://xkcd.com/979/>_
+>_<https://xkcd.com/844/>_

@@ -1,4 +1,4 @@
-Read about the Github flow here: <https://guides.github.com/introduction/flow/>
+[Read about the Github flow here.](https://guides.github.com/introduction/flow/)
 
 When you are done reading, let's practice using the Github flow a bit. 
 
