@@ -1,4 +1,4 @@
-We use what's called the Gitflow workflow, which you can read about in detail [over here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+We use what's called the Gitflow workflow, which you can read about in detail [over here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). We won't be installing the `git-flow` program or running any of the `git flow` commands, since as long as you understand how it works, all of it is doable with just Git.  
 
 Essentially, it boils down to these main points:
 

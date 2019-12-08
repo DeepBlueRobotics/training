@@ -6,7 +6,7 @@ More about how the programming team uses Trello:
 
 - The programming lead sorts the cards in the "Todo" list by priority, but anyone is welcome to add cards to the bottom of the list.
 - The programming lead will assign tasks to team members. If you have not been assigned a task, you can choose the highest card on the "Todo" list that you can do.
-- Assign yourself to a card when you start it, and move it to the "In Progress" column. When you are done, move it to the "Done" columm and notify a programming lead or mentor to check you off and archive the card.
+- Assign yourself to a card when you start it, and move it to the "In Progress" column. When you are done, move it to the "Done" column and notify a programming lead or mentor to check you off and archive the card.
 - Please update your card before you leave every day, including changing the description, moving it, checking off parts of a checkbox, or adding comments on your progress onto the card
 
 ## Shadowing Team Members
