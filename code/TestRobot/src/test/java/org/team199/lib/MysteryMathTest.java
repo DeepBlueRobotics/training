@@ -18,34 +18,34 @@ import org.junit.Test;
 public class MysteryMathTest {
     @Test
     public void testFour() {
-        assertEquals(MysteryMath.four(), 2);
-        assertNotEquals(MysteryMath.four(), 3);
-        assertNotEquals(MysteryMath.four(), 5);
+        assertEquals(2, MysteryMath.four());
+        assertNotEquals(3, MysteryMath.four());
+        assertNotEquals(5, MysteryMath.four());
     }
 
     @Test
     public void testInverseAbsPositive() {
         // positive
-        assertEquals(MysteryMath.inverseAbs(1), -1.0, 0);
-        assertEquals(MysteryMath.inverseAbs(2.5), -2.5, 0);
+        assertEquals(-1.0, MysteryMath.inverseAbs(1), 0);
+        assertEquals(-2.5, MysteryMath.inverseAbs(2.5), 0);
 
         // negative
-        assertEquals(MysteryMath.inverseAbs(-1), -1.0, 0);
-        assertEquals(MysteryMath.inverseAbs(-2.5), -2.5, 0);
+        assertEquals(-1.0, MysteryMath.inverseAbs(-1), 0);
+        assertEquals(-2.5, MysteryMath.inverseAbs(-2.5), 0);
 
         // zero
-        assertEquals(MysteryMath.inverseAbs(0), 0.0, 0);
+        assertEquals(0.0, MysteryMath.inverseAbs(0), 0);
     }
 
     @Test
     public void testFib() {
-        assertEquals(MysteryMath.fib(0), 0);
-        assertEquals(MysteryMath.fib(1), 1);
-        assertEquals(MysteryMath.fib(2), 1);
-        assertEquals(MysteryMath.fib(3), 2);
-        assertEquals(MysteryMath.fib(4), 3);
-        assertEquals(MysteryMath.fib(5), 5);
-        assertEquals(MysteryMath.fib(20), 6765);
-        assertEquals(MysteryMath.fib(-1), 0);
+        assertEquals(0, MysteryMath.fib(0));
+        assertEquals(1, MysteryMath.fib(1));
+        assertEquals(1, MysteryMath.fib(2));
+        assertEquals(2, MysteryMath.fib(3));
+        assertEquals(3, MysteryMath.fib(4));
+        assertEquals(5, MysteryMath.fib(5));
+        assertEquals(6765, MysteryMath.fib(20));
+        assertEquals(0, MysteryMath.fib(-1));
     }
 }
