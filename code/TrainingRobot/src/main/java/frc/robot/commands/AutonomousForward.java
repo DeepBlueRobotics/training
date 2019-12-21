@@ -52,7 +52,7 @@ public class AutonomousForward extends Command {
   @Override
   protected boolean isFinished() {
     System.out.println(leftEnc);
-    return leftEnc.get() > 24 && rightEnc.get() > 24;
+    return leftEnc.get() > 24 || rightEnc.get() > 24;
   }
 
   // Called once after isFinished returns true
