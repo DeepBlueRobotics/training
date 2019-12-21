@@ -51,6 +51,7 @@ public class AutonomousForward extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
+    System.out.println(leftEnc);
     return leftEnc.get() > 24 && rightEnc.get() > 24;
   }
 

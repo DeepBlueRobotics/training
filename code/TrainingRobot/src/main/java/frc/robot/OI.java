@@ -24,10 +24,11 @@ public class OI {
     private JoystickButton tankorArcadeButton;
     OI(Drivetrain motors) {
         leftJoy = new Joystick(0);
-        rightJoy = new Joystick(2);
-        controller = new Joystick(1);
+        rightJoy = new Joystick(1);
+        controller = new Joystick(2);
         
         tankorArcadeButton = new JoystickButton(controller,2);
+        /** Switching button is Y on controller */
         tankorArcadeButton.whenPressed(new TankorArcade(motors));
 
     }
