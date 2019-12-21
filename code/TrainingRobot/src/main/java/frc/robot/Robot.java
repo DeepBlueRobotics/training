@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.commands.AutonomousCommandGroup;
 import frc.robot.commands.RunMotorsWithJoystick;
+import frc.robot.RobotMap;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -81,7 +82,7 @@ public class Robot extends TimedRobot {
     m_autoSelected = m_chooser.getSelected();
     // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     System.out.println("Auto selected: " + m_autoSelected);
-    autonomousCommand = new AutonomousCommandGroup(Encoder.leftEnc, Encoder.rightEnc, motors.Motor);
+    autonomousCommand = new AutonomousCommandGroup(RobotMap.leftEnc, RobotMap.rightEnc, motors);
   }
 
   /**
