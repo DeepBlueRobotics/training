@@ -17,6 +17,16 @@ public class MysteryMath2 {
      * @return the larger of the two solutions to a quadratic equation, or -1 if there are no solutions
      */
     public static double quadraticFormula(double a, double b, double c) {
+        if (b*b - 4*a*c < 0) {
+            return -1;
+        }
+        if (a == 0) {
+            if (b == 0) {
+                return -1;
+            } else {
+                return -c / b;
+            }
+        }
         return (-b + Math.sqrt(b*b - 4*a*c)) / (2*a);
     }
 }

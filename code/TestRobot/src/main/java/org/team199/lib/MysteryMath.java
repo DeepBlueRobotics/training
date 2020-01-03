@@ -22,7 +22,7 @@ public class MysteryMath {
      * @return the negative of the absolute value
      */
     public static double inverseAbs(double input) {
-        if (input > 0)
+        if (input < 0)
             input = Math.abs(input);
         
         return input * -1;

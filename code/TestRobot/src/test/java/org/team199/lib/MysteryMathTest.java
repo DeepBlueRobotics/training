@@ -18,7 +18,7 @@ import org.junit.Test;
 public class MysteryMathTest {
     @Test
     public void testFour() {
-        assertEquals(2, MysteryMath.four());
+        assertEquals(4, MysteryMath.four());
         assertNotEquals(3, MysteryMath.four());
         assertNotEquals(5, MysteryMath.four());
     }
@@ -47,5 +47,11 @@ public class MysteryMathTest {
         assertEquals(5, MysteryMath.fib(5));
         assertEquals(6765, MysteryMath.fib(20));
         assertEquals(0, MysteryMath.fib(-1));
+    }
+
+    @Test
+    public void testQuadraticFormula() {
+        assertEquals(-1, MysteryMath2.quadraticFormula(1, 0, 2), 0);
+        assertEquals(-1, MysteryMath2.quadraticFormula(0, 0, 6), 0);
     }
 }
