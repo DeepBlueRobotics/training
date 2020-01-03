@@ -1,6 +1,6 @@
 ## Documentation
 
-- [WPILib/FRC (new)](https://frc-docs.readthedocs.io/en/latest/index.html)
+- [WPILib/FRC (new)](https://docs.wpilib.org/en/latest/)
 - [WPILib/FRC (old)](https://wpilib.screenstepslive.com/s/currentCS)
 
 ## JavaDocs
