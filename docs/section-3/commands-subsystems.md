@@ -1,9 +1,6 @@
 ## Command-based programming
 
-FRC has [a pretty good write-up on command-based programming](https://frc-docs.readthedocs.io/en/latest/docs/software/old-commandbased/index.html), so we'll just read that. Once you're done, we'll get to some fun stuff.
-
-!!! note
-    FRC is currently making major revisions to the command-based system that will be released for the 2020 build season. The general concepts will be the same, but don't take all the class names and details to heart since they are most likely going to change.
+FRC has [a pretty good write-up on command-based programming](https://frc-docs.readthedocs.io/en/latest/docs/software/commandbased/index.html#command-based-programming), so we'll just read that. Once you're done, we'll get to some fun stuff.
 
 ## Let's write some robot code!
 

@@ -21,7 +21,7 @@ WPILib is the name of the library FRC provides us to control the robot with. [It
 You should have already cloned this repo in the last section. Open up the `TrainingRobot` project inside the `code/` directory of this repo. Now connect to the RoboRIO of the practice board with a USB cable, click on the WPILib logo on the top right of VSCode which looks like this: ![wpilib](https://avatars1.githubusercontent.com/u/19267233?s=400&v=4){: style="height:25px;width:25px"}, and then choose "Deploy Robot Code". It should take a minute to deploy the code before displaying "Build Successful" in green. 
 
 !!! note
-    Deploying code to the RoboRIO only works on a Windows computer, however you can still build your code to see if it compiles correctly, before moving onto a Windows computer to complete this part.
+    Deploying code to the RoboRIO only works on a Windows computer; however you can still build your code to see if it compiles correctly, before moving onto a Windows computer to complete this part.
 
 Once you have that, connect a driver station computer to the RoboRIO and a motor to the Talon, enable, and press the X key on the controller. If the motor runs, then you're all set!
 
