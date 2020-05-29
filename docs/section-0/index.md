@@ -21,4 +21,4 @@ Week 3:
 - Debugging
 
 !!! warning
-    Do not do the "Pro" sections, they're not necessary and will slow you down.
+    Do not do the "Pro" sections; they're not necessary and will slow you down.

@@ -5,20 +5,26 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.team199.trainingrobot;
+package org.team199.trainingrobot.subsystems;
 
+import org.team199.trainingrobot.Constants;
+
+import org.team199.lib.MotorControllerFactory;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-/**
- * The RobotMap is a mapping from the ports sensors and actuators are wired into
- * to a variable name. This provides flexibility changing wiring, makes checking
- * the wiring easier and significantly reduces the number of magic numbers
- * floating around.
- */
-public class RobotMap {
-    static WPI_TalonSRX talon;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-    static {
-        talon = new WPI_TalonSRX(1);
-    }
+/**
+ * Add your docs here.
+ */
+public class Motors extends SubsystemBase {
+  private final WPI_TalonSRX talon = MotorControllerFactory.createTalon(Constants.Drive.kTalon);
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
+  public Motors() {
+  }
+
+  public void run(double speed) {
+    talon.set(speed);
+  }
 }
