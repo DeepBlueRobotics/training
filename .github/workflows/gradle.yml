@@ -28,4 +28,4 @@ jobs:
     - name: Build with Gradle
       # We only run tests if the code changed because we expect them to fail
       # except when a student is actually changing code/tests.
-      run: cd code/TestRobot && ./gradlew `if git diff --quiet master -- .; then echo build; else echo assemble; fi
+      run: cd code/TestRobot && ./gradlew `if git diff --quiet master -- .; then echo build; else echo assemble; fi`
