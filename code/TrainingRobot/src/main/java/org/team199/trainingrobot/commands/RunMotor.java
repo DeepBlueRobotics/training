@@ -30,7 +30,7 @@ public class RunMotor extends CommandBase {
 
   // Returns true when the command should end.
   @Override
-  protected boolean isFinished() {
+  public boolean isFinished() {
     return false;
   }
 
