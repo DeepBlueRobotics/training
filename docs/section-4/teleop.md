@@ -18,4 +18,4 @@ Requirements for teleop:
 2. be able to drive the drivetrain with the joysticks in tank mode
 3. have a button on one of the joysticks to toggle between the two modes
 
-Alright, get to it! Use the resources listed in the [Resources](/resources/) section, past robot code, and help from mentors and programming team members to your full advantage! Once you're done with this part, check in with a programming lead or mentor and then test it out on an actual drivetrain!
+Alright, get to it! Use the resources listed in the [Resources](/resources/) section, past robot code, and help from mentors and programming team members to your full advantage! Once you're done with this part, check in with a programming lead or mentor, and then test it out on an actual drivetrain!

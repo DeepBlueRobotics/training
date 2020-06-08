@@ -8,10 +8,9 @@
 package org.team199.trainingrobot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.team199.trainingrobot.subsystems.Motors;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,13 +20,7 @@ import org.team199.trainingrobot.subsystems.Motors;
  * project.
  */
 public class Robot extends TimedRobot {
-  private static final String kDefaultAuto = "Default";
-  private static final String kCustomAuto = "My Auto";
-  private String m_autoSelected;
-  private final SendableChooser<String> m_chooser = new SendableChooser<>();
-
-  private static Motors motors;
-  private static OI oi;
+  private RobotContainer robotContainer;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -35,12 +28,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    motors = new Motors(RobotMap.talon);
-    oi = new OI(motors);
-
-    m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
-    m_chooser.addOption("My Auto", kCustomAuto);
-    SmartDashboard.putData("Auto choices", m_chooser);
+    robotContainer = new RobotContainer();
   }
 
   /**
@@ -53,6 +41,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    CommandScheduler.getInstance().run();
   }
 
   /**
@@ -68,9 +57,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autoSelected = m_chooser.getSelected();
-    // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
-    System.out.println("Auto selected: " + m_autoSelected);
+    robotContainer.getAutonomousCommand().schedule();
   }
 
   /**
@@ -78,15 +65,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    switch (m_autoSelected) {
-      case kCustomAuto:
-        // Put custom auto code here
-        break;
-      case kDefaultAuto:
-      default:
-        // Put default auto code here
-        break;
-    }
   }
 
   /**
@@ -94,7 +72,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    Scheduler.getInstance().run();
   }
 
   /**
