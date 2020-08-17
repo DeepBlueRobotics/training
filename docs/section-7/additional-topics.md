@@ -1,6 +1,6 @@
 For those who want to go above and beyond, here is an assortment of topics of varying degrees of difficulty that don't fit in the other sections, either because some sections were too long or because it didn't fit with the theme of the other topics.
 
-# State Space Control
+## State Space Control
 
 ## Computer Vision
 In every FRC game in recent memory, there are strips of retroreflective tapes paced in strategic places on the field. We can use vision to track these strips of tape and effectively calculate where we are relative to them. This helps with accuracy during an autonomous mode or auto-alignment code.

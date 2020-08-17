@@ -1,7 +1,7 @@
-# What is Odometry?
+## What is Odometry?
 Odometry is the use of sensor information to estimate the robot's position on the field. Odometry works for both differential drivetrains (think arcade/tank drive) and swerve drivetrains (covered in a later section - drivetrains that can move forward, strafe, and rotate, perhaps at the same time).
 
-# WPILib Odometry Class
+## WPILib Odometry Class
 Before we cover odometry, we first need to cover the `Translation2d`, `Rotation2d`, and `Pose2d` objects.
 
 `Translation2d` stores x and y positions of the robot in meters as well as has several other useful methods, including scaling using `plus()`, `rotateBy()`, `times()`, and `getNorm()` (normalization a.k.a the unit vector on the unit circle in the same direction as the point).
@@ -29,10 +29,10 @@ The odometry object has three methods of importance:
 
 - `update()` = updates the odometry pose based on the robot's new heading and speeds.
 
-# What is Kinematics?
+## What is Kinematics?
 Kinematics deals with calculating the deisred velocities of the motor controllers based on the desired velocity of the drivetrain. As with odometry, there are implementations of kinematics for differential drivetrains and swerve drivetrains.
 
-# WPILib Kinematics Class
+## WPILib Kinematics Class
 Before we cover kinematics, we first need to cover the `ChassisSpeeds` class. `ChassisSpeeds` is a simple class that contains information about the translational velocity (forward/backwards and left/right) and angular velocity (rotation) of the robot. `ChassisSpeeds` has three primary variables:
 
 - vxMetersPerSecond = the *forward* velocity of the drivetrain in m/s. + means moving forward, - means moving backwards.
