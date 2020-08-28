@@ -1,13 +1,13 @@
 One advantage of a characterized drivetrain is that it more effectively drives the robot to a precise location. This makes autonomous pathing a far more viable option. All we need to do is tell the robot a specific path to follow and the robot will drive the path pretty accurately.
 
-But how do we specify these paths? We use the ```Trajectory``` class in conjunction with WPILib's Pathweaver tool.
+But how do we specify these paths? We use the `Trajectory` class in conjunction with WPILib's Pathweaver tool.
 
 Let's write some autonomous code!
 
 ## Trajectories
-The ```Trajectory``` class computes the optimal path the robot should follow given a list of states. Each state contains information such as the time passed, velocity, acceleration, pose, and amount of curvature. Luckily for us, another class exists that helps create a trajectory given a list of points. This class is known as the ```TrajectoryGenerator``` and there are many ways to generate a trajectory using this class. For our purposes, we will be using the ```generateTrajectory()``` method using a list of waypoints and a ```TrajectoryConfig``` object.
+The `Trajectory` class computes the optimal path the robot should follow given a list of states. Each state contains information such as the time passed, velocity, acceleration, pose, and amount of curvature. Luckily for us, another class exists that helps create a trajectory given a list of points. This class is known as the `TrajectoryGenerator` and there are many ways to generate a trajectory using this class. For our purposes, we will be using the `generateTrajectory()` method using a list of waypoints and a `TrajectoryConfig` object.
 
-For the ```TrajectoryConfig```, there are several constraints we can add. For now, lets set the maximum speed, maximum acceleration, kinematics, voltage constraint, and whether or not the paths are inverted.
+For the `TrajectoryConfig`, there are several constraints we can add. For now, lets set the maximum speed, maximum acceleration, kinematics, voltage constraint, and whether or not the paths are inverted.
 
 ```
 TrajectoryConfig config = new TrajectoryConfig(maxSpeed, maxAcceleration);
@@ -51,21 +51,9 @@ This code uses code from org.apache.commons.csv. You will need to add the follow
 ```compile group: 'org.apache.commons', name: 'commons-csv', version: '1.6' ```
 
 ## Pathweaver Tool
-We can use the pathweaver tool to create waypoints and bend the paths between these waypoints to create curves.
+We can use the Pathweaver tool to create waypoints and bend the paths between these waypoints to create curves. You can find instructions for using the tool [here](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/pathweaver/creating-pathweaver-project.html).
 
-To start the Pathweaver tool, go to the top right corner of VS code and press the three dots. Then click the Start Tool button and from the options, select Pathweaver.
-
-Next, select the project directory and type in the relevant parameters. This will include the game name, length measurement unit, max velocity, max acceleration, and wheel base (the distance between the centers of two opposite wheels). Then, hit Create Project. You should see the following interface:
-
-![Pathweaver](https://docs.wpilib.org/en/stable/_images/pathweaver-4.png)
-
-In the top-left corner you will see the field. Here is where you can add new waypoints and change the shape of trajectories. The properties of the selected waypoint - X, Y, Tangent X, and Tangent Y (note that the magnitude of the tangent line doesn't matter, only the direction) - are shown at the bottom. Path groups (collections of paths used for visualization) are shown in the top right corner and paths are shown in the bottom right corner.
-
-You can select new paths by clicking on the desired path in the list of paths. You can create or remove paths by using the + and - buttons in the same region.
-
-Each waypoint looks like the head of an arrow and the direction of the arrow is determined by its tangent line. Clicking and dragging on a waypoint moves it to a new location. New waypoints can only be created between existing waypoints and are created by clicking on a path between two waypoints.
-
-When you are done, save the paths and close the tool. It is not necessary to build the paths.
+I will add a few notes though. The length of the tangent line has _no effect_ on the trajectory. Only the direction of the tangent line matters. In addition, since Team 199 last used Pathweaver, the Build Paths button was not working. So, when you are done, save the paths and close the tool - don't build the paths (besides, the button will likely not work).
 
 Get creative with your paths!
 
@@ -74,22 +62,22 @@ Telling the robot to follow a path is simple. There are three steps to an autono
 
 1. Load the odometry so that the robot's position is at the start of the path.
 
-2. Create a ```RamseteCommand``` to follow the trajectory. The ```RamseteCommand``` takes the following arguments:
+2. Create a [`'RamseteCommand`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html) to follow the trajectory. The `RamseteCommand` takes the following arguments:
 
     -  The trajectory to follow.
 
-    - A ```Supplier<Pose2d>``` that gives the current pose of the robot.
+    - A `Supplier<Pose2d>` that gives the current pose of the robot. See [here](https://www.geeksforgeeks.org/supplier-interface-in-java-with-examples/) if you are unfamiliar with Suppliers.
 
-    - A ```RamseteController``` object.
+    - A [`RamseteController`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/RamseteController.html) object.
 
     - Your kinematics object.
 
-    - A ```Biconsumer<Double, Double>``` representing your command that drives the robot given left and right speeds in m/s. This will be your characterized drive method.
+    - A `Biconsumer<Double, Double>` representing your command that drives the robot given left and right speeds in m/s. This will be your characterized drive method. See [here](https://www.geeksforgeeks.org/java-8-biconsumer-interface-in-java-with-examples/) if you are unfamiliar with Biconsumers.
 
-    - The subsystems that will be required. This will most likely only be the drivetrain subsystem.
+    - The subsystems that will be required. This will probably just be the drivetrain.
 
 3. Stop the robot.
 
-It is highly recommended that you use the ```andThen()``` method from the Command class to schedule these processes.
+It is highly recommended that you use the [`andThen()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)) method from the Command class to schedule these processes.
 
 That is all to it! Pathweaver is a powerful and simple tool that lets you do incredible things. You could create a command group to turn on a feeder mechanism, drive a trajectory, align to a target, run a shooter mechanism, and drive to pick up more game elements.

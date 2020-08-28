@@ -19,19 +19,19 @@ Let's try to develop the PID equation from the ground-up. Where should we start?
 
 It may not look like it, but this simple formula does pretty well in practice. Let's try it out on a simple task: I want to move from 0 meters to 3 meters, I have motors that move the robot at a max speed of 3.5 m/s, and we use just the update function above with \(k_P = 0.5\), updating every 0.25 seconds. Assume that when I supply a percentage value to the motors that they move at the exact percentage of maximum speed (e.g: supplying 0.5 makes the robot move at exactly half-speed).
 
-\[\text{New Position} = \text{Max Speed} \cdot \text{Update Rate} \cdot \text{Update}\]
+\[\text{New Position} = \text{Position} + \text{Update Rate} \cdot \text{Max Speed} \cdot \text{Update}\]
 
 Time (s) | Position (m) | Update (capped at 1.0) | New Position (m)
 -------- | ------------ | ---------------------- | ----------------
 0 | 0 | 1.0 | 0.875
-0.25 | 0.875 | 1 | 1.75
+0.25 | 0.875 | 1.0 | 1.75
 0.5 | 1.75 | 0.625 | 2.297
 0.75 | 2.297 | 0.3515 | 2.604
 1 | 2.604 | 0.198 | 2.778
 1.25 | 2.778 | 0.111 | 2.875
 1.5 | 2.875 | 0.0625 | 2.93
 
-Not bad for a simple model. We could change k_P around or change how frequently we update to get faster convergence, but I think you understand the idea. Note that, due to effects such as friction or internal motor resistance, small updates such as that at 1.5 seconds may barely move the robot at all. We will revist this idea when we cover the feed-forward term.
+Not bad for a simple model. We could change \(k_P\) around or change how frequently we update to get faster convergence, but I think you get the idea. Note that, due to effects such as friction or internal motor resistance, small updates such as that at 1.5 seconds may barely move the robot at all. We will revist this idea when we cover the feed-forward term.
 
 ### Integral Term
 Now let's make the equation more powerful. What if we were to act not just on our current error, but also our past error. That way, if the kP term is incrementing slowly, we can speed up the process a bit. One way of doing this is to just sum our past errors and add that to the equation.
@@ -132,7 +132,7 @@ And finally, we have reached the end: the feed-forward term. This one is very si
 Implementing this is code is also easy. Once the calculation is finished, add your kF term. 
 
 ## Implementation
-Often, one does not need to implement PID Control from the ground-up. Many motor controllers have PID controllers built into the class. All that needs to be done is just to set the setpoint, kP, kI, kD, and kF (as well as some other configurations). For example, all BaseMotorControllers in the CTRE_Phoenix API (think Talon_SRX and Victor_SPX) can do PID as follows:
+Often, one does not need to implement PID Control from the ground-up. Many motor controllers have PID controllers built into the class. All that needs to be done is just to set the setpoint, kP, kI, kD, and kF (as well as some other configurations). For example, all [`BaseMotorControllers`](https://www.ctr-electronics.com/downloads/api/cpp/html/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_base_motor_controller.html) in the CTRE_Phoenix API (think Talon_SRX and Victor_SPX) can do PID as follows:
 
 ```
 // Config
@@ -148,7 +148,7 @@ motor.configAllowableClosedloopError(0, closeness);
 motor.set(ControlMode.Position, 0);
 ```
 
-And for CANSparkMax controllers, we use the CANPIDController:
+And for SparkMax controllers, we use the [`CANPIDController`](revrobotics.com/content/sw/max/sw-docs/java/com/revrobotics/CANPIDController.html):
 ```
 CANPIDController pidController = motor.getPIDController();
 // Config
@@ -164,7 +164,7 @@ pidController.setSmartMotionAllowedClosedLoopError​(closeness, 0);
 pidController.setReference​(0.0, ControlType.kPosition, 0)
 ```
 
-For general purposes, you can use the PIDController class:
+For general purposes, you can use the [`PIDController`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html) class:
 ```
 // No kF
 PIDController pidController = new PIDController(kP, kI, kD);

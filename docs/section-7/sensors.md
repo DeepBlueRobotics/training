@@ -1,6 +1,6 @@
 # Common Sensors
 
-There are four types of sensors that are used commonly in FRC competitions: encoders, gyroscopes, accelerometers, and distance sensors.
+There are four types of sensors that are used commonly in FRC competitions: encoders, gyroscopes, accelerometers, and distance sensors. This page tries to give a good overview, however, if you want to learn more, check out WPILib's documentation about [sensors for software](https://docs.wpilib.org/en/latest/docs/software/sensors/index.html) and [sensors for hardware](https://docs.wpilib.org/en/latest/docs/hardware/sensors/index.html).
 
 ## Encoders
 Encoders (more specifically rotary encoders) are a class of sensors which measure the angular position of a motor. They are often used in measuring the distance travelled by components of the robot or for determining speed. There are two types of encoders we will be focusing on: quadrature encoders and analog encoders.
