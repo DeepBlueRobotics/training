@@ -1,10 +1,12 @@
+This section is a broad overview of the Kinematics and Odometry classes in WPIlib. For a more detailed description, you can check out their section of the wiki [here](https://docs.wpilib.org/en/stable/docs/software/kinematics-and-odometry/index.html).
+
 ## What is Odometry?
 Odometry is the use of sensor information to estimate the robot's position and rotation on the field. Odometry works for both differential drivetrains (think arcade/tank drive) and swerve drivetrains (covered in a later section - drivetrains that can move forward, strafe, and rotate, perhaps all three at the same time).
 
 ## WPILib Odometry Class
 Before we cover odometry, we first need to cover the [`Translation2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html), [`Rotation2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html), and [`Pose2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Pose2d.html) objects.
 
-[`Translation2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html) stores x and y positions of the robot in meters as well as has several other useful methods, including scaling using [`plus()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html#plus(edu.wpi.first.wpilibj.geometry.Translation2d)), [`rotateBy()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html#rotateBy(edu.wpi.first.wpilibj.geometry.Rotation2d)), [`times()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html#times(double)), and [`getNorm()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html#getNorm()) (normalization a.k.a the unit vector that points in the same direction as the point).
+[`Translation2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html) stores x and y positions of the robot in meters as well as has several other useful methods, including `plus()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html#plus(edu.wpi.first.wpilibj.geometry.Translation2d)), [`rotateBy()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html#rotateBy(edu.wpi.first.wpilibj.geometry.Rotation2d)), [`times()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html#times(double)), and [`getNorm()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html#getNorm()) (normalization a.k.a the unit vector that points in the same direction as the point).
 
 [`Rotation2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html) stores an angular position value in radians as well as has several other useful methods, including [`getDegrees()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html#getDegrees()), [`fromDegrees()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html#fromDegrees(double)), [`rotateBy()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html#rotateBy(edu.wpi.first.wpilibj.geometry.Rotation2d)), and [`plus()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html#plus(edu.wpi.first.wpilibj.geometry.Rotation2d)).
 
@@ -21,7 +23,7 @@ DifferentialDriveOdometry odometry1 = new DifferentialDriveOdometry(heading)
 DifferentialDriveOdometry odometry2 = new DifferentialDriveOdometry(heading, new Pose2d(x, y, heading))
 ```
 
-Note that when intializing the odometry with only a heading, the angle in the `Pose2d` object will _not_ be equal to the heading. The `Pose2d` angle is relative to its initial heading.
+Note that when initializing the odometry with only a heading, the angle in the `Pose2d` object will _not_ be equal to the heading. The `Pose2d` angle is relative to its initial heading.
 
 ```
 // Create an odometry at (0, 0) facing 90 degrees.
@@ -43,18 +45,18 @@ The odometry object has three methods:
 - [`update()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveOdometry.html#update(edu.wpi.first.wpilibj.geometry.Rotation2d,double,double)) = updates the odometry pose based on the robot's new heading and speeds.
 
 ## What is Kinematics?
-Kinematics deals with calculating the desired velocities of the motor controllers based on the desired velocity of the drivetrain. As with odometry, there are implementations of kinematics for differential drivetrains and swerve drivetrains.
+Kinematics deals with calculating the desired velocities of the motor controllers based on the desired velocity of the drivetrain (known as inverse kinematics). Kinematics can also go in the reverse direction and calculate the desired velocity of the drivetrain from the velocities of the motor controllers (known as forward kinematics). Like with odometry, there are implementations of kinematics for differential drivetrains and swerve drivetrains.
 
 ## WPILib Kinematics Class
-Before we cover kinematics, we first need to cover the [`ChassisSpeeds`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/ChassisSpeeds.html) class. `ChassisSpeeds` is a simple class that contains information about the translational velocity (forward/backwards and left/right) and angular velocity (rotation) of the robot. `ChassisSpeeds` has three primary variables:
+Before we cover kinematics, we first need to cover the [`ChassisSpeeds`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/ChassisSpeeds.html) class. `ChassisSpeeds` is a simple class that contains information about the translational velocity (forward/backward and left/right) and angular velocity (rotation) of the robot. `ChassisSpeeds` has three primary variables:
 
-- vxMetersPerSecond = the *forward* velocity of the drivetrain in m/s. + means moving forward, - means moving backwards.
+- vxMetersPerSecond = the *forward* velocity of the drivetrain in m/s. + means moving forward, - means moving backward.
 
-- vyMetersPerSecond = the *horizontal* velocity of the drivetrain in m/s. + means moving left, - means moving right.
+- vyMetersPerSecond = the *lateral* velocity of the drivetrain in m/s. + means moving left, - means moving right.
 
 - omegaRadiansPerSecond = the angular velocity of the drivetrain in rad/s. + means moving counter-clockwise, - means moving clockwise.
 
-Try not to confuse your coordinate systems! X means going forwards and Y means going horizontal.
+Try not to confuse your coordinate systems! X means going forwards and Y means going lateral.
 
 The [Kinematics object](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveKinematics.html) can be constructed as follows for a Differential Drivetrain:
 
