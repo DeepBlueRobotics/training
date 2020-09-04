@@ -23,7 +23,7 @@ motor.configAllowableClosedloopError(0, closeness);
 motor.set(ControlMode.Position, 0);
 ```
 
-And for SparkMax controllers, we use the [`CANPIDController`](revrobotics.com/content/sw/max/sw-docs/java/com/revrobotics/CANPIDController.html):
+And for SparkMax controllers, we use the [`CANPIDController`](https://revrobotics.com/content/sw/max/sw-docs/java/com/revrobotics/CANPIDController.html):
 ```
 CANPIDController pidController = motor.getPIDController();
 // Config

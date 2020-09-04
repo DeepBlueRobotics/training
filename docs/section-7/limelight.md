@@ -1,7 +1,5 @@
 ## What is a Limelight?
-A Limelight is a small, on-board computer and camera system that performs computer vision. Many FRC teams, including us, use a Limelight for the autonomous period of competition games. Limelights are expensive and should be handled carefully.
-
-![Limelight](https://andymark-weblinc.netdna-ssl.com/product_images/limelight-2-plus/5e15fe1480289d6162f285cd/zoom.jpg?c=1578499604)
+A Limelight[https://andymark-weblinc.netdna-ssl.com/product_images/limelight-2-plus/5e15fe1480289d6162f285cd/zoom.jpg?c=1578499604] is a small, on-board computer and camera system that performs computer vision. Many FRC teams, including us, use a Limelight for the autonomous period of competition games. Limelights are expensive and should be handled carefully.
 
 How does it work? Well, the principles are simple. Several places on the field are marked by special tape known as retroreflective vision tape. This tape reflects all light that hits it directly back at the source, as shown in the image below (the photo was taken with flash). The tape is the only visible object in the image because all the light from the flash was reflected by the vision tape right back at the camera.
 

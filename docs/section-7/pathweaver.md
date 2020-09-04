@@ -1,13 +1,13 @@
 One advantage of a characterized drivetrain is that it more effectively drives the robot to a precise location. This makes autonomous pathing a more viable option. All we need to do is tell the robot a specific path to follow and the robot will drive the path pretty accurately.
 
-But how do we specify these paths? We use the `Trajectory` class along with WPILib's Pathweaver tool.
+But how do we specify these paths? We use the `Trajectory` class along with WPILib's Pathweaver tool. For a more detailed description of how to use this class, check out WPIlib's [documentation](https://docs.wpilib.org/en/stable/docs/software/examples-tutorials/trajectory-tutorial/index.html).
 
 Let's write some autonomous code!
 
 ## Trajectories
-The `Trajectory` class computes the optimal path the robot should follow given a list of states. Each state contains information such as the time elapsed, velocity, acceleration, pose, and the curvature of the path. Luckily for us, another class exists that helps create a trajectory given a list of points. This class is known as the `TrajectoryGenerator` and there are many ways to generate a trajectory using it. For our purposes, we will be using the `generateTrajectory()` method using a list of waypoints and a `TrajectoryConfig` object.
+The [`Trajectory`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/Trajectory.html) class creates a smooth path through a list of states. Each state contains information such as the position on the field, time elapsed, velocity, acceleration, pose, and the curvature of the path. Once you have built your paths using Pathweaver, you can use the [`fromPathweaverJson()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrajectoryUtil.html#fromPathweaverJson(java.nio.file.Path)) method from [`TrajectoryUtil`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrajectoryUtil.html) to create a Trajectory from the built path. This will be the primary way in which we create our `Trajectory` objects.
 
-For the `TrajectoryConfig`, there are several constraints we can add. For now, lets set the maximum speed, maximum acceleration, kinematics, voltage constraint, and whether or not the paths are inverted.
+If you want to create a trajectory given a list of points, you can use the [`TrajectoryGenerator`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrajectoryGenerator.html) class. There are many ways to generate a trajectory using this option, but I will only highlight the [`generateTrajectory()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrajectoryGenerator.html#generateTrajectory(java.util.List,edu.wpi.first.wpilibj.trajectory.TrajectoryConfig)) method which uses a list of waypoints and a [`TrajectoryConfig`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrajectoryConfig.html) object. For the `TrajectoryConfig`, there are several constraints we can add. As an example, lets set the maximum speed, maximum acceleration, kinematics, voltage constraint, and whether or not the paths are inverted.
 
 ```
 TrajectoryConfig config = new TrajectoryConfig(maxSpeed, maxAcceleration);
@@ -15,45 +15,15 @@ config.setKinematics(/* Your kinematics object */);
 DifferentialDriveVoltageConstraint voltConstraint = new DifferentialDriveVoltageConstraint(/* Your SimpleMotorFeedForward Object */, /* Your kinematics object */, maximumVoltage);
 // For the SimpleMotorFeedForward Object, construct a new object using the average of the kVolts, the average of the kV, and the average of the kA values.
 config.addConstraint(voltConstraint);
-confif.setInverted(inverted);
+config.setInverted(inverted);
+
+List<Pose2d> waypoints = new List<Pose2d>();
+/* Add your waypoints here, starting with the beginning of the path */
+Trajectory trajectory = TrajectoryGenerator.generateTrajectory​(waypoints, config);
 ```
-
-The list of waypoints will be generated using the Pathweaver tool. The tool will create .csv files for each path. To convert the .csv elements to Pose2D objects, we can use the following code:
-
-```
-ArrayList<Pose2d> poses = new ArrayList<Pose2d>();
-
-try {
-    CSVParser csvParser = CSVFormat.DEFAULT.parse(new FileReader(file));
-    double x, y, tanx, tany;
-    Rotation2d rot;
-    List<CSVRecord> records = csvParser.getRecords();
-
-    for (int i = 1; i < records.size(); i++) {
-        CSVRecord record = records.get(i);
-        x = Double.parseDouble(record.get(0)) + initPos.getX();
-        y = Double.parseDouble(record.get(1)) + initPos.getY();
-        tanx = Double.parseDouble(record.get(2));
-        tany = Double.parseDouble(record.get(3));
-        rot = new Rotation2d(tanx, tany);
-        if (isInverted) rot = rot.rotateBy(new Rotation2d(Math.PI));
-        poses.add(new Pose2d(x, y, rot));
-    }
-    csvParser.close();
-} catch (FileNotFoundException e) {
-    System.out.println("File named: " + file.getAbsolutePath() + " not found.");
-    e.printStackTrace();
-}
-```
-
-This code uses code from org.apache.commons.csv. You will need to add the following line to the dependencies section of build.gradle if it is not already present:
-
-```compile group: 'org.apache.commons', name: 'commons-csv', version: '1.6' ```
 
 ## Pathweaver Tool
-We can use the Pathweaver tool to create waypoints and curves You can find instructions for using the tool [here](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/pathweaver/creating-pathweaver-project.html).
-
-I will add a few notes though. The length of the tangent line has _no effect_ on the trajectory; only the direction matters. In addition, since Team 199 last used Pathweaver, the Build Paths button was not working. So, when you are done, save the paths and close the tool - don't build the paths. If your paths are built successfully, you will need to follow the instructions [here](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/pathweaver/integrating-robot-program.html) to import them.
+We can use the Pathweaver tool to create waypoints and curves. You can find instructions for using the tool [here](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/pathweaver/creating-pathweaver-project.html).
 
 ## Following Pathweaver Paths
 There are three steps to an autonomous path command:

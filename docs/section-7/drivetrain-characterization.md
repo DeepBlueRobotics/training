@@ -1,4 +1,4 @@
-This section covers a control method known as Drivetrain Characterization, as described in [this](https://drive.google.com/drive/folders/14UI1WPtFT9KvKjAHt90VEv66ovQtFDvc) paper. In this section, we will develop the Drivetrain Characterization formula along with various tests to determine the constants needed to make the formula work.
+This section covers a control method known as characterization, as described in [this](https://drive.google.com/drive/folders/14UI1WPtFT9KvKjAHt90VEv66ovQtFDvc) paper and in [WPIlib's documentation](https://docs.wpilib.org/en/latest/docs/software/wpilib-tools/robot-characterization/index.html). In this section, we will develop the characterization formula for our drivetrain along with various tests to determine the constants needed to make the formula work.
 
 ## Developing the Drivetrain Characterization Formula
 Our previous method for driving the robot used the joystick values as a percentage of the maximum voltage we want to supply to the motors. But, let's say we wanted a more accurate control method - one based on math and physics. Drivetrain Characterization allows us to more accurately determine the voltage we should supply given a desired velocity and acceleration. This section will require an understanding of the concepts described in [Part 1](https://docs.google.com/presentation/d/14PnR4rYJ5rdAwwJBectMS4YYf6jHjcI0Y-uhp9_ridM/edit#slide=id.g253f61fe15_3_0) and [Part 2](https://docs.google.com/presentation/d/1bMCfHxcyumRmsPNsWSuRBEDfwZfm4lxp9J-wn77V3Ao/edit) of our basic electronic theory presentation.
@@ -7,7 +7,11 @@ Brushed DC motors work by running current through a coil of copper wires (known 
 
 <a title="Wapcaplet / CC BY-SA (http://creativecommons.org/licenses/by-sa/3.0/)" href="https://commons.wikimedia.org/wiki/File:Electric_motor_cycle_1.png"><img width="512" alt="Electric motor cycle 1" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Electric_motor_cycle_1.png"></a>
 
+<a href="https://commons.wikimedia.org/wiki/File:Electric_motor_cycle_1.png" title="via Wikimedia Commons">Wapcaplet</a> / <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a>
+
 <a title="Abnormaal / CC BY-SA (http://creativecommons.org/licenses/by-sa/3.0/)" href="https://commons.wikimedia.org/wiki/File:Electric_motor.gif"><img width="512" alt="Electric motor" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Electric_motor.gif"></a>
+
+<a href="https://commons.wikimedia.org/wiki/File:Electric_motor.gif" title="via Wikimedia Commons">Abnormaal</a> / <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a>
 
 But what prevents the motor from accelerating indefinitely? Well, just as current running through the motor causes a torque that accelerates the armature, spinning the armature generates a voltage known as the counter electromotive force (or back-EMF) because it opposes the voltage that was applied to the motor. Eventually, back-EMF will cancel out the applied voltage. As a result, no current will flow through the windings and the rotational speed of the motor will reach a constant value.
 
@@ -24,7 +28,7 @@ Which, by solving for \(V_{app}\), becomes:
 !!! note
     It is known that \(V_{windings} = IR\) where \(I\) is the current and \(R\) is the resistance and \(\tau \propto I\) where \(\tau\) is the motor torque. Additionally \(V_{emf} \propto \omega\) where \(\omega\) is the rotational speed of the motor. Since \(\tau \propto \frac{d\omega}{dt}\),
     we can create an equation for \(\omega(t)\):
-        \[V_{app} = a\frac{d\omega}{dt} + b\omega(t)\]
+        \[V_{app} = a\omega(t) + b\frac{d\omega}{dt}\]
     where \(a\) and \(b\) are constants. For those who are inclined to do some calculus, you can find an equation relating rotational speed with time. The behavior of this function should match the behavior described earlier.
 
 The voltage due to back-EMF varies directly with the speed of the wheels and therefore varies directly with the speed of the drivetrain, or \(V_{emf} = k_v * \text{velocity}\). The voltage across the windings causes torque, which is proportional to the acceleration of the wheels and therefore the acceleration of the drivetrain, meaning \(V_{windings} = k_a * \text{acceleration}\). Finally, we need to account for any resistance we encounter in trying to move, such as friction. It so happens that this resistance is approximately constant no matter the desired velocity and acceleration. All that needs to be done is add a third constant - let's call it \(k_{volt}\) (other sources may call it \(k_S\)). Our new formula becomes:

@@ -60,7 +60,7 @@ nav:
     - PID Control: section-7/pid-control.md
     - Odometry and Kinematics: section-7/odometry-kinematics.md
     - Drivetrain Characterization: section-7/drivetrain-characterization.md
-    - Autonomous Pathing: section-7/pathweaver.md
+    - Creating and Following Paths: section-7/pathweaver.md
     - Limelight: section-7/limelight.md
     - Swerve Drivetrains: section-7/swerve-drive.md
   - Contributing: 

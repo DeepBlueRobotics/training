@@ -6,15 +6,17 @@ Encoders (more specifically rotary encoders) are a class of sensors that measure
 Analog encoders report their readings as a continuous signal. An example of an analog encoder is the [ 
 MA3 Absolute Encoder](https://www.andymark.com/products/ma3-absolute-encoder-with-cable), as shown in the image below. Absolute encoders keep a record of their position even after the encoder has lost power. The MA3 reports degree rotations of its associated shaft as a voltage signal between 0 and 5 volts. In practice, there may be small changes to the voltage reported by the MA3, perhaps due to magnetic field effects. As a result, a 180-degree rotation of the shaft might cause an analog encoder to report 2.47 volts (~177 degrees) instead of 2.5 volts. Analog encoders are much simpler than quadrature encoders, however, their outputs are sensitive to physical phenomena.
 
-![MA3 Analog Encoder](https://www.usdigital.com/assets/images/galleries2/ma3_webproduct_01.jpg)
-
 Quadrature encoders are incremental, meaning that they measure a certain number of ticks elapsed from a known position. You may be already familiar with quadrature encoders since Team 199 uses them frequently. Quadrature encoders are digital, meaning that there are a finite number of values their output can take; in this case, each channel reports either a 0 or a 1.
 
-![Quadrature Encoder](https://docs.wpilib.org/en/stable/_images/encoding-direction1.png)
+<a title="Sagsaw at English Wikipedia / Public domain" href="https://commons.wikimedia.org/wiki/File:Quadrature_Diagram.svg"><img width="512" alt="Quadrature Diagram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Quadrature_Diagram.svg/512px-Quadrature_Diagram.svg.png"></a>
+
+<a href="https://commons.wikimedia.org/wiki/File:Quadrature_Diagram.svg" title="via Wikimedia Commons">Sagsaw at English Wikipedia</a> / Public domain
 
 Quadrature encoders have two channels: an A channel and a B channel. The two are identical except that the B channel has been phase-shifted by 90 degrees. When a motor rotates, it spins a code disc (shown below for an optical encoder), creating two sets of square waves. By counting the number of pulses, consisting of a rising-edge (0 -> 1) and a falling edge (1 -> 0), and dividing by the pulses-per-revolution (PPR), on one of the channels, we can determine the number of revolutions in a given period. The direction of rotation depends on the channel which detects a rising-edge first. If the A channel detects a rising-edge first, we say that A "leads" B and the motor is rotating clockwise; likewise, if B leads A, the motor is rotating counter-clockwise.
 
-![Code Disc](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Incremental_directional_encoder.gif/220px-Incremental_directional_encoder.gif)
+<a title="Sidehack at English Wikibooks / Public domain" href="https://commons.wikimedia.org/wiki/File:Incremental_directional_encoder.gif"><img width="256" alt="Incremental directional encoder" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Incremental_directional_encoder.gif"></a>
+
+<a href="https://commons.wikimedia.org/wiki/File:Incremental_directional_encoder.gif" title="via Wikimedia Commons">Sidehack at English Wikibooks</a> / Public domain
 
 Here is a list of encoder terminology:
 
@@ -35,15 +37,9 @@ Here is a list of encoder terminology:
 - CPR: cycles-per-revolution - the same thing as the number of full periods per revolution.
 
 ## Gyroscopes
-Gyroscopes measure the rotation of components on the robot. Usually, when working with a gyro, you will be using the navX gyro onboard the RoboRIO, shown below. The coordinate system used by the navX is circled.
+Gyroscopes measure the rotation of components on the robot. Usually, when working with a gyro, you will be using the navX gyro onboard the RobRIO. You can find information about the navX on their [website](https://pdocs.kauailabs.com/navx-mxp/). One important section I will highlight is the [terminology](https://pdocs.kauailabs.com/navx-mxp/guidance/terminology/) section, which explains what terms such as "fused heading" and "yaw" mean and also defines the coordinate system.
 
-![navX](navx.jpg)
-
-Here is a clearer image of the navX coordinate system:
-
-![coordinates](https://i1.wp.com/pdocs.kauailabs.com/navx-mxp/wp-content/uploads/2015/06/TriAxis.png?resize=300%2C256&ssl=1)
-
-You can declare a navX gyro using the `AHRS()` class from Kauai Labs. You may need to call your gyroscope's `zeroYaw()` depending on how much of an impact sensor drift will have. See [here](https://www.kauailabs.com/support/navx-mxp/kb/faq.php?id=7) for information about dealing with sensor drift. You might also want to look at instructions for [calibrating the navX](https://pdocs.kauailabs.com/navx-mxp/?page_id=188)
+You can declare a navX gyro using the [`AHRS()`](https://www.kauailabs.com/public_files/navx-mxp/apidocs/java/com/kauailabs/navx/frc/AHRS.html) class from Kauai Labs. You may need to call your gyroscope's `zeroYaw()` depending on how much of an impact sensor drift will have. See [here](https://www.kauailabs.com/support/navx-mxp/kb/faq.php?id=7) for information about dealing with sensor drift. You might also want to look at instructions for [calibrating the navX](https://pdocs.kauailabs.com/navx-mxp/?page_id=188)
 
 ## Accelerometers
-Accelerometers measure - you guessed it - acceleration! Lucky for us, the nav-X can also measure the acceleration of the robot and compass heading. Often, we declare an accelerometer using the `AHRS()` class or the `BuiltInAccelerometer()` class.
+Accelerometers measure - you guessed it - acceleration! Lucky for us, the nav-X can also measure the acceleration of the robot and compass heading. Often, we declare an accelerometer using the `AHRS()` class or the [`BuiltInAccelerometer()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html) class.
