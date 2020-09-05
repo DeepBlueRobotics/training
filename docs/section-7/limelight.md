@@ -1,15 +1,17 @@
 ## What is a Limelight?
-A Limelight[https://andymark-weblinc.netdna-ssl.com/product_images/limelight-2-plus/5e15fe1480289d6162f285cd/zoom.jpg?c=1578499604] is a small, on-board computer and camera system that performs computer vision. Many FRC teams, including us, use a Limelight for the autonomous period of competition games. Limelights are expensive and should be handled carefully.
+A [Limelight](https://andymark-weblinc.netdna-ssl.com/product_images/limelight-2-plus/5e15fe1480289d6162f285cd/zoom.jpg?c=1578499604) is a small, on-board computer and camera system that performs computer vision. Many FRC teams, including us, use a Limelight for the autonomous period of competition games. Limelights are expensive and should be handled carefully.
 
 How does it work? Well, the principles are simple. Several places on the field are marked by special tape known as retroreflective vision tape. This tape reflects all light that hits it directly back at the source, as shown in the image below (the photo was taken with flash). The tape is the only visible object in the image because all the light from the flash was reflected by the vision tape right back at the camera.
 
 ![Vision Tape](vision_tape.JPG)
 
+![Vision Tape 2](vision_tape2.JPG)
+
 The limelight shines green light continuously and captures images using a camera. If the limelight shines green light onto retroreflective vision tape, the tape will show up brightly in the camera image. The limelight then determines the brightest object in the image, draws bounding boxes around it, finds the center of the bounding box, and determines the difference between that center and the crosshair of the camera alongside other important variables.
 
 Take a look at the instructions [here](https://docs.limelightvision.io/en/latest/getting_started.html) for setting up the Limelight. As well, you should read how to build and configure a vision pipeline [here](https://docs.limelightvision.io/en/latest/vision_pipeline_tuning.html).
 
-There are two important interfaces for the limelight: http://limelight.local:5801 and http://limelight.local:5800 (you need to be connected to the limelight to use these links). The first one is for configuration of the Limelight pipeline and the second one is for displaying the camera feed.
+There are two important interfaces for the limelight: http://limelight.local:5801 and http://limelight.local:5800 (you need to be connected to the limelight to use these links). The first one is for configuring the Limelight pipeline and the second one is for displaying the camera feed.
 
 ## Limelight NetworkTables values
 [`NetworkTables`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/networktables/NetworkTable.html) might seem like a new concept, but you have already been working with `NetworkTables` because it includes `SmartDashboard` as one of its keys. Whenever you put or read values using SmartDashboard, you were working with `NetworkTables`. You can think of every instance of `SmartDashboard` as `NetworkTableInstance.getDefault().getTable("SmartDashboard")`. You can find a full description of `NetworkTables` [here](https://docs.wpilib.org/en/stable/docs/software/networktables/index.html?highlight=networktables),
@@ -87,7 +89,7 @@ Now take a look at [Limelight.java](https://github.com/DeepBlueRobotics/RobotCod
 
 1. We use the `PIDController` class which allows us the ability to use kP as well as kI and kD if we wish.
 
-2. We use `ta` instead of `ty` to determine if the bounding box is large enough to consider as a vision target.
+2. We use `ta` to determine if the bounding box is large enough to consider as a vision target.
 
 3. When `steeringAssist()` does not see a bounding box, it turns in the direction of the last `tx` value. This is to make sure that if it overshoots or if the target changes direction, it will take the shortest path to try to face the target again.
 

@@ -1,7 +1,7 @@
 This section is a broad overview of the Kinematics and Odometry classes in WPIlib. For a more detailed description, you can check out their section of the wiki [here](https://docs.wpilib.org/en/stable/docs/software/kinematics-and-odometry/index.html).
 
 ## What is Odometry?
-Odometry is the use of sensor information to estimate the robot's position and rotation on the field. Odometry works for both differential drivetrains (think arcade/tank drive) and swerve drivetrains (covered in a later section - drivetrains that can move forward, strafe, and rotate, perhaps all three at the same time).
+Odometry is the use of sensor information to estimate the robot's position and rotation on the field. Odometry works for both differential drivetrains and swerve drivetrains (covered in a later section - drivetrains that can move forward, strafe, and rotate, perhaps all three at the same time).
 
 ## WPILib Odometry Class
 Before we cover odometry, we first need to cover the [`Translation2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Translation2d.html), [`Rotation2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html), and [`Pose2d`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Pose2d.html) objects.
@@ -40,9 +40,9 @@ The odometry object has three methods:
 
 - [`getPoseMeters()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveOdometry.html#getPoseMeters()) = returns a Pose2d object representing the robot's current position on the field and rotation.
 
-- [`resetPosition()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveOdometry.html#resetPosition(edu.wpi.first.wpilibj.geometry.Pose2d,edu.wpi.first.wpilibj.geometry.Rotation2d)) = resets the odometry with a new pose and rotation.
+- [`resetPosition()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveOdometry.html#resetPosition(edu.wpi.first.wpilibj.geometry.Pose2d,edu.wpi.first.wpilibj.geometry.Rotation2d)) = resets the odometry with a new pose and heading.
 
-- [`update()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveOdometry.html#update(edu.wpi.first.wpilibj.geometry.Rotation2d,double,double)) = updates the odometry pose based on the robot's new heading and speeds.
+- [`update()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveOdometry.html#update(edu.wpi.first.wpilibj.geometry.Rotation2d,double,double)) = updates the odometry pose based on the robot's heading and speed.
 
 ## What is Kinematics?
 Drivetrain kinematics deals with the relationship between motor speeds and the velocity of the drivetrain. There are two types of kinematic calculations: forward kinematics and inverse kinematics. Forward kinematics calculates the velocity of the drivetrain based on the motor speeds and inverse kinematics calculates the motor speeds based on the velocity of the drivetrain. Like with odometry, there are implementations of kinematics for differential drivetrains and swerve drivetrains.

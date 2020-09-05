@@ -9,7 +9,7 @@ This section will only cover how to program a Swerve Drivetrain using WPIlib. Ho
 - [SWERVE DRIVE](https://www.chiefdelphi.com/uploads/default/original/3X/e/f/ef10db45f7d65f6d4da874cd26db294c7ad469bb.pdf) (PDF) by Ether.
 
 ## Using WPIlib
-Firstly, we need to create our kinematics and odometry objects. WPIlib has some documentation on how to construct your [kinematics object](https://docs.wpilib.org/en/stable/docs/software/kinematics-and-odometry/swerve-drive-kinematics.html) and your [odometry object](https://docs.wpilib.org/en/stable/docs/software/kinematics-and-odometry/swerve-drive-odometry.html), however I will also provide a simplified overview.
+Firstly, we need to create our kinematics and odometry objects. WPIlib has some documentation on how to construct a [kinematics object](https://docs.wpilib.org/en/stable/docs/software/kinematics-and-odometry/swerve-drive-kinematics.html) and an [odometry object](https://docs.wpilib.org/en/stable/docs/software/kinematics-and-odometry/swerve-drive-odometry.html), however I will also provide a simplified overview.
 
 To do this, we need to specify the positions of each of the swerve modules. Then, we create our [`SwerveDriveKinematics`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/SwerveDriveKinematics.html) and [`SwerveDriveOdometry`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/SwerveDriveOdometry.html) objects, passing our kinematics object to the constructor of our odometry object.
 
@@ -47,7 +47,7 @@ Where forward, strafe, and rotation are our desired forward/backward speed in m/
 
 What is a `SwerveModuleState`? It is an object that stores the speed, in m/s, at which to drive at and the angle, as a `Rotation2d` object, at which to orient the swerve module. So, `SwerveModuleState state = new SwerveModuleState(3.0, Rotation2d.fromDegrees(45));` represents a module running at 3.0 m/s facing 45 degrees. Simply put, a `SwerveModuleState` object represents a velocity vector for a particular swerve module.
 
-Finally, we use our `SwerveModuleState` array to drive our motors:
+Finally, we use our `SwerveModuleState` array to drive our motors. It's recommended that you create a separate class, perhaps named `SwerveModule`, for this purpose. Below, moduleFL and moduleFR are instances of such a class:
 
 ```
 /* Ensure that the speeds in the array of states are less than the maxSpeed of the robot, 
@@ -128,7 +128,7 @@ Now we need to create the `move()` method for our `SwerveModule` class. It shoul
     }
 ```
 
-`computeSetpoints()` uses the other two functions in order to computer the desired speed as a percentage of maximum applied voltage (from -1.0 to 1.0) and the angle as a percentage of a full rotation of the encoder on the turn motor. `shouldReverse()` determines whether or not the module should turn to the desired angle (\(\alpha\)) or if it should turn to \(180^{\circ} - \alpha\) and run the drive motor in the opposite direction (which has the same result as turning to \(\alpha\) but may be faster). `convertAngle()` converts the angle from a fraction of a full revolution in radians to a fraction of a full revolution in quadrature encoder ticks.
+`computeSetpoints()` uses the other two functions in order to compute the desired speed as a percentage of maximum applied voltage (from -1.0 to 1.0) and the angle as a percentage of a full rotation of the encoder on the turn motor. `shouldReverse()` determines whether or not the module should turn to the desired angle (\(\alpha\)) or if it should turn to \(180^{\circ} - \alpha\) and run the drive motor in the opposite direction (which has the same result as turning to \(\alpha\) but may be faster). `convertAngle()` converts the angle from a fraction of a full revolution in radians to a fraction of a full revolution in quadrature encoder ticks.
 
 We can combine these three methods in our `move()` function as follows:
 
@@ -144,7 +144,7 @@ public void move(double normalizedSpeed, double angle) {
 ```
 
 ## Home Absolute
-Currently, out `move()` method requires that our swerve modules start in a known configuration (let's assume straight forward) so th at passing and angle of 0 makes it face forward, 0.5 makes it face backward, etc. This is where the `HomeAbsolute` command comes in. `HomeAbsolute` requires knowing two things: the quadrature/analog position of the initial configuration and the gear ratio of the turn motor. We calculate our displacement from the configuration we want and use set the sensor position to this displacement. As a result, whenever we read from this sensor (or direct a motor controller to go to a specific position), the sensor value will be relative to the intial configuration. Here is the bulk of the command for Talon_SRX motor controllers:
+Currently, our `move()` method requires that our swerve modules measure their orientation as a counter-clockwise angle relative to facing straight forward so that passing an angle of 0 makes it face forward, 0.5 makes it face backward, etc. This is where the `HomeAbsolute` command comes in. `HomeAbsolute` requires knowing two things: the quadrature/analog position of the initial configuration and the gear ratio of the turn motor. We calculate our displacement from the configuration we want and set the sensor position to this displacement. As a result, whenever we read from this sensor (or direct a motor controller to go to a specific position), the sensor value will be relative to the intial configuration. Here is the bulk of the command for Talon_SRX motor controllers:
 
 ```
 // The quadrature encoders are for turning the steer motor.
