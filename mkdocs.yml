@@ -11,11 +11,15 @@ extra:
 repo_name: 'DeepBlueRobotics/training'
 repo_url: 'https://github.com/DeepBlueRobotics/training'
 
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
 markdown_extensions:
   - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - mdx_math
   - toc:
       permalink: true
 
@@ -52,7 +56,13 @@ nav:
     - PRs and Code Reviews: section-6/pull-requests.md
   - 7. Advanced Programming:
     - Introduction: section-7/intro.md
-    - Additional Topics: section-7/additional-topics.md
+    - Common Sensors: section-7/sensors.md
+    - PID Control: section-7/pid-control.md
+    - Odometry and Kinematics: section-7/odometry-kinematics.md
+    - Drivetrain Characterization: section-7/drivetrain-characterization.md
+    - Creating and Following Paths: section-7/pathweaver.md
+    - Limelight: section-7/limelight.md
+    - Swerve Drivetrains: section-7/swerve-drive.md
   - Contributing: 
     - Introduction: contributing/intro.md
     - With Python: contributing/with-python.md
