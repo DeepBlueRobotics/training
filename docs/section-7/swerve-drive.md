@@ -30,6 +30,8 @@ where FL corresponds to the the furthestmost module on the left side of the robo
 
 <a title="Truthdowser at English Wikipedia / CC BY (https://creativecommons.org/licenses/by/3.0)" href="https://commons.wikimedia.org/wiki/File:Wheelbase_and_Track.png"><img width="512" alt="Wheelbase and Track" src="https://upload.wikimedia.org/wikipedia/commons/5/52/Wheelbase_and_Track.png"></a>
 
+<a href="https://commons.wikimedia.org/wiki/File:Wheelbase_and_Track.png" title="via Wikimedia Commons">Truthdowser at English Wikipedia</a> / <a href="https://creativecommons.org/licenses/by/3.0">CC BY</a>
+
 Next, we want to calculate the [`SwerveModuleState`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/SwerveModuleState.html) for each corner of the drivetrain. The way we do this depends on if our speeds are robot relative or field relative. If they are field relative, then we need to use [`ChassisSpeeds.fromFieldRelativeSpeeds`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/ChassisSpeeds.html#fromFieldRelativeSpeeds(double,double,double,edu.wpi.first.wpilibj.geometry.Rotation2d)) and pass in our current heading.
 
 ```
