@@ -4,7 +4,7 @@ There are three types of sensors that are used commonly in FRC competitions: enc
 Encoders (more specifically rotary encoders) are a class of sensors that measure the angular position of a motor. They are often used in measuring the distance traveled by components of the robot or for determining speed. There are two types of encoders we will be focusing on: quadrature encoders and analog encoders.
 
 Analog encoders report their readings as a continuous signal. An example of an analog encoder is the [ 
-MA3 Absolute Encoder](https://www.andymark.com/products/ma3-absolute-encoder-with-cable), as shown in the image below. Absolute encoders keep a record of their position even after the encoder has lost power. The MA3 reports degree rotations of its associated shaft as a voltage signal between 0 and 5 volts. In practice, there may be small changes to the voltage reported by the MA3, perhaps due to magnetic field effects. As a result, a 180-degree rotation of the shaft might cause an analog encoder to report 2.47 volts (~177 degrees) instead of 2.5 volts. Analog encoders are much simpler than quadrature encoders, however, their outputs are much more sensitive to physical phenomena.
+MA3 Absolute Encoder](https://www.andymark.com/products/ma3-absolute-encoder-with-cable). Absolute encoders keep a record of their position even after the encoder has lost power. The MA3 reports degree rotations of its associated shaft as a voltage signal between 0 and 5 volts. In practice, there may be small changes to the voltage reported by the MA3, perhaps due to magnetic field effects. As a result, a 180-degree rotation of the shaft might cause an analog encoder to report 2.47 volts (~177 degrees) instead of 2.5 volts. Analog encoders are much simpler than quadrature encoders, however, their outputs are much more sensitive to physical phenomena.
 
 Quadrature encoders are incremental, meaning that they measure a certain number of ticks elapsed from a known position. You may be already familiar with quadrature encoders since Team 199 uses them frequently. Quadrature encoders are digital, meaning that there are a finite number of values their output can take; in this case, each channel reports either a 0 or a 1.
 
@@ -23,6 +23,8 @@ Here is a list of encoder terminology:
 - Analog: reports outputs as a continuous signal.
 
 - Absolute: retains position even after power is lost.
+
+- Quadrature: consists of two channels, A and B, outputs a binary signal, reports ticks relative to some initial position.
 
 - Optical: shines light at the code disc - if light reaches a light sensor behind the disc, the signal turns on, otherwise it is off.
 
