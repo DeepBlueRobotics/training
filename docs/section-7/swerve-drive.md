@@ -162,3 +162,31 @@ turn.setSelectedSensorPosition(quadPos);
 // Make sure we actually turn to the correct position.
 setAngle(0.0);      // Your method for setting the angle of the module.
 ```
+
+## Swerve Drivetrain Odometry
+
+Updating the robot's odometry for swerve drivetrains is similar to updating it for differential drivetrains. You can declare a [`SwerveDriveOdometry`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/SwerveDriveOdometry.html) object with:
+
+```
+SwerveDriveOdometry odometry = new SwerveDriveOdometry(/* initialPose */, /* robot heading */);
+```
+
+And to update your `SwerveDriveOdometry` object:
+
+```
+odometry.update(/* robot heading */, /* SwerveModuleState objects */);
+```
+
+The `SwerveModuleState` objects correspond to the actual speed and angle of the swerve modules, not the `SwerveModuleState` objects calculated using your `SwerveDriveKinematics` object. The order of the arguments should correspond with the order you specified in the constructor for your `SwerveDriveKinematics` object. For example, if you wrote: 
+
+```
+// Intentionally shuffled the locations to show that order matters
+SwerveDriveKinematics kinematics = new SwerveDriveKinematics(locationBR, locationFL, locationBL, locationFR);
+```
+
+Then you would update your odometry with:
+
+```
+// stateFL, stateFR, etc. are SwerveModuleState objects
+odometry.update(/* robot heading */, stateBR, stateFL, stateBL, stateFR);
+```
