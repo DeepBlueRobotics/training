@@ -30,6 +30,7 @@ Which, by solving for \(V_{app}\), becomes:
     we can create an equation for \(\omega(t)\):
         \[V_{app} = a\omega(t) + b\frac{d\omega}{dt}\]
     where \(a\) and \(b\) are constants. For those who are inclined to do some calculus, you can find an equation relating rotational speed with time. The behavior of this function should match the behavior described earlier.
+    The symbol \(\propto\) means "proportional to". Everytime you see something like \(y \propto x \) think of it as \(y = k \cdot x \) where \(k\) is a proportionality constant.
 
 The voltage due to back-EMF varies directly with the speed of the wheels and therefore varies directly with the speed of the drivetrain, or \(V_{emf} = k_v * \text{velocity}\). The voltage across the windings causes torque, which is proportional to the acceleration of the wheels and therefore the acceleration of the drivetrain, meaning \(V_{windings} = k_a * \text{acceleration}\). Finally, we need to account for any resistance we encounter in trying to move, such as friction. It so happens that this resistance is approximately constant no matter the desired velocity and acceleration. All that needs to be done is add a third constant - let's call it \(k_{volt}\) (other sources may call it \(k_S\)). Our new formula becomes:
 
