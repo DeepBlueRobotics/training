@@ -130,7 +130,7 @@ Now we need to create the `move()` method for our `SwerveModule` class. It shoul
     }
 ```
 
-`computeSetpoints()` uses the other two functions in order to compute the desired speed as a percentage of maximum applied voltage (from -1.0 to 1.0) and the angle as a percentage of a full rotation of the encoder on the turn motor. `shouldReverse()` determines whether or not the module should turn to the desired angle (\(\alpha\)) or if it should turn to \(180^{\circ} - \alpha\) and run the drive motor in the opposite direction (which has the same result as turning to \(\alpha\) but may be faster). `convertAngle()` converts the angle from a fraction of a full revolution in radians to a fraction of a full revolution in quadrature encoder ticks.
+`computeSetpoints()` uses the other two functions in order to compute the desired speed as a percentage of maximum applied voltage (from -1.0 to 1.0) and the angle as a percentage of a full rotation of the encoder on the turn motor. `shouldReverse()` determines whether or not the module should turn to the desired angle (\(\alpha\)) or if it should turn to \(\alpha + 180^{\circ}\) and run the drive motor in the opposite direction (which has the same result as turning to \(\alpha\) but may be faster). `convertAngle()` converts the angle from a fraction of a full revolution in radians to a fraction of a full revolution in quadrature encoder ticks.
 
 We can combine these three methods in our `move()` function as follows:
 
