@@ -35,6 +35,7 @@ Navigate to this file in the repo (`docs/section-2/version-control.md`) and add 
     Alice Finkelstein,
     Bishista Paul,
     Jack Hansen 
+    Arianna Hsu 
 
 Now stage and commit your changes with the message `add [your name]`, and then push your changes. Refer to the [Git tutorial](https://guides.github.com/introduction/git-handbook/) and [VS Code tutorial](https://code.visualstudio.com/docs/editor/versioncontrol) if needed.
 
