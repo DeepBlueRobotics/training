@@ -18,7 +18,9 @@ public class RobotContainer {
         // set default commands here
     }
     private void configureButtonBindingsController() {
-        new JoystickButton(controller, Constants.OI.Controller.kRunMotorsButton).whileHeld(new RunMotor(motors));
+
+        new JoystickButton(controller, Constants.OI.Controller.kRunMotorsButton).whenHeld(new RunMotor(motors));
+
     }
 
     public Command getAutonomousCommand() {
