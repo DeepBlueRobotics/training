@@ -36,6 +36,7 @@ Navigate to this file in the repo (`docs/section-2/version-control.md`) and add 
     Bishista Paul,
     Jack Hansen, 
     Arianna Hsu,
+    Ana Hoffman, 
     John Hurley,
     Xavier Lem
 
