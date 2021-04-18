@@ -10,6 +10,9 @@ Once you're done, we'll do some exercises to see if you've got it.
 ## Practice
 VS Code is the text editor we will be using to write and run our code, and should have been installed with the WPILib suite during setup. Open up VS Code and follow the "Cloning a repository" section of [the VS Code git tutorial](https://code.visualstudio.com/docs/editor/versioncontrol#_cloning-a-repository) to clone [this repo](https://github.com/DeepBlueRobotics/training/).
 
+!!!note 
+    If you look at the tutorial above, they mention the "Git: Clone" command from the Command Palette (⇧⌘P). However, it's good practice to use "Git: Clone(Recursive)" instead of just "Git(Clone)" because cloning the repo recursively also clones all the defined submodules in the repo as well.
+
 Navigate to this file in the repo (`docs/section-2/version-control.md`) and add your name to the list below.
 
 !!! success "People who have added their name"
