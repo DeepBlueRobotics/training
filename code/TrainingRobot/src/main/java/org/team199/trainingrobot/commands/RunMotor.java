@@ -7,11 +7,9 @@
 
 package org.team199.trainingrobot.commands;
 
-import edu.wpi.first.wpilibj.MotorSafety;
-import edu.wpi.first.wpilibj.PWM;
-import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import org.team199.trainingrobot.subsystems.Motors;
+
+import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class RunMotor extends CommandBase {
   private Motors motors;
