@@ -53,5 +53,7 @@ Commands are what run the robot. For example, there may be a `RunIntake` command
 ## Lib
 The `lib` folder is where we would store the complex calculations, wrappers, or other things that do not directly interact with the robot, but are rather called on by commands or subsystems to assist in their execution. Stuff in this folder would be valuable code that we would actually want to keep and develop on from one year to another, such as drivetrain characterization, motion profiling, or swerve drive code.
 
+Most of this code is stored in the repository [lib199](https://github.com/DeepBlueRobotics/lib199) which is included as a submodule to our main robot code. This makes it easy to include in new robot projects and other codebases.
+
 ## MotorControllerFactory.java
-This is the most-used file in the lib folder. It stores methods for creating the objects for the motor controllers and solenoids that are used in the subsystems.
+This is the most-used file in the lib folder. It stores methods for creating the objects for the motor controllers that are used in the subsystems.
