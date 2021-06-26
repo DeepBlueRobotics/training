@@ -4,7 +4,7 @@
 What's covered in this section:
 
 - How we organize our robot project during build season
-- Assigning tasks and using Trello
+- Assigning tasks and using Github Issues
 - Pull requests and code reviews
 
 ***
