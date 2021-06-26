@@ -1,16 +1,16 @@
 !!! question
-    How do you test code without a robot?
+    How do we collaborate during build season?
 
 What's covered in this section:
 
-- What unit tests are and how to use them
-- Unit testing conventions and when to write tests
-- Continuous integration and more about Pull Requests
+- How we organize our robot project during build season
+- Assigning tasks and using Github Issues
+- Pull requests and code reviews
 
 ***
 
->**xkcd #844: Good Code**
+>**xkcd #1658: Estimating Time**
 >
->![good_code](https://imgs.xkcd.com/comics/good_code.png "You can either hang out in the Android Loop or the HURD loop.")
+>![estimating_time](https://imgs.xkcd.com/comics/estimating_time.png "Corollary to Hofstadter's Law: Every minute you spend thinking about Hofstadter's Law is a minute you're NOT WORKING AND WILL NEVER FINISH! PAAAAAANIIIIIIC!")
 >
->_<https://xkcd.com/844/>_
+>_<https://xkcd.com/1658/>_

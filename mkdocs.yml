@@ -44,16 +44,16 @@ nav:
     - Introduction: section-4/intro.md
     - Teleoperated Period: section-4/teleop.md
     - Autonomous Period: section-4/auton.md
-  - 5. Unit Testing:
+  - 5. Build Season Process:
     - Introduction: section-5/intro.md
-    - Why Unit Tests?: section-5/why-tests.md
-    - Writing Tests: section-5/writing-tests.md
-    - Continuous Integration: section-5/ci.md
-  - 6. Build Season Process:
+    - Branch Organization: section-5/organization.md
+    - Task Delegation: section-5/delegation.md
+    - PRs and Code Reviews: section-5/pull-requests.md
+  - 6. Unit Testing:
     - Introduction: section-6/intro.md
-    - Branch Organization: section-6/organization.md
-    - Task Delegation: section-6/delegation.md
-    - PRs and Code Reviews: section-6/pull-requests.md
+    - Why Unit Tests?: section-6/why-tests.md
+    - Writing Tests: section-6/writing-tests.md
+    - Continuous Integration: section-6/ci.md
   - 7. Advanced Programming:
     - Introduction: section-7/intro.md
     - Common Sensors: section-7/sensors.md
