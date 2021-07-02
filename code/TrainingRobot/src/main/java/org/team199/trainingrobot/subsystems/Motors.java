@@ -9,7 +9,7 @@ package org.team199.trainingrobot.subsystems;
 
 import org.team199.trainingrobot.Constants;
 
-import org.team199.lib.MotorControllerFactory;
+import frc.robot.lib.MotorControllerFactory;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
