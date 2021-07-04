@@ -40,6 +40,7 @@ nav:
     - JavaDocs and WPILib: section-3/wpilib.md
     - Commands and Subsystems: section-3/commands-subsystems.md
     - Advanced Version Control: section-3/version-control2.md
+    - Simulation: section-3/simulator.md
   - 4. Drivetrain Project:
     - Introduction: section-4/intro.md
     - Teleoperated Period: section-4/teleop.md
