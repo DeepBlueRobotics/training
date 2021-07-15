@@ -59,6 +59,9 @@ dependencies {
     // Enable simulation gui support. Must check the box in vscode to enable support
     // upon debugging
     simulation wpi.deps.sim.gui(wpi.platforms.desktop, false)
+    simulation wpi.deps.sim.driverstation(wpi.platforms.desktop, false)
+    simulation wpi.deps.sim.ws_server(wpi.platforms.desktop, false)
+    simulation wpi.deps.sim.ws_client(wpi.platforms.desktop, false)
 }
 
 // Setting up my Jar File. In this case, adding all libraries into the main jar ('fat jar')
