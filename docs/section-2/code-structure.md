@@ -45,11 +45,10 @@ This is where we create and store the objects for the subsystems, then set up al
 This file contains all of the numbers that don't change and are relevant to the whole robot. This includes all ports and joystick buttons, which correlate to motor controllers, solenoids, and commands in the code.
 
 ## Subsystems
-Subsystems are where much of the logic of the code is stored. In each subsystem, there are methods that perform certain actions, such as running a motor. These methods are then called in Commands as part of a larger process. For example, a method in the Climber subsystem could be used to retrieve the height of a lift, which can then be called in one of the Climber commands. 
-The subsystem classes contain the Objects for the motor controllers and solenoids. Constants for the specific subsystem are also stored in the subsystem class. For example, a constant such as the speed of a drivetrain motor should be stored in the Drivetrain subsystem, as it’s only relevant to the Drivetrain. 
+Subsystems are anoter name for robot mechanisms, such as a drivetrain, an elevator, an intake, or a climber. The subystem classes contain the Objects for the motor controllers and solenoids and have methods for controlling the subsystem, which are used by commands.
 
 ## Commands
-Commands are sections of code that define general actions taken by the robot. Usually, they don’t contain detailed code about the function of the robot’s mechanical parts, such as how far a motor turns or its direction (these finer details are usually placed in subsystems, which commands then reference to give function to each of the robot’s mechanical components). Instead, commands code for actions taken by the robot’s mechanisms. Examples of these actions could include lifting an arm or turning wheels that intake a game piece. 
+Commands are what run the robot. For example, there may be a `RunIntake` command that runs two motors to turn the wheels that intake a game piece. 
 
 
 ## Lib
