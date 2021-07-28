@@ -2,7 +2,7 @@
 
 We use the JUnit 4 library to write unit tests. We put our tests in the `src/test` folder of a robot project, and the folder structure should mirror the structure of the main code in `src/main`. In addition, test files should follow the naming convention `[class to be tested]Test.java`.
 
-We have a test written called `MysteryMathTest.java` in the TestRobot project, located in the `code/` directory of this repo, which you should already have. (If TestRobot isn't present in your local repo, pull the `master` branch again.) You may want to make a new branch for this section.
+Clone the [`TestRobot`](https://github.com/DeepBlueRobotics/TestRobot) repo. We have a test written called `MysteryMathTest.java` in the `TestRobot` project.
 
 Before you look in either `MysteryMath.java` or `MysteryMathTest.java`, open the `TestRobot` project in VS Code, click on the WPILib button, and select "Test Robot Code". 
 

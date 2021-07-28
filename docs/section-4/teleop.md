@@ -10,7 +10,7 @@ Once you know the answers to these, you should be ready to get started.
 
 ## Teleop
 
-You can use the `TrainingRobot` project in this repo that you've been using in previous sections as a base for your drivetrain code. Let's first code our teleoperated (teleop) mode, where drivers are the ones controlling the robot.
+You can use the `TrainingRobot` repo that you've been using in previous sections as a base for your drivetrain code. Let's first code our teleoperated (teleop) mode, where drivers are the ones controlling the robot.
 
 Requirements for teleop:
 

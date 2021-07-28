@@ -18,7 +18,7 @@ WPILib is the name of the library FRC provides us to control the robot with. [It
     - a controller connected to the computer  
     - a brushed motor
 
-You should have already cloned this repo in the last section. Open up the `TrainingRobot` project inside the `code/` directory of this repo (not the `Training` folder that all of this is in). Now connect to the RoboRIO of the practice board with a USB cable, click on the WPILib logo on the top right of VSCode which looks like this: ![wpilib](https://avatars1.githubusercontent.com/u/19267233?s=400&v=4){: style="height:25px;width:25px"}, and then choose "Deploy Robot Code". It should take a minute to deploy the code before displaying "Build Successful" in green. 
+Clone the [`TrainingRobot`](https://github.com/DeepBlueRobotics/TrainingRobot) repo. Now connect to the RoboRIO of the practice board with a USB cable, click on the WPILib logo on the top right of VSCode which looks like this: ![wpilib](https://avatars1.githubusercontent.com/u/19267233?s=400&v=4){: style="height:25px;width:25px"}, and then choose "Deploy Robot Code". It should take a minute to deploy the code before displaying "Build Successful" in green. 
 
 !!! note
     Deploying code to the RoboRIO only works on a Windows computer; however, you can still build your code to see if it compiles correctly before moving onto a Windows computer to complete this part.
@@ -37,6 +37,6 @@ In the `TrainingRobot` project, find the `RobotContainer.java` file (`src/main/j
 
 In the same project, you'll find the `RunMotor.java` file in the `commands` directory. In the `RunMotor` class, the `end()` method is currently empty. Add code to it that stops the motors. (Hint: you might want to write something similar to what's in `execute()`.)
 
-**Step 4: Deploy!**
+**Step 3: Deploy!**
 
 Once you think you figured it out, follow the above "Deploying robot code" section again to deploy, and see if your code worked!
