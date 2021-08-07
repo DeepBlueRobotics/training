@@ -1,16 +1,16 @@
 !!! question
-    How do we collaborate during build season?
+    How do you test code without a robot?
 
 What's covered in this section:
 
-- How we organize our robot project during build season
-- Assigning tasks and using Trello
-- Pull requests and code reviews
+- What unit tests are and how to use them
+- Unit testing conventions and when to write tests
+- Continuous integration and more about Pull Requests
 
 ***
 
->**xkcd #1658: Estimating Time**
+>**xkcd #844: Good Code**
 >
->![estimating_time](https://imgs.xkcd.com/comics/estimating_time.png "Corollary to Hofstadter's Law: Every minute you spend thinking about Hofstadter's Law is a minute you're NOT WORKING AND WILL NEVER FINISH! PAAAAAANIIIIIIC!")
+>![good_code](https://imgs.xkcd.com/comics/good_code.png "You can either hang out in the Android Loop or the HURD loop.")
 >
->_<https://xkcd.com/1658/>_
+>_<https://xkcd.com/844/>_

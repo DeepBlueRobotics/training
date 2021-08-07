@@ -6,12 +6,12 @@ FRC has [a pretty good write-up on command-based programming](https://docs.wpili
 
 ### Adding motor controllers
 
-First order of business is to add the two other motor controllers (Victor SPX and Victor SP) on the practice board to the code. That involves two steps:
+First order of business is to add the two other motor controllers (Victor SPX and Spark Max) on the practice board to the code. That involves two steps:
 
 1. Creating instances of them in `Motors.java`
 2. Calling their `set()` methods in `Motors.run()`
 
-Use the `talon` object as an example for the Victor SPX object, but since the Victor SP controller is very simple, we can just directly create a `new VictorSP()`. The Victor SPX class is called `WPI_VictorSPX` and is located in the `com.ctre.phoenix.motorcontrol.can` package, while the Victor SP class is called `VictorSP` and is located in the `edu.wpi.first.wpilibj` package. 
+Use the `talon` object as an example for the Victor SPX and Spark MAX objects. The Victor SPX class is called `WPI_VictorSPX` and is located in the `com.ctre.phoenix.motorcontrol.can` package, while the Spark Max class is called `CANSparkMax` and is located in the `com.revrobotics` package.
 
 Once you're done with that, do not deploy from your computer. Follow the instructions in the next page, `Advanced Version Control`, and then pull your branch onto the driver station computer that should be set up and deploy from there.
 
