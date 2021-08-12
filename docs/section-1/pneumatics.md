@@ -1,4 +1,4 @@
-Similar to elex, SenAc also has [a pneumatics presentation](https://docs.google.com/presentation/d/1UDH-Om2QCeOL6JKvXSvE9Xdm5i8acvCqRSJa4wcBMAM/edit#slide=id.g2573de0a58_0_73). Take some time to read through it.
+Similar to elex, SenAct also has [a pneumatics presentation](https://docs.google.com/presentation/d/1UDH-Om2QCeOL6JKvXSvE9Xdm5i8acvCqRSJa4wcBMAM/edit#slide=id.g2573de0a58_0_73). Take some time to read through it.
 
 Key takeaways:
 

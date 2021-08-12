@@ -11,5 +11,5 @@ These are things that should be checked/changed in the curriculum before pre-sea
 - The curriculum is adjusted on difficulty and odd parts are fixed based on trainee input
 - Quickly look through the entire site to make sure everything is correct
 - Make sure whoever is presenting the presentations in section 1 are familiar with them
-    - You can coordinate with SenAc on maybe giving the presentation together or having a SenAc team member do the presentation
+    - You can coordinate with SenAct on maybe giving the presentation together or having a SenAct team member do the presentation
 - We have the newest and most relevant XKCDs \ (•◡•) /
