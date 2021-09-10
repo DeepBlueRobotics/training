@@ -31,7 +31,7 @@ You may have noticed that the motor does not stop running when you release the b
 
 **Step 1: Change the button to trigger the command continuously while it's held rather than once when it's pressed**
 
-In the `TrainingRobot` project, find the `RobotContainer.java` file (`src/main/java/org/team199/trainingrobot/RobotContainer.java`). Currently, line 20 contains the method `whenHeld()`. Refer to the WPILib JavaDocs to determine what you need to change `whenHeld()` to in order to run the command while the button is pressed. (Hint: `runMotorButton` is an instance of the `JoystickButton` class.)
+In the `TrainingRobot` project, find the `RobotContainer.java` file (`src/main/java/org/team199/trainingrobot/RobotContainer.java`). Currently, line 20 contains the method `whenPressed()`. Refer to the WPILib JavaDocs to determine what you need to change `whenPressed()` to in order to run the command while the button is pressed. (Hint: `runMotorButton` is an instance of the `JoystickButton` class.)
 
 **Step 2: Stop the motors when the command ends**
 
