@@ -35,7 +35,7 @@ Navigate to this file in the repo (`docs/section-2/version-control.md`) and add 
     Uday Chaudhary,
     Jack Neth,
     Alan Finkelstein,
-    Alice Finkelstein,d
+    Alice Finkelstein,
     Bishista Paul,
     Jack Hansen, 
     Arianna Hsu,
