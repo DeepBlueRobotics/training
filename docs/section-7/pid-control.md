@@ -17,8 +17,8 @@ motor.config_kI(0, kI);
 motor.config_kD(0, kD);
 // Tell the PID loop how close we want to get to the setpoint in sensor units
 motor.configAllowableClosedloopError(0, closeness);
-// Tell the PID loop which sensor to use. In this case use a quadrature encoder. motor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder)
-
+// Tell the PID loop which sensor to use. In this case use a quadrature encoder 
+motor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder);
 // Move to 0 on the selected sensor
 motor.set(ControlMode.Position, 0);
 ```
