@@ -44,7 +44,7 @@ Navigate to this file in the repo (`docs/section-2/version-control.md`) and add 
     Xavier Lem,
     Sean Weber,
     Romit Bhatnagar,
-    Charles Ding
+    Charles Ding, 
     Mason Cao, 
     Nick Chen, 
     Jay Motamarry, 
