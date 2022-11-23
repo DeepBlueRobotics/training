@@ -1,6 +1,10 @@
 ## Command-based programming
 
-FRC has [a pretty good write-up on command-based programming](https://docs.wpilib.org/en/latest/docs/software/commandbased/index.html), so we'll just read that. You do not need to read the sections on PID control and trapezoid profiles just yet (although I encourage you to read about these two topics if you are interested, especially PID control). This resource is crucial and will help you understand nearly everything about writing code for the robot. Do not skip past this unless you understand how it works!
+Youtube has a really good [series](https://www.youtube.com/channel/UCmJAoN-yI6AJDv7JJ3372yg/videos) on programming using WPILIB. I highly recommend watching videos #1, 2, and 5. All the others are optionally and are more advanced, but feel free to look at them. Try implementing the code along with the video so you get a feel of things.
+
+FRC also has [a pretty good write-up on command-based programming](https://docs.wpilib.org/en/latest/docs/software/commandbased/index.html). The video cover all the fundamentals, but the write-ups go into more detail. You do not need to read the sections on PID control and trapezoid profiles just yet (although I encourage you to read about these two topics if you are interested, especially PID control). These resources are crucial and will help you understand nearly everything about writing code for the robot. 
+
+Do not skip past this unless you understand how it works!
 
 ## Let's write some robot code!
 
