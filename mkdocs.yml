@@ -26,18 +26,18 @@ markdown_extensions:
 nav:
   - Home: index.md
   - 0. Java Basics: section-0/index.md
-  - 1. Electronics and Pneumatics:
+  - 1. Setup and Version Control:
     - Introduction: section-1/intro.md
-    - Electronics: section-1/electronics.md
-    - Pneumatics: section-1/pneumatics.md
-  - 2. Robot Code and Version Control:
+    - Setup: section-1/setup.md
+    - Version Control: section-1/version-control.md
+  - 2. Electronics and Pneumatics:
     - Introduction: section-2/intro.md
-    - Setup: section-2/setup.md
-    - Code Structure: section-2/code-structure.md
-    - Version Control: section-2/version-control.md
+    - Electronics: section-2/electronics.md
+    - Pneumatics: section-2/pneumatics.md
   - 3. Developing Robot Code:
     - Introduction: section-3/intro.md
     - JavaDocs and WPILib: section-3/wpilib.md
+    - Code Structure: section-3/code-structure.md
     - Commands and Subsystems: section-3/commands-subsystems.md
     - Advanced Version Control: section-3/version-control2.md
     - Simulation: section-3/simulator.md
