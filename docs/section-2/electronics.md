@@ -10,12 +10,12 @@ We have significant overlap with SenAct training. If you want more details on Se
 
 - The RoboRIO is the "brain" of the robot and runs our robot code.
     - Can plug sensors and add-ons onto it
-    - Can add micro-controllers such as a Raspberry Pi to make it run faster
+    - Can add micro-controllers such as a Raspberry Pi to connect to other devices
     - ![RoboRIO Ports](roborio_ports.png)
 - The radio is what we use to communicate between the robot and the driver station computer. 
-    - Connects to the DS Computer via Wifi or Ethernet
+    - Connects to the DS Computer via Wifi, Ethernet, or USB
     - ![Status Lights for Radio](radio_status_lights.png)
-- The PDP gives power to the electrical components. 
+- The Power Distribution Panel (PDP) / Power Distribution Hub (PDH) gives power to the electrical components.
 
 ### Motors and Motor Controllers
 - Motor controllers control the motors and communicate with the RoboRIO.
@@ -26,7 +26,7 @@ We have significant overlap with SenAct training. If you want more details on Se
     - CIM
         - Biggest
         - Most powerful
-        - Used for drivetrains
+        - Used for drivetrains and other subsystems which require a lot of torque
     - Mini CIMs
         - Medium size
     - BAG
@@ -34,13 +34,13 @@ We have significant overlap with SenAct training. If you want more details on Se
     - NEO
         - Encoders are built into these
         - Comparable to CIMs
-        - Used for drivetrains
+        - Used for drivetrains and other subsystems which require a lot of torque
     - NEO 550
         - Small
         - Used for subsystems other than drivetrains
 - The typically motor controllers we use are:
     - CANSparkMaxes
-    - Talons
+    - Talon SRXs
 
 ![CANSparkMax](CANSparkMax.png)
 
