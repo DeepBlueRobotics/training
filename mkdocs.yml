@@ -36,9 +36,9 @@ nav:
     - Pneumatics: section-2/pneumatics.md
   - 3. Developing Robot Code:
     - Introduction: section-3/intro.md
-    - JavaDocs and WPILib: section-3/wpilib.md
     - Code Structure: section-3/code-structure.md
     - Commands and Subsystems: section-3/commands-subsystems.md
+    - Finding JavaDocs and Resources: section-3/finding-docs.md
     - Advanced Version Control: section-3/version-control2.md
     - Simulation: section-3/simulator.md
   - 4. Drivetrain Project:
