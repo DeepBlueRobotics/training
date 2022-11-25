@@ -25,7 +25,21 @@ Week 3:
 
 ## Other Notes
 
-For Inheritance and Polymorphism, a concept they do not cover are interfaces which you may encounter a lot. Read about them [here](https://www.w3schools.com/java/java_interface.asp).
+For Inheritance and Polymorphism, a concept they do not cover are interfaces which you may encounter. Read about them [here](https://www.w3schools.com/java/java_interface.asp).
+
+They also do not cover enums. Read more about them [here](https://www.w3schools.com/java/java_enums.asp). One thing they don't mention is that you can actually assign values to your enums such as:
+
+```
+public static enum TemperatureLimit {
+    NEO(70), NEO_550(40);
+
+    public final int limit;
+
+    private TemperatureLimit(int limit) {
+        this.limit = limit;
+    }
+}
+```
 
 ## JavaDocs
 
