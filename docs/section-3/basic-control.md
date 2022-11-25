@@ -105,7 +105,7 @@ Watch the [first video](https://www.youtube.com/watch?v=ihO-mw_4Qpo&t=347s&ab_ch
 !!! warning
     Do not create a new project like how he did in the video. Use the cloned repo and do the code on your own branch.
 
-Now watch the [second video](https://www.youtube.com/watch?v=g-dgdWVO5u8&t=1s&ab_channel=FRC0toAutonomous), but once he starts writing the code, **STOP**. He gives you all the motor controllers and encoders used for this project, so you can try implementing all the stuff before you see how he does it. For the ports, you can just put in random numbers as long as they are different from each other. Unfortunately, we do not have an exact replica of his robot to test the code on, but we will cover how to debug later on.
+Now watch the [second video](https://www.youtube.com/watch?v=g-dgdWVO5u8&t=1s&ab_channel=FRC0toAutonomous), but once he starts writing the code, **STOP**. He gives you all the motor controllers and encoders used for this project, so you can try implementing all the stuff before you see how he does it. It will involve searching up documentation a ton, so I highly recommend reading the "Finding JavaDocs and Resources" module (Some stuff may not make sense since we haven't covered Subsystems or Commands, so ignore those parts). For the ports, you can just put in random numbers as long as they are different from each other. Unfortunately, we do not have an exact replica of his robot to test the code on, but we will cover how to debug later on.
 
 !!! warning
     It is crucial that you try to implement the code before seeing how someone else does it. It may involve a lot of googling and searching up documentation, but that is how programming will be like. It takes a ton of practice to get proficient at writing code.
