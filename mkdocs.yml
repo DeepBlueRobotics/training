@@ -36,6 +36,7 @@ nav:
     - Pneumatics: section-2/pneumatics.md
   - 3. Developing Robot Code:
     - Introduction: section-3/intro.md
+    - Basic Control: section-3/basic-control.md
     - Code Structure: section-3/code-structure.md
     - Commands and Subsystems: section-3/commands-subsystems.md
     - Finding JavaDocs and Resources: section-3/finding-docs.md
