@@ -37,8 +37,7 @@ nav:
   - 3. Developing Robot Code:
     - Introduction: section-3/intro.md
     - Basic Control: section-3/basic-control.md
-    - Code Structure: section-3/code-structure.md
-    - Commands and Subsystems: section-3/commands-subsystems.md
+    - Subsystems and Commands: section-3/subsystems-and-commands.md
     - Finding JavaDocs and Resources: section-3/finding-docs.md
     - Advanced Version Control: section-3/version-control2.md
     - Simulation: section-3/simulator.md
