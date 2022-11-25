@@ -97,7 +97,18 @@ Other than the information that can be obtained using getters on the motor contr
 - Reset Method (Zeroes the default position)
 
 ## Controllers
-Here we will summarize the WPILib classes used for communication between the driver computer and the roboRIO. There are several different types: Joystick, XboxController, and other class types. WPILib offers a really good overview on [joysticks](https://docs.wpilib.org/en/stable/docs/software/basic-programming/joystick.html), so read up on that. We will cover how to mount commands to triggers once we have covered command-based programming.
+Here we will summarize the WPILib classes used for communication between the driver computer and the roboRIO. There are several different types: Joystick, XboxController, and other class types. All of these classes extend the `GenericHID` class, which is the general class that implements controllers. WPILib offers a really good overview on [joysticks](https://docs.wpilib.org/en/stable/docs/software/basic-programming/joystick.html), so read up on that. We will cover how to mount commands to triggers once we have covered command-based programming. Here is a general overview.
+
+### Creation
+WPILib provides several classes such as `Joystick` and `XBoxController`. We use their conventional constructors which both ask for a port number:
+``` Java
+Joystick joystick = new Joystick([insert port]);
+XBoxController xbox = new XBoxController([insert port]);
+```
+You can configure their USB port numbers through driver station. A more detailed guide is outlined in the WPILib article about joysticks.
+
+### Methods
+[Controllers](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/GenericHID.html) provide data on the axis, buttons, and other inputs. They usually have a lot of getter methods and a few config methods.
 
 ## Pneumatics
 Pneumatics use compressed air to actuate mechanisms. They are often used when we want part of our robot to actuate between two set positions. Once again, WPILib has a [good article](https://docs.wpilib.org/en/stable/docs/software/hardware-apis/pneumatics/pneumatics.html) which explains this more in-depth.
@@ -128,7 +139,10 @@ Watch the [first video](https://www.youtube.com/watch?v=ihO-mw_4Qpo&t=347s&ab_ch
 !!! warning
     Do not create a new project like how he did in the video. Use the cloned repo and do the code on your own branch.
 
-Now watch the [second video](https://www.youtube.com/watch?v=g-dgdWVO5u8&t=1s&ab_channel=FRC0toAutonomous), but once he starts writing the code, **STOP**. He gives you all the motor controllers and encoders used for this project, so you can try implementing all the stuff before you see how he does it. It will involve searching up documentation a ton, so I highly recommend reading the [Finding JavaDocs and Resources](finding-docs.md) module (Some stuff may not make sense since we haven't covered Subsystems or Commands, so ignore those parts). For the ports, you can just put in random numbers as long as they are different from each other. Unfortunately, we do not have an exact replica of his robot to test the code on, but we will cover how to debug later on.
+Now watch the [second video](https://www.youtube.com/watch?v=g-dgdWVO5u8&t=1s&ab_channel=FRC0toAutonomous), but once he starts writing the code, **STOP**. He gives you all the motor controllers and encoders used for this project, so you can try implementing some of the subsystems before you see how he does it (You may not have time to implement the entire robot, so at least try to implement a few subsystems yourself before watching the rest of the video). It will involve searching up documentation a ton, so I highly recommend reading the [Finding JavaDocs and Resources](finding-docs.md) module (Some stuff may not make sense since we haven't covered Subsystems or Commands, so ignore those parts). For the ports, you can just put in random numbers as long as they are different from each other. Unfortunately, we do not have an exact replica of his robot to test the code on, but we will cover how to debug later on.
 
 !!! warning
     It is crucial that you try to implement the code before seeing how someone else does it. It may involve a lot of googling and searching up documentation, but that is how programming will be like. It takes a ton of practice to get proficient at writing code.
+
+!!! tip
+    Remember, if you need help, don't be afraid to ask! We're throwing you in the deep end right now because it's the fastest way to learn. You're not expected to immediately know what to do.
