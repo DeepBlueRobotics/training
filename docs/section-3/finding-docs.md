@@ -32,9 +32,7 @@ Here is a general outline of where stuff might be:
 ### [Lib199](https://github.com/DeepBlueRobotics/lib199)
 - Anything whose import has "lib199" in it
 - This code is written by Carlmont students that is reused every year
-- The javadocs are available [here](https://deepbluerobotics.github.io/lib199/).
-!!! unfinished
-    This might be removed if [my PR](https://github.com/DeepBlueRobotics/lib199/pull/27) is rejected
+- The javadocs are available [here](https://deepbluerobotics.github.io/lib199/)
 - We have a long video detailing all classes in [lib199](https://www.youtube.com/watch?v=RMme7byAOPY)
 !!! unfinished
     If you are reading this, remind one of the veteran programs to add timestamps to the lib199 video
