@@ -13,7 +13,7 @@ Firstly, we need to create our kinematics and odometry objects. WPIlib has some 
 
 To do this, we need to specify the positions of each of the swerve modules. Then, we create our [`SwerveDriveKinematics`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/SwerveDriveKinematics.html) and [`SwerveDriveOdometry`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/SwerveDriveOdometry.html) objects, passing our kinematics object to the constructor of our odometry object.
 
-```
+``` Java
 double wheelBase = /* The distance between the centers of wheels on the same side */;
 double trackWidth = /* The distance between the centers of wheels on opposite sides */;
 
@@ -34,7 +34,7 @@ where FL corresponds to the the furthestmost module on the left side of the robo
 
 Next, we want to calculate the [`SwerveModuleState`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/SwerveModuleState.html) for each corner of the drivetrain. The way we do this depends on if our speeds are robot relative or field relative. If they are field relative, then we need to use [`ChassisSpeeds.fromFieldRelativeSpeeds`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/ChassisSpeeds.html#fromFieldRelativeSpeeds(double,double,double,edu.wpi.first.wpilibj.geometry.Rotation2d)) and pass in our current heading.
 
-```
+``` Java
 ChassisSpeeds speeds;
 if (SmartDashboard.getBoolean("Field Relative", true)) {
     speeds = ChassisSpeeds.fromFieldRelativeSpeeds(forward, strafe, rotation, 
@@ -51,7 +51,7 @@ What is a `SwerveModuleState`? It is an object that stores the speed, in m/s, at
 
 Finally, we use our `SwerveModuleState` array to drive our motors. It's recommended that you create a separate class, perhaps named `SwerveModule`, for this purpose. Below, moduleFL and moduleFR are instances of such a class:
 
-```
+``` Java
 /* Ensure that the speeds in the array of states are less than the maxSpeed of the robot, 
    but also ensure the ratio between speeds is the same. */
 SwerveDriveKinematics.normalizeWheelSpeeds(states, maxSpeed);
@@ -63,7 +63,7 @@ SwerveModule class which handles moving the motors for a particular swerve modul
 
 Now we need to create the `move()` method for our `SwerveModule` class. It should take the desired speed as a fraction of our maximum speed and the desired angle as a fraction of \(2\pi\). Our method should compute how much the turn motor (the motor responsible for turning module) should move and set the speed of the drive motor (the motor responsible for rotating the wheel). We can do this with three methods: `computeSetpoints()`, `shouldReverse()`, and `convertAngle()`.
 
-```
+``` Java
 /**
      * Computes the setpoint values for speed and angle for a singular motor controller.
      * 
@@ -134,7 +134,7 @@ Now we need to create the `move()` method for our `SwerveModule` class. It shoul
 
 We can combine these three methods in our `move()` function as follows:
 
-```
+``` Java
 public void move(double normalizedSpeed, double angle) {
     double setpoints[] = SwerveMath.computeSetpoints(normalizedSpeed / maxSpeed,
                                                      angle / (2 * Math.PI),
@@ -148,7 +148,7 @@ public void move(double normalizedSpeed, double angle) {
 ## Home Absolute
 Currently, our `move()` method requires that our swerve modules measure their orientation as a counter-clockwise angle relative to facing straight forward so that passing an angle of 0 makes it face forward, 0.5 makes it face backward, etc. This is where the `HomeAbsolute` command comes in. `HomeAbsolute` requires knowing two things: the quadrature/analog position of the initial configuration and the gear ratio of the turn motor. We calculate our displacement from the configuration we want and set the sensor position to this displacement. As a result, whenever we read from this sensor (or direct a motor controller to go to a specific position), the sensor value will be relative to the intial configuration. Here is the bulk of the command for Talon_SRX motor controllers:
 
-```
+``` Java
 // The quadrature encoders are for turning the steer motor.
 // The analog encoders are for checking if the motors are in the right position.
 turn.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder);
@@ -169,26 +169,26 @@ setAngle(0.0);      // Your method for setting the angle of the module.
 
 Updating the robot's odometry for swerve drivetrains is similar to updating it for differential drivetrains. You can declare a [`SwerveDriveOdometry`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/SwerveDriveOdometry.html) object with:
 
-```
+``` Java
 SwerveDriveOdometry odometry = new SwerveDriveOdometry(/* initialPose */, /* robot heading */);
 ```
 
 And to update your `SwerveDriveOdometry` object:
 
-```
+``` Java
 odometry.update(/* robot heading */, /* SwerveModuleState objects */);
 ```
 
 The `SwerveModuleState` objects correspond to the actual speed and angle of the swerve modules, not the `SwerveModuleState` objects calculated using your `SwerveDriveKinematics` object. The order of the arguments should correspond with the order you specified in the constructor for your `SwerveDriveKinematics` object. For example, if you wrote: 
 
-```
+``` Java
 // Intentionally shuffled the locations to show that order matters
 SwerveDriveKinematics kinematics = new SwerveDriveKinematics(locationBR, locationFL, locationBL, locationFR);
 ```
 
 Then you would update your odometry with:
 
-```
+``` Java
 // stateFL, stateFR, etc. are SwerveModuleState objects
 odometry.update(/* robot heading */, stateBR, stateFL, stateBL, stateFR);
 ```

@@ -30,7 +30,7 @@ Key | Description
 
 The code for accessing a key is:
 
-```
+``` Java
 NetworkTableInstance.getDefault().getTable("limelight").getEntry("<variablename>").getDouble(0);
 ```
 
@@ -40,7 +40,7 @@ You may want to store the Limelight `NetworkTable` as a variable depending on ho
 There are several "Case Studies" in the [Limelight documentation](https://docs.limelightvision.io/en/latest). I will highlight a few and compare/contrast with the Limelight code used for the 2020 Build Season. I highly recommend watching the gifs of the code in action for each of the case studies.
 
 First up, aiming. Here is the featured code for aiming at a vision target (it is written in C++, but the math is the same regardless of the syntax):
-```
+``` Java
 float Kp = -0.1f;
 float min_command = 0.05f;
 
@@ -68,7 +68,7 @@ The code is active while a specific button is pressed. It gets the current horiz
 
 The second segment of code is for moving to a particular distance:
 
-```
+``` Java
 float KpDistance = -0.1f;
 
 std::shared_ptr<NetworkTable> table = NetworkTable::GetTable("limelight");

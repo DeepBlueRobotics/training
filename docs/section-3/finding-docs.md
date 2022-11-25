@@ -7,34 +7,36 @@ Here is a general outline of where stuff might be:
 - ArrayLists
 - Wrapper Classes (Integer, Double, etc)
 
-### [WPILIB Javadocs](https://github.wpilib.org/allwpilib/docs/release/java/index.html)
+### [WPILib Javadocs](https://github.wpilib.org/allwpilib/docs/release/java/index.html)
 
-- Anything concerning how the command based project runs, and Driver Station related classes
+- Anything concerning how the command based project runs, and driver station related classes
 - Joystick
 - SmartDashboard
 - Commands
 - Subsystems
-- Command Schedular
+- CommandScheduler
 
 ### Common Vendor Libraries
 
 - Motors, Motor Controllers, other hardware on the robot
-- [Revrobotics](https://codedocs.revrobotics.com/java/com/revrobotics/package-summary.html)
-    - Spark/Sparkmax motor controllers
+- [Rev Robotics](https://codedocs.revrobotics.com/java/com/revrobotics/package-summary.html)
+    - Spark/SparkMax motor controllers
     - Color Sensors
-- [Phoenix](https://api.ctr-electronics.com/phoenix/release/java/index.html)
+- [Cross the Road Electronics (CTRE/Phoenix)](https://api.ctr-electronics.com/phoenix/release/java/index.html)
     - Talon motor controllers
+    - CANCoders
 - Generally if you do not know, ask around what vendor the motor is from
-- You can also check in lib199 code the MotorControllerFactory class to see what class type is used when creating a certain motor controller
+- You can also check the `MotorControllerFactory` classin `lib199` to see what class type is used when creating a certain motor controller
     - Looking at imports `import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;` you can tell this motor is a phoenix
 
 ### [Lib199](https://github.com/DeepBlueRobotics/lib199)
 - Anything whose import has "lib199" in it
 - This code is written by Carlmont students that is reused every year
-- You cannot find documentation online
+- The javadocs are available [here](https://deepbluerobotics.github.io/lib199/).
+!!! unfinished
+    This might be removed if [my PR](https://github.com/DeepBlueRobotics/lib199/pull/27) is rejected
 - We have a long video detailing all classes in [lib199](https://www.youtube.com/watch?v=RMme7byAOPY)
-    - MotorControllerFactory
-!!! unfinished 
+!!! unfinished
     If you are reading this, remind one of the veteran programs to add timestamps to the lib199 video
 
 ### Others
