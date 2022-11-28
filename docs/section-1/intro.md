@@ -1,7 +1,16 @@
 !!! question
-    How does code physically interact with the robot?
+    How do we code the robot?
 
-Before you can effectively program a robot, you need to know what you're programming. This section will teach you about:
+What's covered in this section:
 
-- electronics, including the RoboRIO, motor controllers, sensors
-- pneumatics, including the compressor, solenoids, pistons
+- Setting up our FRC code development environment
+- An introduction to our robot code
+- What is git, why we use it, and how to use it
+
+***
+
+>**xkcd #303: Compiling**
+>
+>![compiling](https://imgs.xkcd.com/comics/compiling.png "'Are you stealing those LCDs?' 'Yeah, but I'm doing it while my code compiles.'")
+>
+>_<https://xkcd.com/303/>_

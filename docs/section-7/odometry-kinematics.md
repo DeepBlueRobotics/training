@@ -14,7 +14,7 @@ Before we cover odometry, we first need to cover the [`Translation2d`](https://f
 
 To declare an odometry object, you need to specify the robot's pose and heading. For [`DifferentialDriveOdometry`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveOdometry.html), you can do this as follows:
 
-```
+``` Java
 Rotation2d heading = /* Get gyro heading */;
 // Create odometry at (0, 0) at a specific heading
 DifferentialDriveOdometry odometry1 = new DifferentialDriveOdometry(heading)
@@ -25,7 +25,7 @@ DifferentialDriveOdometry odometry2 = new DifferentialDriveOdometry(heading, new
 
 Note that when initializing the odometry with only a heading, the angle in the `Pose2d` object will _not_ be equal to the heading. The `Pose2d` angle is relative to its initial heading.
 
-```
+``` Java
 // Create an odometry at (0, 0) facing 90 degrees.
 DifferentialDriveOdometry odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(90));
 // Print the current rotation. Should be 0 degrees.
@@ -60,7 +60,7 @@ Try not to confuse your coordinate systems! X means going forward/backward and Y
 
 The [Kinematics object](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveKinematics.html) can be constructed as follows for a Differential Drivetrain:
 
-```
+``` Java
 // trackWidthMeters is a double representing the distance, in meters, between two opposite wheels on the drivetrain.
 DifferentialDriveKinematics kinematics = new DifferentialDriveKinematics​(trackWidthMeters);
 ```

@@ -10,7 +10,7 @@ If you are using PID for a velocity closed-loop or a current closed-loop, you mi
 ## Implementation
 Often, one does not need to implement PID Control from the ground-up. Many motor controllers have PID controllers built into the class. All that needs to be done is set the setpoint, kP, kI, and kD (as well as other configurations that you may want). For example, all [`BaseMotorControllers`](https://www.ctr-electronics.com/downloads/api/cpp/html classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_base_motor_controller.html) in the CTRE Phoenix API (Talon_SRX and Victor_SPX) can do PID as follows:
 
-```
+``` Java
 // Config
 motor.config_kP(0, kP);
 motor.config_kI(0, kI);
@@ -24,7 +24,7 @@ motor.set(ControlMode.Position, 0);
 ```
 
 And for SparkMax controllers, we use the [`CANPIDController`](https://revrobotics.com/content/sw/max/sw-docs/java/com/revrobotics/CANPIDController.html):
-```
+``` Java
 CANPIDController pidController = motor.getPIDController();
 // Config
 pidController.setOutputRange(-1.0, 1.0);
@@ -39,7 +39,7 @@ pidController.setReference​(0.0, ControlType.kPosition, 0)
 ```
 
 For general purposes, you can use the [`PIDController`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html) class:
-```
+``` Java
 PIDController pidController = new PIDController(kP, kI, kD);
 pidController.setSetpoint(0);
 // Tell the PID loop how close we want to get to the setpoint in rotations

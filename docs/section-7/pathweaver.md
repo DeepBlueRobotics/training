@@ -9,7 +9,7 @@ The [`Trajectory`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/f
 
 If you want to create a trajectory given a list of points, you can use the [`TrajectoryGenerator`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrajectoryGenerator.html) class. There are many ways to generate a trajectory using this option, but I will only highlight the [`generateTrajectory()`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrajectoryGenerator.html#generateTrajectory(java.util.List,edu.wpi.first.wpilibj.trajectory.TrajectoryConfig)) method which uses a list of waypoints and a [`TrajectoryConfig`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/trajectory/TrajectoryConfig.html) object. For the `TrajectoryConfig`, there are several constraints we can add. As an example, let's set the maximum speed, maximum acceleration, kinematics, voltage constraint, and whether or not the paths are inverted.
 
-```
+``` Java
 TrajectoryConfig config = new TrajectoryConfig(maxSpeed, maxAcceleration);
 config.setKinematics(/* Your kinematics object */);
 DifferentialDriveVoltageConstraint voltConstraint = new DifferentialDriveVoltageConstraint(/* Your SimpleMotorFeedForward Object */, /* Your kinematics object */, maximumVoltage);
