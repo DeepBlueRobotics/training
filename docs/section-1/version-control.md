@@ -49,7 +49,7 @@ Navigate to this file in the repo (`docs/section-2/version-control.md`) and add 
     Nick Chen, 
     Jay Motamarry, 
     Ylann Bouis,
-    Raya,
+    Raya Skaf,
     Sofie Budman,
 
 
