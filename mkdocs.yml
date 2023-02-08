@@ -5,14 +5,15 @@ theme:
 
 extra:
   social:
-    - type: github
-      link: https://github.com/kevinzwang/training
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/DeepBlueRobotics/training
 
-repo_name: 'DeepBlueRobotics/training'
-repo_url: 'https://github.com/DeepBlueRobotics/training'
+repo_name: DeepBlueRobotics/training
+repo_url: https://github.com/DeepBlueRobotics/training
 
 extra_javascript: 
-    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
 
 markdown_extensions:
   - attr_list
