@@ -33,7 +33,6 @@ Navigate to this file in the repo (`docs/section-2/version-control.md`) and add 
     Nicole Jin,
     Avirral Agarwal,
     Uday Chaudhary,
-    Jack Neth,
     Alan Finkelstein,
     Alice Finkelstein,
     Bishista Paul,
