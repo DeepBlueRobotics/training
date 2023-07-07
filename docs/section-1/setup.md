@@ -6,6 +6,10 @@ The WPILib suite installs the IDE we write our code in and the tools needed to r
 
 Follow the instructions on [the official WPILib documentation](https://docs.wpilib.org/en/stable/docs/getting-started/getting-started-frc-control-system/wpilib-setup.html) for your respective OS.
 
+!!! note
+    Alternative methods of working on our code DO exist, but are generally more complicated and liable to break.
+    Ask a programming veteran for more info on them.
+
 ## Git and Github
 
 We use Git and Github to keep track of and collaborate on code.

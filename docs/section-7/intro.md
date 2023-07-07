@@ -16,4 +16,4 @@ Are you ready?
 
 ***
 
-Written by Alexander McDowell.
+(Mostly) Written by Alexander McDowell.

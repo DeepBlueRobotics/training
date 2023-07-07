@@ -17,4 +17,4 @@ More requirements for autonomous:
 - it can only use the encoder values to tell the command whether or not you have traveled far enough
 - it should not overshoot by a wide margin, but as long as it goes past 2 feet it's acceptable
 
-Good luck! Again, once you're done, simulate it and then check in with a programming lead or mentor then run your code on a robot!
+Good luck! Again, once you're done, check in with a veteran programmer and then run your code on a robot!
