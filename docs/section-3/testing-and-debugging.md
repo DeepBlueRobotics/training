@@ -2,7 +2,7 @@ So now we have the code, how do we actually run it and test?
 
 ## Deploying and Building Code
 
-Connect to the RoboRIO of the practice board with a USB cable by connecting to it's wifi. Afterwards, click on the WPILib logo on the top right of VSCode which looks like this: ![wpilib](https://avatars1.githubusercontent.com/u/19267233?s=400&v=4){: style="height:25px;width:25px"} or press `Ctrl-Shift-P` to pull up command palette, and then choose "Deploy Robot Code". It should take a minute to deploy the code before displaying "Build Successful" in green. 
+Connect to the RoboRIO of the practice board with a USB cable or by connecting to it's wifi. Afterwards, click on the WPILib logo on the top right of VSCode which looks like this: ![wpilib](https://avatars1.githubusercontent.com/u/19267233?s=400&v=4){: style="height:25px;width:25px"} or press `Ctrl-Shift-P` to pull up command palette, and then choose "Deploy Robot Code". It should take a minute to deploy the code before displaying "Build Successful" in green. 
 
 ### Wait. What is "deploying?"
 - Deploying the robot code sends the most recent code to the robot, so that the robot is updated with the new changes. 
