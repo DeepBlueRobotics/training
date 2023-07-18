@@ -10,7 +10,7 @@ If you do not have Python installed, follow the instructions to download it for 
 Clone the [training docs repo](https://github.com/DeepBlueRobotics/training>) with Github, with your preferred method.
 
 ### Python Dependencies
-This site uses the MkDocs Python package to convert Markdown files to a website, and a few more packages to provide additional functionality and theming. You can install all the necessary dependencies by running `python3 -m pip install -r requirements.txt` in terminal while in the root directory of this repo.
+This site uses the MkDocs Python package to convert Markdown files to a website, and a few more packages to provide additional functionality and theming. You can install all the necessary dependencies by running `python3 -m pip install -r requirements.txt` in your terminal while in the root directory of this repo.
 
 ## Development Workflow
 To develop locally, run `python3 -m mkdocs serve` in the root directory of this project. This will generate a local website which autorefreshes whenever changes are made. 
