@@ -10,7 +10,7 @@ When you are done reading, let's practice using the Github flow a bit.
 In the pull request, people can add comments, review the code, and merge the code into our `master` branch. This is how we make sure all the code that we put on our robot works and meets our quality standards. We won't be merging your code in this time around, but let a programming lead or mentor know once you get to this step so we can check what you've learned.
 
 ## Good Git Practices
-- Delete branches which are no longer relevant, or do not contain unique code.
+- Delete branches which are no longer relevant or do not contain unique code.
 
 - Add details into your commit message.
 
