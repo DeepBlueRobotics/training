@@ -6,6 +6,7 @@
 ## JavaDocs
 
 - [WPILib JavaDocs](https://first.wpi.edu/FRC/roborio/release/docs/java/index.html)
+- [Lib199 JavaDocs](https://deepbluerobotics.github.io/lib199/)
 - [CTRE JavaDocs (TalonSRX, VictorSPX)](http://www.ctr-electronics.com/downloads/api/java/html/index.html)
 - [REV Robotics JavaDocs (SPARK)](http://www.revrobotics.com/content/sw/max/sw-docs/java/index.html)
 - [Kauai Labs (AHRS)](https://www.kauailabs.com/public_files/navx-mxp/apidocs/java/index.html)
