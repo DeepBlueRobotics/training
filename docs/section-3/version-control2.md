@@ -16,6 +16,6 @@ In the pull request, people can add comments, review the code, and merge the cod
 
 A commit called `"Update Motors"` does not help anyone. Give it a title of what you did, and use the message space to actually go into detail about the changes (if needed).
 
-- Use [Github Desktop](https://desktop.github.com/), or, alternatively, github from the command line for comfortable programmers.
+- Use [GitHub Desktop](https://desktop.github.com/), or, alternatively, git from the command line for comfortable programmers.
 
-This is because VSCode's "Github" window does not have all the features of actual github (such as commit messages), and the fact that Github Desktop gives a more organized way to create branches, merge, view changes, etc. compared to VSCode
+This is because VSCode's "Git" window does not have all the features of actual GitHub (such as commit messages) and because GitHub Desktop gives a more organized way to create branches, merge, view changes, etc. compared to VSCode.
