@@ -14,7 +14,7 @@ Follow the instructions on [the official WPILib documentation](https://docs.wpil
 
 We use Git and Github to keep track of and collaborate on code.
 
-Again, follow the instructions for your respective OS to [get Git here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+Again, follow the instructions for your respective OS to [get Git here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Preferrably, install [Github Desktop](https://desktop.github.com/) for it's ease of use.
 
 If you do not have a [GitHub](https://github.com) account, create one now.
 
