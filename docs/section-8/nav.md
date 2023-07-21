@@ -22,7 +22,7 @@ If you're new to your terminal, then you're blind right now. You've got no clue 
 
 ### 1) `ls`
 
-`ls` is a short version of what it does: `List the things I can see.` In your file browser, you can see all of your things inside your `Downloads` folder when you double-click on it to get there. `ls` is the command that tells you what's there. But how do we "get there" in the terminal? How do we know where we are?
+`ls` is a short version of what it does: `List the things I can see.` In your file browser you can, for example, see all of your things inside your `Downloads` folder when you double-click on it to get there. `ls` is the command that tells you what's there. But how do we "get there" in the terminal? How do we know where we are?
 
 ### 2) `pwd`
 
