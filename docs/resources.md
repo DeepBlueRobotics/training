@@ -15,6 +15,7 @@
 
 ## Obscurities
 
+- [Updating Lib199 Video](https://drive.google.com/file/d/1CLS0XMqJ6Y5_mLtYdS3HUR-l4us7WAk-/view)
 - [Code Styling Guide](https://docs.google.com/document/d/1RVMY4_c5qCdh_hqiG-O33_-PpMKZtKSpayKp2bSBjTo/edit)
 - [Complex Obscure Buxfixes Doc](https://docs.google.com/document/d/1PtT4ICuIJJ_EW_JgU_YRrFyJk2P9CibrkjtXtpVGjXE/edit)
 
