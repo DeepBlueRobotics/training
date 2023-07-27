@@ -15,8 +15,8 @@
 
 ## Obscurities
 
-### Code References
 - [Code Styling Guide](https://docs.google.com/document/d/1RVMY4_c5qCdh_hqiG-O33_-PpMKZtKSpayKp2bSBjTo/edit)
+- [Complex Obscure Buxfixes Doc](https://docs.google.com/document/d/1PtT4ICuIJJ_EW_JgU_YRrFyJk2P9CibrkjtXtpVGjXE/edit)
 
 ### Github Usernames
 ```
