@@ -66,6 +66,7 @@ nav:
     - Creating and Following Paths: section-7/pathweaver.md
     - Limelight: section-7/limelight.md
     - Swerve Drivetrains: section-7/swerve-drive.md
+    - Safe Mode: section-7/safe-mode.md
   - Contributing: 
     - Introduction: contributing/intro.md
     - With Python: contributing/with-python.md
