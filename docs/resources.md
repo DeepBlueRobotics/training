@@ -11,3 +11,7 @@
 - [Kauai Labs (AHRS)](https://www.kauailabs.com/public_files/navx-mxp/apidocs/java/index.html)
 - [Playing With Fusion (TimeOfFlight)](https://www.playingwithfusion.com/frc/2020/javadoc/index.html)
 - [JUnit 4 JavaDocs](https://junit.org/junit4/javadoc/latest/index.html)
+
+## Helpful Java Websites
+- [Code Academy](https://www.codecademy.com/learn/learn-java/modules/learn-java-object-oriented-java-u/cheatsheet)
+- [W3 Schools](https://www.w3schools.com/java/default.asp)
