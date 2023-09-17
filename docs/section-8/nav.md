@@ -3,15 +3,17 @@
 
 # Navigating this Barren Wasteland of Text
 
-![Freshly Opened Windows Terminal Window](images/newterm/windowsc.png)
-![Freshly Opened Mac Terminal Window](images/newterm/mac.png)
-![Freshly Opened VSCode Terminal Window](images/newterm/vscode.png)
+![Freshly Opened Windows Terminal Window](img/newterm/windows.png)
+![Freshly Opened Mac Terminal Window](img/newterm/mac.png)
+<sub>A Windows and a MacOS terminal</sub>
 
 Your terminal might look a little different, depending where you are. It goes by many names: `Terminal`, `Console`, `PowerShell`, `Command Line`, etc. But no matter where you are, they're all the same if you type `bash` and hit enter.
 
 ### What did that just do?
 
-Terminals are finicky beasts. They take in commands, a line at a time. No syntax highlighting, no git integration, none of the comfort of VSCode. `bash` happens to be a command which sets the terminal "language" to... bash. How surprising. The reason to do this is because not all terminals speak the same language - and the person who wrote this happens to like using bash.
+Terminals are finicky beasts. They take in commands, a line at a time. No syntax highlighting, no git integration, none of the comfort of VSCode. `bash` happens to be a command which sets the terminal "language" to... bash. How surprising. 
+
+The reason to do this is because not all terminals speak the same language - and the person who wrote page this happens to like using bash.
 
 ## Looking around
 
@@ -81,7 +83,7 @@ You're in luck. The `cd` command has special keywords for doing things like that
 
 - `..`  "backwards", or rather the folder holding your current folder. However, you can't do this when you're in the `/` (AKA the "root") folder, since nothing contains that.
 - `~`  Your "user" folder - this is the `/Users/Jim` we were at, since our imaginary computer person was named "Jim"
-- `/`  The root directory. All the way back!
+- `/`  The root directory of your computer. All the way back!
 
 So `cd ..` will send you backwards, in our case from `/Users/Jim/Downloads` back into `/Users/Jim`
 
