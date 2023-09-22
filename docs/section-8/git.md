@@ -45,6 +45,9 @@ And do try and remember: Commit before you push, otherwise you're pushing nothin
 ## Committing
 <big> `git commit -a -m "Title" -m "Message"` </big>
 Git commit is a bit longer than most of the others, but for good reason. Keep the double-quotes!
+
+`-a` means to commit `a`ll changes.
+
 EX. use:
 ```
 Jim@Driverstation2 RobotCode2023 % git commit -a -m "Added Constants" -m "Added overloadSocks, megaChad, and barfBottleCount to constants"
