@@ -13,48 +13,8 @@ VS Code is the text editor we will be using to write and run our code, and shoul
 !!! note 
     If you look at the tutorial above, they mention the "Git: Clone" command from the Command Palette (⇧⌘P). However, it's good practice to use "Git: Clone(Recursive)" instead of just "Git(Clone)" because cloning the repo recursively also clones all the defined submodules in the repo as well.
 
-Navigate to this file in the repo (`docs/section-2/version-control.md`) and add your name to the list below.
 
-!!! success "People who have added their name"
-    Kevin Wang,
-    Adam Kalayjian,
-    Alice Chamberlin,
-    Ryan DeBarger,
-    Jonathan Shi,
-    James DiMartino,
-    Vernon Luk,
-    Ethan Htun,
-    Mia Vasquez,
-    Kevin Bachelor,
-    Megan Li,
-    Kasey Liu,
-    Garrett Maslyar,
-    Anita Beroza,
-    Nicole Jin,
-    Avirral Agarwal,
-    Uday Chaudhary,
-    Alan Finkelstein,
-    Alice Finkelstein,
-    Bishista Paul,
-    Jack Hansen, 
-    Arianna Hsu,
-    Ana Hoffman, 
-    John Hurley,
-    Xavier Lem,
-    Sean Weber,
-    Romit Bhatnagar,
-    Charles Ding, 
-    Mason Cao, 
-    Nick Chen, 
-    Jay Motamarry, 
-    Ylann Bouis,
-    Raya Skaf,
-    Sofie Budman,
-    Tara Krishnan,
-    Theodore Mui
-
-
-Now stage and commit your changes with the message `add [your name]`, and then push your changes. Refer to the [Git tutorial](https://guides.github.com/introduction/git-handbook/) and [VS Code tutorial](https://code.visualstudio.com/docs/editor/versioncontrol) if needed.
+Navigate to this [google doc](https://docs.google.com/document/d/1D_4Fbr4ktwU9jl2Mkpw2Kpv0Q4v-NhCO2m5agvL5TfY/edit) and add your github username to the list inside.
 
 
 !!! tip

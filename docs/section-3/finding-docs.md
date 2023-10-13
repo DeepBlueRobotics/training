@@ -39,6 +39,7 @@ Here is a general outline of where stuff might be:
 
 ### Others
 - [Limelight](https://docs.limelightvision.io/en/latest/)
+- "Resources" section of this website
 - Any version control commands is related to git
 - Google "[insert name] frc javadoc" or "[insert name] frc documentation" and hope for the best
 - Ask a programming veteran

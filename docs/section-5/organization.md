@@ -6,3 +6,4 @@ Essentially, it boils down to these main points:
 - Feature branches branch off `dev` and merge back into `dev` when completed. Feature branches should be the only places where new features are added. 
 - When we reach a point, a release branch is branched off dev, tested and fixed if necessary, and merged into both `master` and back into `dev` when we deem it stable enough.
 - Hotfix branches branch off `master` when we need to fix a problem that is in the `master` branch, and are merged back when the problem is fixed.
+- Unused/already merged branches should be deleted.

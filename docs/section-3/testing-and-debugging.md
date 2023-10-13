@@ -2,18 +2,22 @@ So now we have the code, how do we actually run it and test?
 
 ## Deploying and Building Code
 
-Connect to the RoboRIO of the practice board with a USB cable or connect to its radio. Afterwards, click on the WPILib logo on the top right of VSCode which looks like this: ![wpilib](https://avatars1.githubusercontent.com/u/19267233?s=400&v=4){: style="height:25px;width:25px"} or press `Ctrl-Shift-P` to pull up command palette, and then choose "Deploy Robot Code". It should take a minute to deploy the code before displaying "Build Successful" in green. 
+Connect to the RoboRIO of the practice board with a USB cable or by connecting to it's wifi. Afterwards, click on the WPILib logo on the top right of VSCode which looks like this: ![wpilib](https://avatars1.githubusercontent.com/u/19267233?s=400&v=4){: style="height:25px;width:25px"} or press `Ctrl-Shift-P` to pull up command palette, and then choose "Deploy Robot Code". It should take a minute to deploy the code before displaying "Build Successful" in green. 
+
+### Wait. What is "deploying?"
+- Deploying the robot code sends the most recent code to the robot, so that the robot is updated with the new changes. 
+- This is different to building the code, which simply prepares it for deploying and checks for (some) errors. 
+- Deploying the code also builds it, so you do not have to build and then also deploy the code every time you make a change
 
 You can also build your code to see if your code compiles correctly without having to connect to a RoboRIO. Just do the steps above and instead of "Deploy Robot Code", choose "Build Robot Code".
 You may see other options such as "Test", "Simulate", etc. We will cover those later.
 
-Deploying code to the RoboRIO only works on a Windows computer; however, you can still build your code to see if it compiles correctly before moving onto a Windows computer to complete this part.
+Enabling and controlling the robot only works on a Windows computer; however you can still build, debug, and deploy your code on any kind of computer... **with some fiddling**.
 
 !!! note
-    For more advanced programmers, the commands to deploy the robot code are just gradle tasks. You can emulate building and deploying by calling certain gradle commands listed [here](https://docs.wpilib.org/en/stable/docs/software/advanced-gradlerio/gradlew-tasks.html).
+    For more advanced programmers, or mac/linux users, the commands to deploy/build the robot code are done by calling certain gradle commands listed [here](https://docs.wpilib.org/en/stable/docs/software/advanced-gradlerio/gradlew-tasks.html).
 
 ## Driver Station
-
 This is the actual application on the driver station computer the controls the robot and reports data from it. WPILib provides a [general overview of everything](https://docs.wpilib.org/en/stable/docs/software/driverstation/driver-station.html) on the driver station, so read that. Here we will provide a general summary of what you need to know.
 
 ### Operation Tab
@@ -29,7 +33,7 @@ This is where you can configure the ports of your joysticks and other controller
 Displays error and warning messages.
 
 ## Debugging
-We will not cover cases where the code fails to build, since this usually means there is a syntax error which can be easy to fix. The hardest bugs to fix are the ones where the program builds and deploys, but the robot does not do the exact task you wanted it to do. Sometimes it is either a programming or a sen-act problem.
+We will not cover cases where the code fails to build, since this usually means there is a syntax error which can be easy to fix. The hardest bugs to fix are the ones where the program builds and deploys, but the robot does not do the exact task you wanted it to do. Generally, it is either a programming or a sen-act problem... but it can be anything from cat hair stuck in motors to the fact you forgot to re-deploy your robot code before running it again.
 
 ### Code crashes when running
 If your robot suddenly stops running while running the code, that can mean the code crashed. You can check [driver station logs](https://docs.wpilib.org/en/stable/docs/software/driverstation/driver-station-log-viewer.html) to see if there is a stack trace. Driver station logs also include a lot of information on events and other graphs.
@@ -39,6 +43,9 @@ Common errors that crash the code include:
 - Index out of bounds of array
 
 There are also configurations set so that if a motor gets too hot, the motor will stop running. There is similar behavior for all sen-act components, whether it be with temperature or voltage. You can also check for those in driver station logs.
+
+!!! note
+    A **Stack Trace** is a fancy programming word for "words that tell you what went wrong and what ran the thing that broke"
 
 ### Wrong robot behavior (SmartDashboard/ShuffleBoard & OutlineViewer)
 However, just looking at driver logs may not help. What if the code does not crash at all, but the behavior is wrong? There is a chance that the data may be wrong, so you can check what data is being read in real-time using Shuffleboard/Smartdashboard.
@@ -53,7 +60,8 @@ In order to get whatever value is assiociated with the key, we do
 !!! warning
     The method `putNumber(key, val)` will replace whatever value is in ShuffleBoard with the `val`. If you have this in a `periodic()` method, then the value will constantly be replaced and you will not be able to change the value via ShuffleBoard.
 
-`putNumber` is not the only method that can be ultilized. [Here](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SmartDashboard.html) is SmartDashboard's javadoc which shows all the data that can be stored.
+`putNumber` is not the only method that can be ultilized - `putString` and `putBoolean` also exist. 
+[Here](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SmartDashboard.html) is SmartDashboard's javadoc which shows all the data that can be stored.
 
 One significant method is `putData(Sendable object)`. Subsystems and commands implement the `Sendable` interface, so you can put an entire subsystem as one block of data onto Shuffleboard. Some lib199 classes also implement the `Sendable` interface, so you can also use `putData()` for those classes. You do not have to use a bunch of `putNumber()` or `getNumber()` methods for data, all the data is thrown into a nice box for convenience. For more details, see [this](https://docs.wpilib.org/en/stable/docs/software/telemetry/robot-telemetry-with-sendable.html).
 
@@ -65,12 +73,13 @@ Sometimes, the application may just randomly break and glitch out. Driver statio
 ### Common "behavior" bugs
 Generally, you will want to replicate the behavior that is causing the error. This is why a lot of testing is required to have effective code. Once you know a specific condition generates a certain erroneous behavior, you can look at how that condition causes a bug and fix it.
 
-Here are some bugs that might fix your issue:
+Common bugs:
 
-- Joystick mounting methods `whenPressed()` and `whileHeld()` mean very different things!
+- You forgot to deploy the code / turn the robot on
+- Joystick mounting methods `onTrue` and `whileTrue` mean very different things!
 - A command does not end properly
 - You swapped some variables (you would notice this through Shuffleboard)
 
-A lot of the times, the motor controller can get unplugged or broken. In that case blame sen-act. It is also helpful to know what the LED lights on a motor means, which you can find online.
+Sometimes, the motor controller can get unplugged or broken. It is also helpful to know what the LED lights on a motor means, which you can find online.
 
 Obviously, this list is not exhuastive and there could be numerous things that is causing your code to not work. It just takes a ton of practice to be able to notice bugs and how to fix them.

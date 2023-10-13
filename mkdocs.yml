@@ -67,6 +67,11 @@ nav:
     - Limelight: section-7/limelight.md
     - Swerve Drivetrains: section-7/swerve-drive.md
     - Safe Mode: section-7/safe-mode.md
+  - 8. The Terminal:
+    - Introduction: section-8/intro.md
+    - Navigation: section-8/nav.md
+    - Github: section-8/git.md
+    - Building And Deploying: section-8/gradle.md
   - Contributing: 
     - Introduction: contributing/intro.md
     - With Python: contributing/with-python.md

@@ -6,11 +6,15 @@ The WPILib suite installs the IDE we write our code in and the tools needed to r
 
 Follow the instructions on [the official WPILib documentation](https://docs.wpilib.org/en/stable/docs/getting-started/getting-started-frc-control-system/wpilib-setup.html) for your respective OS.
 
+!!! note
+    Alternative methods of working on our code DO exist, but are generally more complicated and liable to break.
+    Ask a programming veteran for more info on them.
+
 ## Git and Github
 
 We use Git and Github to keep track of and collaborate on code.
 
-Again, follow the instructions for your respective OS to [get Git here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+Again, follow the instructions for your respective OS to [get Git here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Preferrably, install [Github Desktop](https://desktop.github.com/) for it's ease of use.
 
 If you do not have a [GitHub](https://github.com) account, create one now.
 
