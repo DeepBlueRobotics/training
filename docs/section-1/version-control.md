@@ -13,6 +13,7 @@ VS Code is the text editor we will be using to write and run our code, and shoul
 !!! note 
     If you look at the tutorial above, they mention the "Git: Clone" command from the Command Palette (⇧⌘P). However, it's good practice to use "Git: Clone(Recursive)" instead of just "Git(Clone)" because cloning the repo recursively also clones all the defined submodules in the repo as well.
 
+
 Navigate to this [google doc](https://docs.google.com/document/d/1D_4Fbr4ktwU9jl2Mkpw2Kpv0Q4v-NhCO2m5agvL5TfY/edit) and add your github username to the list inside.
 
 
