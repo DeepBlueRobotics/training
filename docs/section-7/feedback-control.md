@@ -81,6 +81,9 @@ To get those ideal constants... you kind of just guess and check. WPILIB provide
 ### kIz or "I-Zone"
 Sometimes, the I term can accumulate error very fast and overshoot the target. In that case, we only want the I term to be accumulating error when the error is smaller than a certain threshold. The "I-Zone", typically denoted as kIz, lets you set that threshold.
 
+!!! warning
+    Generally, it is discouraged to use the I term because it is easy for the mechanism to overshoot. Feedforward should be used instead of the I term. We will explain why in the Feedforward section.
+
 ### kF or "Feed-Forward Gain"
 This is a sneak peek to what will be discussed in the Feedforward section, but given the target, what is the estimated motor output necessary to get to the target? Say for example we need get a motor to a certain velocity. It probably needs a set amount of voltage to get to that speed, so we should just add it. Note that this is different from kP since kP contributes proportionally to the error, not the target. kF is usually only used for velocity or current (draw) closed loop control, and even then not really used most of the time. The content discussed in the Feed-forward section essentially does what kF does, but better. However, sometimes you will see this constant in other documentation so it is nice to know what it is.
 
