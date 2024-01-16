@@ -12,6 +12,9 @@ There are two fundamental types of mechanism controller that we will cover here:
 
 **Feedforward control (or “open-loop control”)** refers to the class of algorithms which incorporate knowledge of how the mechanism under control is expected to operate. For example, using physics we can account for the force of gravity, friction, and other forces. Using this “model” of operation, the control input is chosen to make the mechanism get close to where it should be.
 
+!!! note
+    The Feedforward control section is still being worked on, so only Feedback control is discussed.
+
 **Feedback control (or “closed-loop control”)** refers to the class of algorithms which use sensors to measure what a mechanism is doing, and issue corrective commands to move a mechanism from where it actually is, to where you want it to be.
 
 It is usually common and best to use both. In the next few pages, we will discuss both control types extensively.
