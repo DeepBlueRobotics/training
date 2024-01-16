@@ -13,7 +13,7 @@ Your terminal might look a little different, depending where you are. It goes by
 
 Terminals are finicky beasts. They take in commands, a line at a time. No syntax highlighting, no git integration, none of the comfort of VSCode. `bash` happens to be a command which sets the terminal "language" to... bash. How surprising. 
 
-The reason to do this is because not all terminals speak the same language - and the person who wrote page this happens to like using bash.
+The reason to do this is because not all terminals speak the same language - and the person who wrote this page happens to like using bash.
 
 ## Looking around
 
