@@ -59,6 +59,7 @@ double calculate(double currentPosition, double targetPosition) {
 For those that know calculus, the formal definition of PID control is:
 
 $$ u(t) = K_{p}e(t) + \int_{0}^{t}e(\tau)d\tau + K_{d}\frac{de}{dt} $$
+
 where u(t) is the control effort (amount of feedback at time t), e(t) is the error at current time t, and \\(\tau\\) is the integration variable. Do not worry about the formula as long as you understand the video and how the code works.
 
 ### **PID in a nutshell:**
