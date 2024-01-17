@@ -18,3 +18,9 @@ There are two fundamental types of mechanism controllers that we will cover here
 **Feedback control (or “closed-loop control”)** refers to the class of algorithms which use sensors to measure what a mechanism is doing, and issue corrective commands to move a mechanism from where it actually is, to where you want it to be. Even with unlimited study, it is impossible to know every force that will be exerted on a robot’s mechanism in perfect detail. So feedback control is used to correct the error not covered by feedforward control.
 
 It is usually common and best to use both. In the next few pages, we will discuss both control types extensively.
+
+## Trapezoid Profiles
+
+It is often easy to get a motor to move at a certain velocity and acceleration using Feedforward + Feedback (which will be explained in the next few articles). However, what if we want a motor to turn to an exact position? In order to use feedforward effectively for position control, we need to come up with a sequence of velocities that will take the robot mechanism to the desire position. This is called a motion profile. 
+
+In some situations, using a motion profile is overkill and feedback control is enough. We will explain why that sometimes pure pid or motion profiling would be for certain situations.
