@@ -90,7 +90,7 @@ This is a sneak peek to what will be discussed in the Feedforward section, but g
 ### kMaxOutput, kMinOutput
 Should be self-explanatory, used to make sure you don't give your mechanism too much power
 
-### setReference(), setSetpoint(), etc
+### `setReference()`, `setSetpoint()`, etc
 There are many names for "target", such as "reference", "setpoint", and more. When tuned properly, after you set the target the motor should drive to the setpoint.
 
 There are many other methods and configurations that are used to PID control which you can find in the documentation. 
