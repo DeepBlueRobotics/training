@@ -62,6 +62,7 @@ nav:
     - Common Sensors: section-7/sensors.md
     - Introduction to Control Algorithms: section-7/control.md
     - Feedback Control (PID): section-7/feedback-control.md
+    - Feedforward Control: section-7/feedforward-control.md
     - Odometry and Kinematics: section-7/odometry-kinematics.md
     - Drivetrain Characterization: section-7/drivetrain-characterization.md
     - Creating and Following Paths: section-7/pathweaver.md
