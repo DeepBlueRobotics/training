@@ -74,7 +74,9 @@ In general, the "optimal" PID controller gets the error to zero as fast as possi
 
 ![PID Tuning Graphs](pid_tuning_graphs.png)
 
-To get those ideal constants... you kind of just guess and check. WPILIB provides a nice simulation of how it is like to tune these constants. Go to this [page](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/tuning-flywheel.html) and skip everything until you get to "Pure Feedback Control". Follow the instructions and see if you can get the optimal tuning solution.
+To get those ideal constants... you kind of just guess and check. WPILIB provides a nice simulation of how it is like to tune these constants.
+### [Click here to try tuning a PID Controller](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/tuning-flywheel.html)
+Scroll until you get to "Pure Feedback Control". Follow the instructions and see if you can get the optimal tuning solution. **DO NOT SKIP THIS PRACTICE**
 
 ## Other constants/terms
 
