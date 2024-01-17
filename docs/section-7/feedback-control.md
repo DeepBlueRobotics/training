@@ -161,6 +161,9 @@ Thankfully, most of the math is handled by WPIlib or motor controller firmware. 
 
 But PID is just the beginning. There are many more complicated and more powerful control methods built upon PID that will be discussed later in this section, including Following Trajectories using PathPlanner and Drivetrain Characterization. In addition, PID is often not enough to properly control a mechanism, feedforward algorithms are also needed...
 
+## Additional materials
+[This YouTube playlist explains in more detail of how PID works. Not required but highly recommended](https://www.youtube.com/watch?v=wkfEZmsQqiA&list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y)
+
 ***
 
 > **xkcd #689: FIRST Design**
