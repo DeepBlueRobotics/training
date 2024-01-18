@@ -55,7 +55,9 @@ double calculate(double currentPosition, double targetPosition) {
     return kP * error + accumulatedError + kD * derivative;
 }
 ```
-
+!!! warning
+    The code excerpt is only meant to show how PID works. This is not how we actually implement PID, but should give you a better idea of the inner workings of PID.
+    
 For those that know calculus, the formal definition of PID control is:
 
 $$ u(t) = K_{p}e(t) + \int_{0}^{t}e(\tau)d\tau + K_{d}\frac{de}{dt} $$
