@@ -57,7 +57,7 @@ double calculate(double currentPosition, double targetPosition) {
 ```
 !!! warning
     The code excerpt is only meant to show how PID works. This is not how we actually implement PID, but should give you a better idea of the inner workings of PID.
-    
+
 For those that know calculus, the formal definition of PID control is:
 
 $$ u(t) = K_{p}e(t) + \int_{0}^{t}e(\tau)d\tau + K_{d}\frac{de}{dt} $$
@@ -79,7 +79,7 @@ In general, the "optimal" PID controller gets the error to zero as fast as possi
 
 To get those ideal constants... you kind of just guess and check. WPILIB provides a nice simulation of how it is like to tune these constants.
 ### [Click here to try tuning a PID Controller. SCROLL TO "PURE FEEDBACK CONTROL", SKIP EVERYTHING ELSE](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/tuning-flywheel.html)
-Follow the instructions and see if you can get the optimal tuning solution. **DO NOT SKIP THIS PRACTICE**
+Follow the instructions and see if you can get the optimal tuning solution. The model simulates a flywheel shooter mechanism and halfway through the simulation it shoots a ball. **DO NOT SKIP THIS PRACTICE**
 
 ## Other constants/terms
 
