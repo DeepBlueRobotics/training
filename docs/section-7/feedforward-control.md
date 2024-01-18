@@ -47,6 +47,9 @@ motor.setVoltage(feedforwardVolts);
 !!! warning
     The amount of voltage calculated is the amount of voltage used to **MAINTAIN** the motor at the specified velocity and acceleration. When `motor.setVoltage(feedforwardVolts)` is run, that does not automatically drive the motor to the specified velocity and acceleration. If the code was run when the motor is at rest, then the voltage will be used the overcome the static friction and accelerate the motor, not to maintain the motor at the specified velocity and acceleration as the motor is not at the specified velocity.
 
+!!! warning
+    The code excerpt is only meant to show how feedforward works. This is not how we actually implement feedforward, but should give you a better idea of the inner workings of feedforward.
+
 ## System Idenfication
 
 ## Implementation
