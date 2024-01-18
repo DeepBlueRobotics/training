@@ -156,7 +156,7 @@ if (!pidController.atSetpoint()) {
 pidController.reset();
 ```
 
-You need to check out the documentation for each of these classes and familiarize youself with them.
+You need to check out the documentation for each of these classes and familiarize youself with them. [Definitely read WPILIB's documentation on their PID Controllers](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/pidcontroller.html).
 
 # Conclusion
 Thankfully, most of the math is handled by WPIlib or motor controller firmware. However, it is important to understand what is actually happening so that you can properly tune your control loops.
