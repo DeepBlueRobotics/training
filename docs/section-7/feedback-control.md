@@ -81,7 +81,7 @@ To get those ideal constants... you kind of just guess and check. WPILIB provide
 ### [Click here to try tuning a PID Controller. SCROLL TO "PURE FEEDBACK CONTROL", SKIP EVERYTHING ELSE](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/tuning-flywheel.html)
 Follow the instructions and see if you can get the optimal tuning solution. The model simulates a flywheel shooter mechanism and halfway through the simulation it shoots a ball. **DO NOT SKIP THIS PRACTICE**
 
-!!! note:
+!!! note
     Often times you don't actually have to use all the constants. In fact, it is generally advised not to use the I constant. When you omit the 'I' variable, the controller is called a "PD" rather than a "PID" controller. Similarly if you omit the 'I' and 'D' variable, the controller is called a P controller.
     If P, PD, or PI controller works, leave it be. You should always implement the easiest solution to avoid bugs and confusion.
 
