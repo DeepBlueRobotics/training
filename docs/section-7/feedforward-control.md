@@ -22,7 +22,7 @@ Feedforward isn't limited to controlling velocity, you can determine the voltage
 We will first learn about the most common feedforward model used for motors, then show how the model can be used to control motor velocity and acceleration. Afterwards, we will cover more complicated mechanisms such as the arm subsystem.
 
 ## The Permanent-Magnet DC Motor Feedforward Equation
-[Click here to read about the equation](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/introduction-to-feedforward.html). Don't read past the "Variants of the Feedforward Equation".
+[Click here to read about the equation](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/introduction-to-feedforward.html).
 
 For those that only want a quick summary. Here is the equation:
 
@@ -49,6 +49,8 @@ motor.setVoltage(feedforwardVolts);
 
 !!! warning
     The code excerpt is only meant to show how feedforward works. This is not how we actually implement feedforward, but should give you a better idea of the inner workings of feedforward.
+
+In addition, feedforward can also be used for elevators and arms. There is one additional constant \\(k_{g}\\) which is used to counteract the force of gravity.
 
 ## Tuning and System Idenfication
 Similar to PID, you can tune values by manually guessing and checking.
@@ -132,6 +134,9 @@ Note that [SysIdRoutineLog](https://github.wpilib.org/allwpilib/docs/release/jav
 
 You may also notice that the only values that the logger logs are of instances that must be of `MutableMeasure<(insert measure)>`. This records the values along with its units. You can't just log a value.
 
+!!! note
+    Notice that you can write anything in the `driveMotor()` and `logMotor()` methods. You are not limited to only powering a single motor but can power an entire elevator, arm, etc. SysID also analyzes elevators and arms which calculate the \\(k_{g}\\) constant.
+
 After you set up the testing parameters and mechanism to test, the SysIdRoutine provides functions that return a command to run the test.
 
 ```java
@@ -150,9 +155,24 @@ Typically it is recommended to bind these commands to controller buttons or an a
 GenericHID controller = new GenericHID(0);
 Shooter shooter = new Shooter();
 
-new JoystickButton(controller, Button.kY.value).whileTrue(shooter.sysIdQuasistatic(SysIdRoutine.Direction.kForward));
+new JoystickButton(controller, Button.kY.value)
+    .whileTrue(
+        shooter.sysIdQuasistatic(SysIdRoutine.Direction.kForward)
+    );
 ```
 Now you are ready to enable and run the tests! Typically the longer you run them, the more data you get which will lead to more accurate calculations. However, keep in mind not to run too long for safety purposes. After all four tests have been run, use the [DataLogTool](https://docs.wpilib.org/en/stable/docs/software/telemetry/datalog-download.html) to get the files.
+
+Afterwards, put them into the SysID tool which can be opened by `Ctrl + Shift + P` and typing `Start Tool`. Here are the following articles for analyzing the data and determining the constants:
+
+- [Loading Data](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/system-identification/loading-data.html)
+- [Viewing Diagnostics](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/system-identification/viewing-diagnostics.html)
+- [Analyzing Data](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/system-identification/analyzing-gains.html)
+- [Additional Utilities and Tools](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/system-identification/additional-utils.html)
+
+Once you have gotten good data and analysis, you should obtain kS, kV, kA and PID constants.
+
+!!! warning
+    The PID constants are only a starting point and should be tuned more.
 
 ## Implementation
 
