@@ -205,3 +205,9 @@ motor.setVoltage(pid.calculate(encoder.getDistance(), setpoint) + feedforward);
 
 Using Feedforward and Feedback, you should now be able to control your mechanisms to go at desired velocities and accerations. However, what if you want your motor to turn to a specific position? (Hint: read next section on trapezoidal control).
 
+## Extra: Swim Shady's (2023 Charged Up) Double Jointed Arm
+
+!!! warning
+    Requires a high level understanding of feedforward + feedback, trapezoidal control, and physics (moment of inertia, torque, etc)
+
+[Here is a google doc that explains the math/physics behind creating and characterizing (running special System Idenfication procedures) a double jointed arm](https://docs.google.com/document/d/1I1YYVotjAXqaMdx4E6DjC-nBDbp6SSmooaWYvMjVmsA/edit?usp=sharing). Due to the complexity of having another joint attached to an already rotating arm, the feedforward calculations done by System Idenfication and other tools was not enough and we needed to do our own math.
