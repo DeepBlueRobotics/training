@@ -3,8 +3,6 @@
   type="text/javascript">
 </script>
 
-## Feedforward Control
-
 Feedforward control means providing the mechanism with the control signal you think it needs to make the mechanism do what you want, without any knowledge of where the mechanism currently is. If you ever used a joystick to "directly" control the speed of a motor through applied voltage, maybe like this:
 
 ```java
@@ -193,5 +191,14 @@ motor.setVoltage(volts);
 
 That's it!
 Similarly WPILIB provides a `ArmFeedforward` and an `ElevatorFeedforward` class whose only difference from `SimpleFeedforward` is that it accepts a \\(k_{g}\\) value.
+
+## Combining Feedforward and Feedback Control
+
+[Read WPILIB's article](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/combining-feedforward-feedback.html)
+(It is as easy as just adding them together)
+```java
+// Adds a feedforward to the loop output before sending it to the motor
+motor.setVoltage(pid.calculate(encoder.getDistance(), setpoint) + feedforward);
+```
 
 ## Conclusion
