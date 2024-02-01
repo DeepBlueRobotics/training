@@ -158,7 +158,7 @@ new JoystickButton(controller, Button.kY.value)
         shooter.sysIdQuasistatic(SysIdRoutine.Direction.kForward)
     );
 ```
-Now you are ready to enable and run the tests! Typically the longer you run them, the more data you get which will lead to more accurate calculations. However, keep in mind not to run too long for safety purposes. After all four tests have been run, use the [DataLogTool](https://docs.wpilib.org/en/stable/docs/software/telemetry/datalog-download.html) to get the files.
+Now you are ready to enable and run the tests! Typically the longer you run them, the more data you get which will lead to more accurate calculations. After all four tests have been run, use the [DataLogTool](https://docs.wpilib.org/en/stable/docs/software/telemetry/datalog-download.html) to get the files.
 
 Afterwards, put them into the SysID tool which can be opened by `Ctrl + Shift + P` and typing `Start Tool`. Here are the following articles for analyzing the data and determining the constants:
 
