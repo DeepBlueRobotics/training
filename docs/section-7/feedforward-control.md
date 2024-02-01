@@ -174,7 +174,7 @@ Once you have gotten good data and analysis, you should obtain kS, kV, kA and PI
 
 ## Implementation
 
-WPILIB provides a [SimpleMotorFeedforward](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html) class that runs feedforward for a motor. After you obtain your feedforward constants (kS, kV, kA) from SysID, you throw them into the constructor of the `SimpleMotorFeedforward` and use the listed methods.
+WPILIB provides a [SimpleMotorFeedforward](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html) class that runs feedforward for a motor. After you obtain your feedforward constants (kS, kV, kA) from SysID, you put them into the constructor of the `SimpleMotorFeedforward` and use the listed methods.
 ```java
 // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
 SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(kS, kV, kA);
