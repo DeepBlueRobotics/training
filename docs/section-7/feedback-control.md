@@ -20,6 +20,10 @@ As a summary, the controller has 3 parts:
 The three quantities are added together to drive the error to zero. The three constants can be "tuned" (by changing around their values) for the error to be driven faster, slower, or to be less volatile.
 
 In code, it looks something like this:
+
+!!! warning
+    The code excerpt is only meant to show how PID works. This is not how we actually implement PID, but should give you a better idea of the inner workings of PID.
+    
 ``` Java
 
 // kP, kI, kD can be any value, for example kP can = 0.5
@@ -55,8 +59,6 @@ double calculate(double currentPosition, double targetPosition) {
     return kP * error + accumulatedError + kD * derivative;
 }
 ```
-!!! warning
-    The code excerpt is only meant to show how PID works. This is not how we actually implement PID, but should give you a better idea of the inner workings of PID.
 
 For those that know calculus, the formal definition of PID control is:
 
