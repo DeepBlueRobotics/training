@@ -203,7 +203,10 @@ motor.setVoltage(pid.calculate(encoder.getDistance(), setpoint) + feedforward);
 
 ## Conclusion
 
-Using Feedforward and Feedback, you should now be able to control your mechanisms to go at desired velocities and accerations. However, what if you want your motor to turn to a specific position? (Hint: read next section on trapezoidal control).
+Using Feedforward and Feedback, you should now be able to control your mechanisms to go at desired velocities and accelerations. 
+
+!!! question
+    However, what if you want your motor to turn to a specific position? (Hint: read next section on trapezoidal control)
 
 ## Extra: Swim Shady's (2023 Charged Up) Double Jointed Arm
 
