@@ -54,7 +54,7 @@ In addition, feedforward can also be used for elevators and arms. There is one a
 ## Tuning and System Idenfication
 Similar to PID, you can tune values by manually guessing and checking.
 
-[Click here to try tuning a feedforward controller. SCROLL TO "PURE FEEDFORWARD CONTROL", SKIP EVERYTHING ELSE](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/tuning-flywheel.html)
+[Click here to try tuning a feedforward controller. Scroll to "Pure Feedforward Control", skip everything else](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/tuning-flywheel.html)
 
 Follow the instructions and see if you can get the optimal tuning solution. The model simulates a flywheel shooter mechanism and halfway through the simulation it shoots a ball. **DO NOT SKIP THIS PRACTICE**
 
