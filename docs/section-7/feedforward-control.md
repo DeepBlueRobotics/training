@@ -76,8 +76,12 @@ For those that want a quick summary:
 
 The SysID tool runs two types of tests: 
 
-- Quasistatic: mechanism is gradually sped up (determines amount of voltage needed for velocity)
-- Dynamic: mechanism is given a constant 'step voltage' (determines amount of voltage needed for acceleration)
+- Quasistatic:
+    - Mechanism is gradually sped up
+    - Determines amount of voltage needed for velocity
+- Dynamic: 
+    - mechanism is given a constant 'step voltage'
+    - determines amount of voltage needed for acceleration
 
 These tests can be run backwards and forwards. To create the test, you have to write create a SysIdRoutine object:
 ```java
