@@ -49,6 +49,27 @@ We have significant overlap with SenAct training. If you want more details on Se
     - Attached to motor or built into motor
     - Record how much a motor has spun
         - Can find RPM, distance spun, etc
+    ### Different types of encoders:  
+    #### 1) Relative Encoders:
+    - Measure relative distance
+    - Give informations about motion of the shaft in 2 directions (positive and negative) and only provide data while the shaft is rotating. Requires a reference point; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last reset. 
+    - Where to plug in:
+        - The motor wire (six pins, comes out of the side of the motor, rainbow) = relative encoder. 
+        - Goes into the side of the motor controller
+        - Plug in from NEO/NEO550
+    - Class to use:
+        - Use the Encoder class AKA Quadrature encoder 
+
+    #### 2) Absolute Encoder: 
+    - Give the absolute coordinate of the parts in a robot, work under any circumstances like the robot breaking down etc. 
+    - Duty Cycle Encoders are a type of absolute encoder and output a pulse where the length of a pulse is proportional to the absolute position of the encoder. 
+    - Where to plug in:
+        - Input goes into the top of the motor controller
+        - Output goes into RoboRIO
+    - Class to use: 
+        - DutyCycleEncoder
+        
+            
 - navX
     - Measures the angle turned for the robot
 - Limelight
