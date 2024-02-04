@@ -20,6 +20,10 @@ As a summary, the controller has 3 parts:
 The three quantities are added together to drive the error to zero. The three constants can be "tuned" (by changing around their values) for the error to be driven faster, slower, or to be less volatile.
 
 In code, it looks something like this:
+
+!!! warning
+    The code excerpt is only meant to show how PID works. This is not how we actually implement PID, but should give you a better idea of the inner workings of PID.
+    
 ``` Java
 
 // kP, kI, kD can be any value, for example kP can = 0.5
@@ -59,6 +63,7 @@ double calculate(double currentPosition, double targetPosition) {
 For those that know calculus, the formal definition of PID control is:
 
 $$ u(t) = K_{p}e(t) + \int_{0}^{t}e(\tau)d\tau + K_{d}\frac{de}{dt} $$
+
 where u(t) is the control effort (amount of feedback at time t), e(t) is the error at current time t, and \\(\tau\\) is the integration variable. Do not worry about the formula as long as you understand the video and how the code works.
 
 ### **PID in a nutshell:**
@@ -75,8 +80,14 @@ In general, the "optimal" PID controller gets the error to zero as fast as possi
 ![PID Tuning Graphs](pid_tuning_graphs.png)
 
 To get those ideal constants... you kind of just guess and check. WPILIB provides a nice simulation of how it is like to tune these constants.
-### [Click here to try tuning a PID Controller](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/tuning-flywheel.html)
-Scroll until you get to "Pure Feedback Control". Follow the instructions and see if you can get the optimal tuning solution. **DO NOT SKIP THIS PRACTICE**
+
+[Click here to try tuning a PID Controller. Scroll to "Pure Feedback Control, skip everything else](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/tuning-flywheel.html)
+
+Follow the instructions and see if you can get the optimal tuning solution. The model simulates a flywheel shooter mechanism and halfway through the simulation it shoots a ball. **DO NOT SKIP THIS PRACTICE**
+
+!!! note
+    Often times you don't actually have to use all the constants. In fact, it is generally advised not to use the I constant. When you omit the 'I' variable, the controller is called a "PD" rather than a "PID" controller. Similarly if you omit the 'I' and 'D' variable, the controller is called a P controller.
+    If P, PD, or PI controller works, leave it be. You should always implement the easiest solution to avoid bugs and confusion.
 
 ## Other constants/terms
 
@@ -120,7 +131,11 @@ motor.set(ControlMode.Position, 0);
 
 And for SparkMax, SparkFlex, or other Rev motor controllers, we use the [`SparkPIDController`](https://codedocs.revrobotics.com/java/com/revrobotics/sparkpidcontroller) (Take a look at the javadocs). Notice how there are other methods that let you control the velocity, acceleration, setting target, and more:
 ``` Java
-CANPIDController pidController = motor.getPIDController();
+// Make CANSparkMaxes run at 1 ms instead of 20 ms by default
+motor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus0, 1);
+motor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus1, 1);
+
+SparkPIDController pidController = motor.getPIDController();
 // Config
 pidController.setOutputRange(-1.0, 1.0);
 pidController.setP(kP, 0);
@@ -153,12 +168,18 @@ if (!pidController.atSetpoint()) {
 pidController.reset();
 ```
 
-You need to check out the documentation for each of these classes and familiarize youself with them.
+!!! note
+    `SparkPIDController` which runs on a CANSparkMax can [obtain inputs and outputs at 1ms](https://docs.revrobotics.com/brushless/spark-max/control-interfaces), while the `PIDController` which runs on the RoboRIO runs every 20ms. For this reason, it is preferred to use the `SparkPIDController` for more precise control. Note that you need to write additional code to make the CANSparkMax run faster since by default it runs every 20ms.
+
+You need to check out the documentation for each of these classes and familiarize youself with them. [Definitely read WPILIB's documentation on their PID Controllers](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/pidcontroller.html).
 
 # Conclusion
 Thankfully, most of the math is handled by WPIlib or motor controller firmware. However, it is important to understand what is actually happening so that you can properly tune your control loops.
 
 But PID is just the beginning. There are many more complicated and more powerful control methods built upon PID that will be discussed later in this section, including Following Trajectories using PathPlanner and Drivetrain Characterization. In addition, PID is often not enough to properly control a mechanism, feedforward algorithms are also needed...
+
+## Additional materials
+[This YouTube playlist explains in more detail of how PID works. Not required but highly recommended](https://www.youtube.com/watch?v=wkfEZmsQqiA&list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y)
 
 ***
 
