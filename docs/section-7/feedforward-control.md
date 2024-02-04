@@ -3,7 +3,7 @@
   type="text/javascript">
 </script>
 
-Feedforward control means providing the mechanism with the control signal you think it needs to make the mechanism do what you want, without any knowledge of where the mechanism currently is. If you ever used a joystick to "directly" control the speed of a motor through applied voltage, maybe like this:
+Feedforward control means controlling a mechanism do a certain action based on knowledge of its behavior (physics, empirical tests, math, etc), rather than controlling based on how "far" away it is from your goal (PID Control). For example, if you've ever used a joystick to "directly" control the speed of a motor through applied voltage, maybe like this:
 
 ```java
 Joystick stick = new Joystick(0);
