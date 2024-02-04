@@ -34,7 +34,10 @@ where `V` is the applied voltage, `d` is the displacement (position) of the moto
 
 When you add up all these values which equals `V`, that is voltage needed to keep a motor at velocity (`d` with dot) and acceleration (`d` with two dots).
 
-Then, to drive the motor at the desired velocity and acceleration, it is as easy as writing:
+!!! warning
+    The amount of voltage calculated is the amount of voltage used to **MAINTAIN** the motor at the specified velocity and acceleration. When `motor.setVoltage(feedforwardVolts)` is run, that does not automatically drive the motor to the specified velocity and acceleration. If the code was run when the motor is at rest, then the voltage will be used the overcome the static friction and accelerate the motor, not to maintain the motor at the specified velocity and acceleration as the motor is not at the specified velocity.
+
+Then, to keep the motor at the desired velocity and acceleration, it is as easy as writing:
 ```java
 // assume kS, kV, and kA are defined
 double vel = 5;
@@ -42,8 +45,6 @@ double accel = 1;
 double feedforwardVolts = kS * Math.signum(vel) + kV * vel + kA * accel;
 motor.setVoltage(feedforwardVolts);
 ```
-!!! warning
-    The amount of voltage calculated is the amount of voltage used to **MAINTAIN** the motor at the specified velocity and acceleration. When `motor.setVoltage(feedforwardVolts)` is run, that does not automatically drive the motor to the specified velocity and acceleration. If the code was run when the motor is at rest, then the voltage will be used the overcome the static friction and accelerate the motor, not to maintain the motor at the specified velocity and acceleration as the motor is not at the specified velocity.
 
 !!! warning
     The code excerpt is only meant to show how feedforward works. This is not how we actually implement feedforward, but should give you a better idea of the inner workings of feedforward.
