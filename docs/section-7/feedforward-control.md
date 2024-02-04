@@ -24,15 +24,15 @@ We will first learn about the most common feedforward model used for motors, the
 
 For those that only want a quick summary. Here is the equation:
 
-$$ V = K_{s} \cdot sgn(\dot{d}) + K_{v} \cdot \dot{d} + K_{a} \cdot \ddot{d} $$
+![Motor Feedforward Equation](motor_feedforward_equation.PNG)
 
-where \\(V\\) is the applied voltage, \\(d\\) is the displacement (position) of the motor, \\(\dot{d}\\) is its velocity, and \\(\ddot{d}\\) is its acceleration (the “overdot” notation traditionally denotes the derivative with respect to time). \\(K_{s}\\), \\(K_{v}\\), and \\(K_{a}\\) are all constants that are tuned.
+where `V` is the applied voltage, `d` is the displacement (position) of the motor, `d` with a single dot is its velocity, and `d` with a double dot is its acceleration (the “overdot” notation traditionally denotes the derivative with respect to time). `kS`, `kV`, and `kA` are all constants that are tuned.
 
-- \\(k_{s} \cdot sgn(\dot{d})\\) is the amount of voltage needed to overcome the motor's static friction, or in other words to just barely get it moving.
-- \\(k_{v} \cdot \dot{d}\\) is the amount of voltage needed to hold the motor at a given constant velocity.
-- \\(k_{a} \cdot \ddot{d}\\) is the amount of voltage needed to drive the motor at a given constant acceleration.
+- The `kS` term (including the `sgn(d)` part) is the amount of voltage needed to overcome the motor's static friction, or in other words to just barely get it moving.
+- The `kV` term (including the `d` dot part) is the amount of voltage needed to hold the motor at a given constant velocity.
+- The `kA` term (incluidng the `d` double dot part) is the amount of voltage needed to drive the motor at a given constant acceleration.
 
-When you add up all these values which equals \\(V\\), that is voltage needed to keep a motor at velocity \\(\dot{d}\\) and acceleration \\(\ddot{d}\\).
+When you add up all these values which equals `V`, that is voltage needed to keep a motor at velocity (`d` with dot) and acceleration (`d` with two dots).
 
 Then, to drive the motor at the desired velocity and acceleration, it is as easy as writing:
 ```java
@@ -48,7 +48,7 @@ motor.setVoltage(feedforwardVolts);
 !!! warning
     The code excerpt is only meant to show how feedforward works. This is not how we actually implement feedforward, but should give you a better idea of the inner workings of feedforward.
 
-In addition, feedforward can also be used for elevators and arms. There is one additional constant \\(k_{g}\\) which is used to counteract the force of gravity.
+In addition, feedforward can also be used for elevators and arms. There is one additional constant `kG` which is used to counteract the force of gravity.
 
 ## Tuning and System Idenfication
 Similar to PID, you can tune values by manually guessing and checking.
@@ -57,12 +57,12 @@ Similar to PID, you can tune values by manually guessing and checking.
 
 Follow the instructions and see if you can get the optimal tuning solution. The model simulates a flywheel shooter mechanism and halfway through the simulation it shoots a ball. **DO NOT SKIP THIS PRACTICE**
 
-While manual tuning works, WPILIB provides a way to generate kS, kV, and kA, called System Identification, or SysID for short.
+While manual tuning works, WPILIB provides a way to generate `kS`, `kV`, and `kA`, called System Identification, or SysID for short.
 
 !!! warning
     Do not move on if you don't know how [lambdas/consumers](https://docs.wpilib.org/en/stable/docs/software/basic-programming/functions-as-data.html) work and the [Java Unit library](https://docs.wpilib.org/en/stable/docs/software/basic-programming/java-units.html).
 
-System Identification is the process of determining a mathematical model for the behavior of a system through statistical anaylsis of its inputs and outputs. SysID has a process to determine kS, kV, and kA for the motor, so you don't have to do any tuning! They also provide PID values, but treat them as a "starting point" for further tuning.
+System Identification is the process of determining a mathematical model for the behavior of a system through statistical anaylsis of its inputs and outputs. SysID has a process to determine `kS`, `kV`, and `kA` for the motor, so you don't have to do any tuning! They also provide PID values, but treat them as a "starting point" for further tuning.
 
 Read the following WPILIB articles:
 
@@ -133,7 +133,7 @@ Note that [SysIdRoutineLog](https://github.wpilib.org/allwpilib/docs/release/jav
 You may also notice that the only values that the logger logs are of instances that must be of `MutableMeasure<(insert measure)>`. This records the values along with its units. You can't just log a value.
 
 !!! note
-    Notice that you can write anything in the `driveMotor()` and `logMotor()` methods. You are not limited to only powering a single motor but can power an entire elevator, arm, etc. SysID also analyzes elevators and arms which calculate the \\(k_{g}\\) constant.
+    Notice that you can write anything in the `driveMotor()` and `logMotor()` methods. You are not limited to only powering a single motor but can power an entire elevator, arm, etc. SysID also analyzes elevators and arms which calculate the `kG` constant.
 
 After you set up the testing parameters and mechanism to test, the SysIdRoutine provides functions that return a command to run the test.
 
@@ -167,14 +167,14 @@ Afterwards, put them into the SysID tool which can be opened by `Ctrl + Shift + 
 - [Analyzing Data](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/system-identification/analyzing-gains.html)
 - [Additional Utilities and Tools](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/system-identification/additional-utils.html)
 
-Once you have gotten good data and analysis, you should obtain kS, kV, kA and PID constants.
+Once you have gotten good data and analysis, you should obtain `kS`, `kV`, `kA` and PID constants.
 
 !!! warning
     The PID constants are only a starting point and should be tuned more.
 
 ## Implementation
 
-WPILIB provides a [SimpleMotorFeedforward](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html) class that runs feedforward for a motor. After you obtain your feedforward constants (kS, kV, kA) from SysID, you put them into the constructor of the `SimpleMotorFeedforward` and use the listed methods.
+WPILIB provides a [SimpleMotorFeedforward](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html) class that runs feedforward for a motor. After you obtain your feedforward constants (`kS`, `kV`, `kA`) from SysID, you put them into the constructor of the `SimpleMotorFeedforward` and use the listed methods.
 ```java
 // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
 SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(kS, kV, kA);
@@ -190,7 +190,7 @@ motor.setVoltage(volts);
 ```
 
 That's it!
-Similarly WPILIB provides a `ArmFeedforward` and an `ElevatorFeedforward` class whose only difference from `SimpleFeedforward` is that it accepts a \\(k_{g}\\) value.
+Similarly WPILIB provides a `ArmFeedforward` and an `ElevatorFeedforward` class whose only difference from `SimpleFeedforward` is that it accepts a `kG` value.
 
 ## Combining Feedforward and Feedback Control
 
