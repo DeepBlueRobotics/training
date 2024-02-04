@@ -113,6 +113,9 @@ new SysIdRoutine.Mechanism(this::driveMotor, this::logMotor, this)
 
 Here are the two functions that drive and log the motor voltage:
 ```java
+import static edu.wpi.first.units.MutableMeasure.mutable;
+import static edu.wpi.first.units.Units.Volts;
+
 // Mutable holder for unit-safe voltage values, persisted to avoid reallocation.
 private final MutableMeasure<Voltage> voltage = mutable(Volts.of(0));
 
