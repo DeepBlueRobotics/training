@@ -25,4 +25,7 @@ It is usually common and best to use both. In the next few pages, we will discus
 
 It is often easy to get a motor to move at a certain velocity and acceleration using Feedforward + Feedback (which will be explained in the next few articles). However, what if we want a motor to turn to an exact position? In order to use feedforward effectively for position control, we need to come up with a sequence of velocities that will take the robot mechanism to the desire position. This is called a motion profile. 
 
+!!! warning
+    The Trapezoid Profiling section is still being worked on.
+
 In some situations, using a motion profile is overkill and feedback control is enough. We will explain why that sometimes pure pid or motion profiling would be for certain situations.
