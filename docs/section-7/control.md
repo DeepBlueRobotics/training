@@ -17,6 +17,9 @@ There are two fundamental types of mechanism controllers that we will cover here
 
 **Feedback control (or “closed-loop control”)** refers to the class of algorithms which use sensors to measure what a mechanism is doing, and issue corrective commands to move a mechanism from where it actually is, to where you want it to be. Even with unlimited study, it is impossible to know every force that will be exerted on a robot’s mechanism in perfect detail. So feedback control is used to correct the error not covered by feedforward control.
 
+!!! Note
+    Basically "feed**forward**" is for predicting how you will act, "feed**back**" is for fixing your mistakes.
+
 It is usually common and best to use both. In the next few pages, we will discuss both control types extensively.
 
 ## Trapezoid Profiles
