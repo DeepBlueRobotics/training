@@ -16,25 +16,16 @@ There are two important interfaces for the limelight: http://limelight.local:580
 ## Limelight NetworkTables values
 [`NetworkTables`](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/networktables/NetworkTable.html) might seem like a new concept, but you have already been working with `NetworkTables` because it includes `SmartDashboard` as one of its keys. Whenever you put or read values using SmartDashboard, you were working with `NetworkTables`. You can think of every instance of `SmartDashboard` as `NetworkTableInstance.getDefault().getTable("SmartDashboard")`. You can find a full description of `NetworkTables` [here](https://docs.wpilib.org/en/stable/docs/software/networktables/index.html?highlight=networktables),
 
-Most important for this section is the fact that the Limelight puts many useful values to `NetworkTables`. You can find the full list [here](https://docs.limelightvision.io/en/latest/networktables_api.html), but I will highlight a few important ones:
-
-Key | Description
-----| -----------
-`tv`  | A double (effectively a boolean) representing whether or not a vision target is in view.
-`tx`  | The horizontal difference between the center of the vision target and the crosshair \(\text{target}_x - \text{crosshair}_x\).
-`ty`  | The vertical difference between the center of the vision target and the crosshair \(\text{target}_y - \text{crosshair}_y\).
-`ta`  | The percentage of area that the vision target takes up in the camera feed.
-`ledMode` | The current mode of the LEDs on the limelight (0 for pipeline default, 1 for off, 2 for blink, 3 for on)
-`tcornx` | An array representing the x-coordinates of the corners of the bounding box.
-`tcorny` | An array representing the y-coordinates of the corners of the bounding box.
-
-The code for accessing a key is:
+Most important for this section is the fact that the Limelight puts many useful values to `NetworkTables`. You can access those values by specifying a key by writing:
 
 ``` Java
 NetworkTableInstance.getDefault().getTable("limelight").getEntry("<variablename>").getDouble(0);
 ```
 
-You may want to store the Limelight `NetworkTable` as a variable depending on how often you plan on accessing its entries.
+!!! tip
+    **You can find the full list of keys [here](https://docs.limelightvision.io/docs/docs-limelight/apis/complete-networktables-api).**
+    
+Important keys that you will use often includes but not limited to: `tv`, `tx`, `ty`, `ta`, and etc. You may want to store the Limelight `NetworkTable` as a variable depending on how often you plan on accessing its entries.
 
 ## Distance Estimation and Angle Alignment
 There are several "Case Studies" in the [Limelight documentation](https://docs.limelightvision.io/en/latest). I will highlight a few and compare/contrast with the Limelight code used for the 2020 Build Season. I highly recommend watching the gifs of the code in action for each of the case studies.
