@@ -74,9 +74,6 @@ Now take a look at [Limelight.java](https://github.com/DeepBlueRobotics/RobotCod
 
 3. When `steeringAssist()` does not see a bounding box, it turns in the direction of the last `tx` value. This is to make sure that if it overshoots or if the target changes direction, it will take the shortest path to try to face the target again.
 
-Some notes to keep in mind:
-- Make sure you keep stay consistent with units
-
 The programming team had some fun with this code during the 2019-2020 Pre-Season:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TjksUg227QQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -85,4 +82,16 @@ The programming team had some fun with this code during the 2019-2020 Pre-Season
 
 In 2024, we used Limelight to autoalign then intake the game piece. Check out [this code](https://github.com/DeepBlueRobotics/RobotCode2024/blob/master/src/main/java/org/carlmontrobotics/commands/AutoMATICALLYGetNote.java) to see how we did it!
 
-TODO: neural network pipeline explanation
+If it's too long to read, basically what it does is:
+1. Change the drivetrain to robot oriented and turn on the intake
+2. Retrieves three offsets: forward, strafe, and angle
+3. It ends when there is a game piece inside the robot
+4. The drivetrain is back to field oriented so it is driveable for the driver and the intake is stopped
+
+Now go back and read it again :)
+
+
+Some notes to keep in mind when coding:
+- Make sure you keep stay consistent with units
+- Remember to store the name of your limelight(s) in constants
+- In commands, don't make Limelight a requirement so that it can be used by multiple commands at the same time
