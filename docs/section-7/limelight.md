@@ -3,13 +3,17 @@ A [Limelight](https://andymark-weblinc.netdna-ssl.com/product_images/limelight-2
 
 Take a look at the instructions [here](https://docs.limelightvision.io/en/latest/getting_started.html) for setting up the Limelight. As well, you should read how to build and configure a vision pipeline [here](https://docs.limelightvision.io/en/latest/vision_pipeline_tuning.html).
 
-There are two main pipelines ("modes") we use with Limelight: AprilTags and Neural Networks.
+Generally, the Limelight draws a bounding box around the target and then obtains values from this rectangle.
+
+There are two main pipelines ("modes") we use are: AprilTags and Neural Networks.
 
 ![Apriltag](apriltag_image1.png)
 
 ![Apriltag in the wild](apriltag_image2.png)
 
-Apriltags are essentially QR codes. These are placed throughout the field, such as on scoring targets.
+Apriltags are essentially QR codes. These are placed throughout the field, such as on scoring targets. Since they have set locations on the field, it is useful for us to use these to detect what things we can do in our location (for example, if we can see that we are in front of a goal then we can shoot).
+
+On the other hand, we use the Neural Network pipeline to detect custom objects. Usually, we train a neural network to find these objects, and then we can get measurement values from it. For more details on training a model, check out [this link](https://docs.limelightvision.io/docs/docs-limelight/pipeline-neural/getting-started-with-neural-networks). There are also several pretrained models online you can steal >:)
 
 There are two important interfaces for the limelight: http://limelight.local:5801 and http://limelight.local:5800 (you need to be connected to the limelight via the radio to use these links). The first one is for configuring the Limelight pipeline and the second one is for displaying the camera feed.
 
@@ -51,7 +55,7 @@ This code uses basic trigonometry to calculate the floor distance. This method c
 We can also align to something with Limelight:
 ``` Java
 public double getRotation() {
-    double cameraLensHorizontalOffset = -LimelightHelpers.getTY("limelight") / getDistance();
+    double cameraLensHorizontalOffset = LimelightHelpers.getTX("limelight") / getDistance();
     double realHorizontalOffset = Math.atan(cameraLensHorizontalOffset / getDistance());
     double rotationError = Math.atan(realHorizontalOffset / getDistance());
 }
