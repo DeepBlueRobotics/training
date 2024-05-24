@@ -100,7 +100,6 @@ A classifier is used to categorize an entire image into a predefined label. For 
 
 A detector is used to find specific distances within an image. This is usually used more often. For example, if you want to find the bounding box and specific location of that ball, you would use a detector.
 
-To train one of these, you need to have a reference group.
 For more details on training a model, check [this](https://docs.limelightvision.io/docs/docs-limelight/pipeline-neural/getting-started-with-neural-networks) out. There are also several pretrained models online you can steal >:) 
 
 Once you have your files, change the pipeline option to "Neural Network" and upload the files to the Limelight interface. Then watch the magic happen 😼😼
