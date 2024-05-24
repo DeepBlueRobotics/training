@@ -13,7 +13,7 @@ There are two main pipelines ("modes") we use are: AprilTags and Neural Networks
 
 Apriltags are essentially QR codes. These are placed throughout the field, such as on scoring targets. Since they have set locations on the field, it is useful for us to use these to detect what things we can do in our location (for example, if we can see that we are in front of a goal then we can shoot).
 
-On the other hand, we use the Neural Network pipeline to detect custom objects. Usually, we train a neural network to find these objects, and then we can get measurement values from it. For more details on training a model, check out [this link](https://docs.limelightvision.io/docs/docs-limelight/pipeline-neural/getting-started-with-neural-networks). There are also several pretrained models online you can steal >:)
+On the other hand, we use the Neural Network pipeline to detect custom objects. Usually, we train a neural network to find these objects, and then we can get measurement values from it. We'll go more in depth later.
 
 There are two important interfaces for the limelight: http://limelight.local:5801 and http://limelight.local:5800 (you need to be connected to the limelight via the radio to use these links). The first one is for configuring the Limelight pipeline and the second one is for displaying the camera feed.
 
@@ -58,6 +58,7 @@ public double getRotation() {
     double cameraLensHorizontalOffset = LimelightHelpers.getTX("limelight") / getDistance();
     double realHorizontalOffset = Math.atan(cameraLensHorizontalOffset / getDistance());
     double rotationError = Math.atan(realHorizontalOffset / getDistance());
+    return rotationError;
 }
 ```
 
@@ -90,8 +91,21 @@ If it's too long to read, basically what it does is:
 
 Now go back and read it again :)
 
+## What if I want to detect other things?
+Well now you're at the right section. Using Limelight, we can detect a bunch of different objects, like game pieces and people!
 
-Some notes to keep in mind when coding:
+There are two (main) types of vision models: classifier and detector.
+
+A classifier is used to categorize an entire image into a predefined label. For example, if you want to distinguish between a red ball and a blue ball, you would use a classifier.
+
+A detector is used to find specific distances within an image. This is usually used more often. For example, if you want to find the bounding box and specific location of that ball, you would use a detector.
+
+To train one of these, you need to have a reference group.
+For more details on training a model, check [this](https://docs.limelightvision.io/docs/docs-limelight/pipeline-neural/getting-started-with-neural-networks) out. There are also several pretrained models online you can steal >:) 
+
+Once you have your files, change the pipeline option to "Neural Network" and upload the files to the Limelight interface. Then watch the magic happen 😼😼
+
+Some general notes to keep in mind when coding:
 - Make sure you keep stay consistent with units
 - Remember to store the name of your limelight(s) in constants
 - In commands, don't make Limelight a requirement so that it can be used by multiple commands at the same time
