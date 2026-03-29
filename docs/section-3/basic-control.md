@@ -1,7 +1,7 @@
 Now that we know the electronics on the robot, how do we actually control them? This section will provide a general overview, so if you want more details look in their respective javadocs and documentation.
 
 ## Motor Controllers/Motors
-Typical motor controllers that you will be using are Spark Maxes and Talon SRXs. Their respective class names are `SparkMax` and `WPI_TalonSRX`. There are other types of motor controllers. If you wish to know more about other motors, you can always look at their documentation. The information provided here should be present in all motor controllers.
+Typical motor controllers that you will be using are Spark Maxes and Spark Flexes. Their respective class names are `SparkMax` and SparkFlex`. There are other types of motor controllers. If you wish to know more about other motors, you can always look at their documentation. The information provided here should be present in all motor controllers.
 
 ### Creation
 
@@ -15,7 +15,7 @@ SparkMax motor = new SparkMax([insert port number], MotorType.kBrushless);
 
 The two motor types: `kBrushless` and `kBrushed` require the controller to power the motors in different ways, and you can end up destroying the motor by using the wrong motor type. The easiest way to tell the difference is that brushless motors use three wires while brushed motors use two. Most of the motors we will use with SparkMaxes are brushless.
 
-Lib199 is a repository which contains many methods and objects we reuse over many projects and years. Now let's use lib199's MotorControllerFactory methodto create the SparkMax
+Lib199 is a repository which contains many methods and objects we reuse over many projects and years. Now let's use lib199's MotorControllerFactory method to create the SparkMax
 
 ``` Java
 SparkMax motor = MotorControllerFactory.createSparkMax([motor id], MotorConfig.NEO);
@@ -52,7 +52,7 @@ Generally most motors will have the following methods. You can always go to thei
 ### Debugging/Updating
 - Motors have LED lights signifying their current status. You can find them on their website.
     
-    - [SparkMax](https://docs.revrobotics.com/sparkmax/status-led)
+    - [SparkMax](https://docs.revrobotics.com/brushless/spark-max/status-led)
     - [SparkFlex](https://docs.revrobotics.com/brushless/spark-flex/status-led)
 
 - Other than javadocs, these websites provide more information on installation of motor controller (Senac's job)

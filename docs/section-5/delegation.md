@@ -4,7 +4,7 @@ Bugs or features which have to be worked on/implemented should have an issue ope
 [Read more about Github Issues here](https://guides.github.com/features/issues/)
 
 ## Shadowing Team Members
-Programming team members who are not fully ready to work independently during build season should shadow a more experienced member. Experienced members who have a shadowing programmer should explain and talk about their code as they write it, and should try to teach the shadow as much as they can.
+Programming team members who are not fully ready to work independently during build season should shadow a more experienced member. Experienced members who have a shadowing programmer should explain and talk about their code as they write it and try to teach the shadow as much as they can.
 
 ## Build Season Schedule
 

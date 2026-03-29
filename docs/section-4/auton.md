@@ -15,6 +15,6 @@ More requirements for autonomous:
 
 - it must use a command group (look in the documentation if you forgot what that is) to run the autonomous period, with one command for moving and the other for spinning
 - it can only use the encoder values to tell the command whether or not you have traveled far enough
-- it should not overshoot by a wide margin, but as long as it goes around 2 feet it's acceptable
+- it should not overshoot or undershoot by a wide margin, but as long as it goes around 2 feet it's acceptable
 
 Good luck! Again, once you're done, check in with a veteran programmer and then run your code on a robot!
