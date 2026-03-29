@@ -6,34 +6,34 @@ Here is another good [video explanation](https://www.youtube.com/watch?v=VoxeXqy
 Here is an overview of what was explained in the first part of the video plus a few additions.
 
 !!! note
-    We'll be assuming that our robot code package is `org.team199.robot` and our code lives in `src/main/java/org/team199` but honestly the package naming scheme varies by year and by team, and it doesn't matter as long as you keep it consistent for a project.
+    We'll be assuming that our robot code package is `org.team199.robot` and our code lives in `java/org/carlmontrobotics` but the package naming scheme varies by year and by team, and it doesn't matter as long as you keep it consistent for a project.
 
-A robot project structure generally looks something like this:
+Our robot project structure generally looks something like this:
 ```
-src/main/java/org/team199/
-  └── robot2020/
-  |   |   Main.java
-  |   |   Robot.java
-  |   |   RobotContainer.java
-  |   |   Constants.java
-  |   |
-  |   └── subsystems/
-  |   |   |   Drivetrain.java
-  |   |   |   Intake.java
-  |   |   |   Climber.java
-  |   |   |   Lift.java
-  |   |
-  |   └── commands/
-  |       |   Drive.java
-  |       |   Climb.java
-  |       |   RunIntake.java
-  |       |   RunEject.java
-  |       |   MoveLift.java
-  |       |   Autonomous.java
+src/main
+  └──deploy
   |
-  └── lib/
-      |   MotorControllerFactory.java
-      |   FancyMathStuff.java
+  └── robot/
+  |   └── commands/
+  |   |  Drive.java
+  |   |  Climb.java
+  |   |  RunIntake.java
+  |   |  RunEject.java
+  |   |  MoveLift.java
+  |   |  AutonCommands/
+  |
+  |   └── subsystems/
+  |   |   Drivetrain.java
+  |   |   Intake.java
+  |   |   Climber.java
+  |   |   Lift.java
+  |
+  |   Constants.java
+  |   Main.java
+  |   Robot.java
+  |   RobotContainer.java
+  |   Constants.java
+
 ```
 It's a lot, so let's break it down. It may be helpful if you were to look at our previous year's code and follow along this guide.
 
@@ -54,7 +54,7 @@ This is also where we use `setDefaultCommand()` for each subsystem.
 In this file, we organize each initialization into different controllers and call all those methods in the constructor of RobotContainer. We also have a `getAutonomousCommand()` which returns the autonomous command to be called during autonomous mode.
 
 ### Constants.java
-This file contains all of the numbers that don't change and are relevant to the **whole robot**, not single subsystems. This includes all ports and joystick buttons, which correlate to motor controllers, solenoids, and commands in the code.
+This file contains all of the numbers that don't change and are relevant to the robot. This includes all ports and joystick buttons, which correlate to motor controllers, solenoids, and commands in the code.
 
 ### [Subsystems](https://docs.wpilib.org/en/stable/docs/software/commandbased/subsystems.html)
 Subsystems are where much of the logic of the code is stored. In each subsystem, there are methods that perform certain actions, such as running a motor. These methods are then called in Commands as part of a larger process. For example, a method in the Climber subsystem could be used to retrieve the height of a lift, which can then be called in one of the Climber commands. The subsystem classes contain the objects for the motor controllers and solenoids. Constants for the specific subsystem are also stored in the subsystem class. For example, a constant such as the speed of a drivetrain motor should be stored in the Drivetrain subsystem, as it’s only relevant to the Drivetrain. Subsystems can also have default commands that are run when no commands are implicitly scheduled. Subsystems also have a `periodic()` which is run every 0.02s no matter what command is called on the subsystem.
@@ -63,7 +63,7 @@ Subsystems are where much of the logic of the code is stored. In each subsystem,
 Commands are sections of code that define general actions taken by the robot. Usually, they don’t contain detailed code about the function of the robot’s mechanical parts, such as how far a motor turns or its direction (these finer details are usually placed in subsystems, which commands then reference to give function to each of the robot’s mechanical components). Instead, commands code for actions taken by the robot’s mechanisms. Examples of these actions could include lifting an arm or turning wheels that intake a game piece. Command classes also have methods `initialize()`, `execute()`, `end()`, and `isFinished()` that serve as a base foundation (More details are in WPILib's article). Each command also have subsystem requirements. This is to avoid scheduling commands that may interfere with each other. For example, one command may want a motor to turn right, while another command wants the motor to turn left. Adding requirements make sure that only one command is using a subsystem at a time. You can add requirements by using the `addRequirements()`.
 
 ### Lib
-The `lib` folder is where we would store the complex calculations, wrappers, or other things that do not directly interact with the robot, but are rather called on by commands or subsystems to assist in their execution. Stuff in this folder would be valuable code that we would actually want to keep and develop on from one year to another, such as drivetrain characterization, motion profiling, or swerve drive code.
+The `lib` folder is where we would store the complex calculations, wrappers, or other things that do not directly interact with the robot, but are rather called on by commands or subsystems to assist in their execution. Stuff in this folder would be valuable code that we would actually want to keep and develop on from one year to another, such as drivetrain characterization, motion profiling, or swerve drive code. We usually don't include a folder decicated to Lib in our projects, but rather ue the lib199 repository.
 
 Most of this code is stored in the repository [lib199](https://github.com/DeepBlueRobotics/lib199) which is included in the gradle build to our main robot code. This makes it easy to include in new robot projects and other codebases. The `lib` folder is accessed through gradle build configurations, so you have to directly go the lib199 repo to see the code. It will not be in your project.
 
@@ -72,6 +72,6 @@ This is the most-used file in the lib folder. It stores methods for creating the
 
 ### WPILib Features
 
-WPILib is the name of the library FRC provides us to control the robot with. [Its JavaDocs are located here](https://first.wpi.edu/FRC/roborio/release/docs/java/index.html) (and you can also find a link to them in the [Resources](/resources/) page of this site). We will be mostly using the library's `edu.wpi.first.wpilibj` package, and you can search for a class or method using the search bar located on the top right corner of your screen.
+WPILib is the library that FRC provides us to control the robot with. Its JavaDocs are located [here](https://first.wpi.edu/FRC/roborio/release/docs/java/index.html) (and you can also find a link to them in the [Resources](/resources/) page of this site). We will be mostly using the library's `edu.wpi.first.wpilibj` package, and you can search for a class or method using the search bar located on the top right corner of your screen.
 
 WPILib also allows us to use [command groups](https://docs.wpilib.org/en/stable/docs/software/commandbased/command-groups.html) which combine commands together in a desired way. The link provides all the command groups that you can ultilize.

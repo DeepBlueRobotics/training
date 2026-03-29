@@ -18,7 +18,7 @@
 - [Updating Lib199 Video](https://drive.google.com/file/d/1CLS0XMqJ6Y5_mLtYdS3HUR-l4us7WAk-/view)
 - [Code Styling Guide](https://docs.google.com/document/d/1RVMY4_c5qCdh_hqiG-O33_-PpMKZtKSpayKp2bSBjTo/edit)
 - [Complex Obscure Buxfixes Doc](https://docs.google.com/document/d/1PtT4ICuIJJ_EW_JgU_YRrFyJk2P9CibrkjtXtpVGjXE/edit)
-- [List of people's github's usernames, Driver station serial numbers, etc](https://docs.google.com/document/d/1D_4Fbr4ktwU9jl2Mkpw2Kpv0Q4v-NhCO2m5agvL5TfY/edit?usp=sharing)
+- [List of people's github's usernames, Driverstation serial numbers, etc](https://docs.google.com/document/d/1D_4Fbr4ktwU9jl2Mkpw2Kpv0Q4v-NhCO2m5agvL5TfY/edit?usp=sharing)
 
 ## Helpful Java Websites
 - [Code Academy](https://www.codecademy.com/learn/learn-java/modules/learn-java-object-oriented-java-u/cheatsheet)

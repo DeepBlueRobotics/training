@@ -87,7 +87,7 @@ These tests can be run backwards and forwards. To create the test, you have to w
 ```java
 public class Shooter extends SubsystemBase {
 
-    private final CANSparkMax motor = 
+    private final SparkMax motor = 
         MotorControllerFactory.createSparkMax(0, MotorConfig.NEO);
     
     private final SysIdRoutine sysIdRoutine = 

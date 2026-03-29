@@ -1,6 +1,6 @@
 # Electronics
 
-We have significant overlap with SenAct training. If you want more details on SenAct components you can go through [their Electronics presentation](https://docs.google.com/presentation/d/1Y2GSd2B3aV2_6J5xKNS-_xWRiGW_daArdgr4zasUuno/edit#slide=id.g253cb92c37_0_37). Here, we will cover the parts relevant to programming.
+We have significant overlap with senac training. If you want more details on senac components you can go through [their Electronics presentation](https://docs.google.com/presentation/d/1Y2GSd2B3aV2_6J5xKNS-_xWRiGW_daArdgr4zasUuno/edit#slide=id.g253cb92c37_0_37). Here, we will cover the parts relevant to programming.
 
 ### Operator Console and Communication
 - We use a computer, joysticks, xbox controllers, etc
@@ -12,7 +12,7 @@ We have significant overlap with SenAct training. If you want more details on Se
     - Can plug sensors and add-ons onto it
     - Can add micro-controllers such as a Raspberry Pi to connect to other devices
     - ![RoboRIO Ports](roborio_ports.png)
-- The radio is what we use to communicate between the robot and the driver station computer. 
+- The radio is what we use to communicate between the robot and the driverstation computer. 
     - Connects to the DS Computer via Wifi, Ethernet, or USB
     - ![Status Lights for Radio](radio_status_lights.png)
 - The Power Distribution Panel (PDP) / Power Distribution Hub (PDH) gives power to the electrical components.
@@ -23,31 +23,28 @@ We have significant overlap with SenAct training. If you want more details on Se
 - Different types of motors have different power and respective motor controllers
 - Gears and planetary gearboxes can be used to make the motor turn with more torque or turn faster
 - The motors we use are:
-    - CIM
-        - Biggest
-        - Most powerful
-        - Used for drivetrains and other subsystems which require a lot of torque
-    - Mini CIMs
-        - Medium size
-    - BAG
-        - Smallest
     - NEO
+        - We almost exclusively use these
+        - Versatile
         - Encoders are built into these
-        - Comparable to CIMs
         - Used for drivetrains and other subsystems which require a lot of torque
+    - NEO Vortex
+        - Very similar to normal NEOs
+        - Motor controller attaches directly to the motor instead of using cables
     - NEO 550
+        - We usually don't use these
         - Small
         - Used for subsystems other than drivetrains
-- The typically motor controllers we use are:
-    - CANSparkMaxes
-    - Talon SRXs
+- The motor controllers we typically use are:
+    - SparkMaxes
+    - SparkFlexes
 
-![CANSparkMax](CANSparkMax.png)
+![SparkMax](SparkMax.png)
 
 ### Sensors
 - Encoders
     - Attached to motor or built into motor
-    - Record how much a motor has spun
+    - Record how much a motor has spun or its position
         - Can find RPM, distance spun, etc
 - navX
     - Measures the angle turned for the robot

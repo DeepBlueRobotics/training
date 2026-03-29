@@ -39,8 +39,9 @@ git push origin HEAD --force
 ## The usuals
 <big> `git fetch` & `git pull` & `git push` </big>
 
-No explanation needed. Fetch before pulling, as usual.
-And do try and remember: Commit before you push, otherwise you're pushing nothing.
+- `fetch` checks for new commits on git
+- `pull` syncs commits from git to your computer
+- `push` syncs commits from your computer to git
 
 ## Committing
 <big> `git commit -a -m "Title" -m "Message"` </big>

@@ -15,10 +15,10 @@ You may see other options such as "Test", "Simulate", etc. We will cover those l
 Enabling and controlling the robot only works on a Windows computer; however you can still build, debug, and deploy your code on any kind of computer... **with some fiddling**.
 
 !!! note
-    For more advanced programmers, or mac/linux users, the commands to deploy/build the robot code are done by calling certain gradle commands listed [here](https://docs.wpilib.org/en/stable/docs/software/advanced-gradlerio/gradlew-tasks.html).
+    For more advanced programmers, the commands to deploy/build the robot code can be done by executing calling certain gradle commands listed [here](https://docs.wpilib.org/en/stable/docs/software/advanced-gradlerio/gradlew-tasks.html).
 
-## Driver Station
-This is the actual application on the driver station computer the controls the robot and reports data from it. WPILib provides a [general overview of everything](https://docs.wpilib.org/en/stable/docs/software/driverstation/driver-station.html) on the driver station, so read that. Here we will provide a general summary of what you need to know.
+## FRC Driverstation
+This is the application on the driverstation computer the controls the robot and reports data from it. WPILib provides a [general overview of everything](https://docs.wpilib.org/en/stable/docs/software/driverstation/driver-station.html) on the driverstation, so read that. Here we will provide a general summary of what you need to know.
 
 ### Operation Tab
 Here you control the robot mode (teleop, autonomous, etc) and can enable/disable. It also displays the status pane which shows PC battery, robot battery, and other important details.
@@ -27,22 +27,22 @@ Here you control the robot mode (teleop, autonomous, etc) and can enable/disable
 The main thing here is that this tab is used to restart the roboRIO or the robot code.
 
 ### USB Devices Tab
-This is where you can configure the ports of your joysticks and other controllers on the driver station.
+This is where you can configure the ports of your controllers on the driverstation.
 
 ### Messages Tab
 Displays error and warning messages.
 
 ## Debugging
-We will not cover cases where the code fails to build, since this usually means there is a syntax error which can be easy to fix. The hardest bugs to fix are the ones where the program builds and deploys, but the robot does not do the exact task you wanted it to do. Generally, it is either a programming or a sen-act problem... but it can be anything from cat hair stuck in motors to the fact you forgot to re-deploy your robot code before running it again.
+We will not cover cases where the code fails to build, since this usually means there is a syntax error or another simple error, which can be easy to fix. The hardest bugs to fix are the ones where the program builds and deploys, but the robot does not do the exact task you wanted it to do. Generally, it is either a programming or a senac problem... but it can be anything from cat hair stuck in motors to the fact you forgot to re-deploy your robot code before running it again.
 
 ### Code crashes when running
-If your robot suddenly stops running while running the code, that can mean the code crashed. You can check [driver station logs](https://docs.wpilib.org/en/stable/docs/software/driverstation/driver-station-log-viewer.html) to see if there is a stack trace. Driver station logs also include a lot of information on events and other graphs.
+If your robot suddenly stops running while running the code, that can mean the code crashed. You can check [driverstation logs](https://docs.wpilib.org/en/stable/docs/software/driverstation/driver-station-log-viewer.html) to see if there is a stack trace. Driverstation logs also include a lot of information on events and other graphs.
 Common errors that crash the code include:
 
 - Null pointer exceptions
 - Index out of bounds of array
 
-There are also configurations set so that if a motor gets too hot, the motor will stop running. There is similar behavior for all sen-act components, whether it be with temperature or voltage. You can also check for those in driver station logs.
+There are also configurations set so that if a motor gets too hot, the motor will stop running. There is similar behavior for all senac-components, whether it be with temperature or voltage. You can also check for those in driverstation logs.
 
 !!! note
     A **Stack Trace** is a fancy programming word for "words that tell you what went wrong and what ran the thing that broke"
@@ -50,6 +50,7 @@ There are also configurations set so that if a motor gets too hot, the motor wil
 ### Wrong robot behavior (SmartDashboard/ShuffleBoard & OutlineViewer)
 However, just looking at driver logs may not help. What if the code does not crash at all, but the behavior is wrong? There is a chance that the data may be wrong, so you can check what data is being read in real-time using Shuffleboard/Smartdashboard.
 WPILib provides the SmartDashboard class which you can use to input and ouput data. They also provide two articles on a general introduction to shuffleboard, so read [the tour](https://docs.wpilib.org/en/stable/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour.html) and [how to display data](https://docs.wpilib.org/en/stable/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data.html).
+<!--TODO: put elastic stuff -->
 
 Generally in order to initialize a "key" on the SmartDasboard, we do
 `SmartDashboard.putNumber("key name", [insert default value]);`
@@ -68,10 +69,10 @@ One significant method is `putData(Sendable object)`. Subsystems and commands im
 You can also use [Outline Viewer](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/outlineviewer/index.html?highlight=outlineviewer) to see debugger values. It has less features than Shuffleboard, but is more compact and generally easier to use.
 
 ### Random glitches unrelated to code
-Sometimes, the application may just randomly break and glitch out. Driver station is known to be glitchy sometimes, so the first step is always to restart your program. Restart robot code, restart roboRIO, restart driver station, etc.
+Sometimes, the application may just randomly break and glitch out. FRC Driverstation is known to be glitchy sometimes, so the first step is always to restart your program. Restart robot code, restart roboRIO, restart driverstation, etc. You can also ask a programming veteran for help as well, as they have lots of experience with tricky errors.
 
 ### Common "behavior" bugs
-Generally, you will want to replicate the behavior that is causing the error. This is why a lot of testing is required to have effective code. Once you know a specific condition generates a certain erroneous behavior, you can look at how that condition causes a bug and fix it.
+Generally, you will want to replicate the behavior that is causing the error. This is why a lot of testing is required to have effective code. Once you know a specific condition generates a certain error, you can look at how that condition causes a bug and fix it.
 
 Common bugs:
 

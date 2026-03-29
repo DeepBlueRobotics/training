@@ -9,7 +9,7 @@ Here is a general outline of where stuff might be:
 
 ### [WPILib Javadocs](https://github.wpilib.org/allwpilib/docs/release/java/index.html)
 
-- Anything concerning how the command based project runs, and driver station related classes
+- Anything concerning how the command based project runs, and driverstation related classes
 - Joystick
 - SmartDashboard
 - Commands
@@ -26,7 +26,7 @@ Here is a general outline of where stuff might be:
     - Talon motor controllers
     - CANCoders
 - Generally if you do not know, ask around what vendor the motor is from
-- You can also check the `MotorControllerFactory` classin `lib199` to see what class type is used when creating a certain motor controller
+- You can also check the `MotorControllerFactory` class in `lib199` to see what class type is used when creating a certain motor controller
     - Looking at imports `import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;` you can tell this motor is a phoenix
 
 ### [Lib199](https://github.com/DeepBlueRobotics/lib199)

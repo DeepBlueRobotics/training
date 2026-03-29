@@ -131,7 +131,7 @@ motor.set(ControlMode.Position, 0);
 
 And for SparkMax, SparkFlex, or other Rev motor controllers, we use the [`SparkPIDController`](https://codedocs.revrobotics.com/java/com/revrobotics/sparkpidcontroller) (Take a look at the javadocs). Notice how there are other methods that let you control the velocity, acceleration, setting target, and more:
 ``` Java
-// Make CANSparkMaxes run at 1 ms instead of 20 ms by default
+// Make SparkMax run at 1 ms instead of 20 ms by default
 motor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus0, 1);
 motor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus1, 1);
 
@@ -169,7 +169,7 @@ pidController.reset();
 ```
 
 !!! note
-    `SparkPIDController` which runs on a CANSparkMax can [obtain inputs and outputs at 1ms](https://docs.revrobotics.com/brushless/spark-max/control-interfaces), while the `PIDController` which runs on the RoboRIO runs every 20ms. For this reason, it is preferred to use the `SparkPIDController` for more precise control. Note that you need to write additional code to make the CANSparkMax run faster since by default it runs every 20ms.
+    `SparkPIDController` which runs on a SparkMax can [obtain inputs and outputs at 1ms](https://docs.revrobotics.com/brushless/spark-max/control-interfaces), while the `PIDController` which runs on the RoboRIO runs every 20ms. For this reason, it is preferred to use the `SparkPIDController` for more precise control. Note that you need to write additional code to make the SparkMax run faster since by default it runs every 20ms.
 
 You need to check out the documentation for each of these classes and familiarize youself with them. [Definitely read WPILIB's documentation on their PID Controllers](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/pidcontroller.html).
 

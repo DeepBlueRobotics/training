@@ -18,9 +18,9 @@ Again, follow the instructions for your respective OS to [get Git here](https://
 
 If you do not have a [GitHub](https://github.com) account, create one now.
 
-Once you have your account, tell a programming mentor or programming lead your username so they can add you to our GitHub organization.
-
 Next, set up your username (your real name) and email in Git by following these instructions: 
 
 - [Setting your username](https://help.github.com/en/articles/setting-your-username-in-git)
 - [Setting your email address](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address)
+
+Once you have your account, tell a programming mentor or programming lead your username so they can add you to our GitHub organization.
