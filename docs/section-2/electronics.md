@@ -14,7 +14,7 @@ We have significant overlap with senac training. If you want more details on sen
     - ![RoboRIO Ports](roborio_ports.png)
 - The radio is what we use to communicate between the robot and the driverstation computer. 
     - Connects to the DS Computer via Wifi, Ethernet, or USB
-    - ![Status Lights for Radio](radio_status_lights.png)
+    - ![Status Lights for Radio](radio_status_lights.png){: style="width: 22.5%"} ![Status Lights for Radio Table](radio_status_lights_table.png){: style="width: 75.5%"} 
 - The Power Distribution Panel (PDP) / Power Distribution Hub (PDH) gives power to the electrical components.
 
 ### Motors and Motor Controllers
