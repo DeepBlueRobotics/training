@@ -33,13 +33,13 @@ They also do not cover enums. Read more about them [here](https://www.w3schools.
 
 ```
 public static enum MotorConfig {
-    NEO(70), NEO_550(40);
+NEO(70), NEO_550(40);
 
-    public final int limit;
+public final int temperatureLimitCelsius;
 
-    private MotorConfig(int limit) {
-        this.limit = limit;
-    }
+private MotorConfig(int temperatureLimitCelsius) {
+    this.temperatureLimitCelsius = temperatureLimitCelsius;
+}
 }
 ```
 

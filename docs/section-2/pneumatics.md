@@ -1,4 +1,4 @@
-Similar to elex, Senac also has [a pneumatics presentation](https://docs.google.com/presentation/d/1UDH-Om2QCeOL6JKvXSvE9Xdm5i8acvCqRSJa4wcBMAM/edit#slide=id.g2573de0a58_0_73). Take some time to read through it.
+Similar to elex, SENAC also has [a pneumatics presentation](https://docs.google.com/presentation/d/1UDH-Om2QCeOL6JKvXSvE9Xdm5i8acvCqRSJa4wcBMAM/edit#slide=id.g2573de0a58_0_73). Take some time to read through it.
 
 Key takeaways:
 
@@ -6,4 +6,5 @@ Key takeaways:
 - Storage tank air pressure should be around 120 PSI, while working pressure should not exceed 60 PSI. There are two guages on the robot indicating the two levels of pressure.
 - Pistons and other pneumatic devices are controlled by the solenoids, which open and close values to let air through based on RoboRIO input.
 ***
-<sub> We rarely use pneumatics because of their complexity and lack of versatility compared to motors. </sub>
+!!! note
+We rarely use pneumatics because of their complexity and lack of versatility compared to motors.

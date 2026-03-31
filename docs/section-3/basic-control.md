@@ -15,14 +15,14 @@ SparkMax motor = new SparkMax([insert port number], MotorType.kBrushless);
 
 The two motor types: `kBrushless` and `kBrushed` require the controller to power the motors in different ways, and you can end up destroying the motor by using the wrong motor type. The easiest way to tell the difference is that brushless motors use three wires while brushed motors use two. Most of the motors we will use with SparkMaxes are brushless.
 
-Lib199 is a repository which contains many methods and objects we reuse over many projects and years. Now let's use lib199's MotorControllerFactory method to create the SparkMax
+Lib199 is our custom java library which contains many methods and objects we reuse over many projects and years. Now let's use lib199's MotorControllerFactory method to create a SparkMax.
 
 ``` Java
 SparkMax motor = MotorControllerFactory.createSparkMax([motor id], MotorConfig.NEO);
 ```
 
 You do not have to remember the specific types of motors used and will not risk destroying the motor. If you were to look at the [`createSparkMax` in lib199](https://github.com/DeepBlueRobotics/lib199/blob/master/src/main/java/org/carlmontrobotics/lib199/MotorControllerFactory.java), there are a lot of features implemented to check for motor types, debugging, simulation, etc.
-The method also asks for a motor configuration. In lib199. All You need to know is the type of motor used, then you can put in "MotorConfig.[insert motor type]" as the parameter. The two types are `SPARK_MAX` and `SPARK_FLEX`.
+The method also asks for a motor configuration. In lib199. All You need to know is the type of motor used, then you can put in "MotorConfig.[insert motor type]" as the parameter. The types are `NEO`, `NEO_VORTEX`,  `NEO-550`, `NEO_550`, `NEO_2`, and `NEO_SOLO_VORTEX`.
 
 ### Methods
 
@@ -66,6 +66,7 @@ Some encoders are built into the motors such as NEOs and NEO 550s. There are als
 Revrobotics uses the class [`RelativeEncoder`](https://codedocs.revrobotics.com/java/com/revrobotics/relativeencoder) for its encoders that are plugged into motor controllers. Since the `RelativeEncoder` class is an interface, you cannot create an instance of class type RelativeEncoder. You have to use the `.getEncoder()` method of a revrobotics motor controller (assuming they have an encoder built in) to initialize a `RelativeEncoder` object.
 ``` Java
 SparkMax motor = MotorControllerFactory.createSparkMax(1);
+motorConfig = MotorControllerFactory.sparkConfig(MotorConfig.[motor type]);
 RelativeEncoder encoder = motor.getEncoder();
 ```
 

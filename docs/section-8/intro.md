@@ -11,7 +11,7 @@ The terminal is takes some time to learn. There's no getting around it. It looks
 - Building and Deploying the robot code *without* WPILib or any other software.
 - Previewing this website as you edit it
 - (ugly) Github!
-- Browse files (including on the Roborio)
+- Browse files (including on the Roborio and systemcore)
 - Installing anything you could think of
 - *Un*installing your operating system and everything else
 

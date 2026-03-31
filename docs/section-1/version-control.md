@@ -19,7 +19,7 @@ Make a new branch, whether by VS Code or Github Desktop or anything else, and ti
 Go find every single file with the name `intro.md`, and paste your name somewhere over it. Or all over it. Horribly deface that file with your name. 
 Think of this as a "ritual" of public defacement in order to initiate your learning of Github.
 
-Now stage and commit your changes with the message `added [your name] to intro files`, and then push your changes to make the branch public. Refer to the [Git tutorial](https://guides.github.com/introduction/git-handbook/) and [VS Code tutorial](https://code.visualstudio.com/docs/editor/versioncontrol) if needed.
+Now stage and commit your changes with the message `add [your name] to intro files`, and then push your changes to make the branch public. Refer to the [Git tutorial](https://guides.github.com/introduction/git-handbook/) and [VS Code tutorial](https://code.visualstudio.com/docs/editor/versioncontrol) if needed.
 
 Great! You now have a crimes done to the training website under your name!
 But in order to let us know you did it, go to github and create a "Pull Request" from your branch to the `master` branch. It should look a bit like this:

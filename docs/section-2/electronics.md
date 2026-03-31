@@ -1,6 +1,6 @@
 # Electronics
 
-We have significant overlap with senac training. If you want more details on senac components you can go through [their Electronics presentation](https://docs.google.com/presentation/d/1Y2GSd2B3aV2_6J5xKNS-_xWRiGW_daArdgr4zasUuno/edit#slide=id.g253cb92c37_0_37). Here, we will cover the parts relevant to programming.
+We have significant overlap with SENAC training. If you want more details on SENAC components you can go through [their Electronics presentation](https://docs.google.com/presentation/d/1Y2GSd2B3aV2_6J5xKNS-_xWRiGW_daArdgr4zasUuno/edit#slide=id.g253cb92c37_0_37). Here, we will cover the parts relevant to programming.
 
 ### Operator Console and Communication
 - We use a computer, joysticks, xbox controllers, etc
@@ -24,9 +24,8 @@ We have significant overlap with senac training. If you want more details on sen
 - Gears and planetary gearboxes can be used to make the motor turn with more torque or turn faster
 - The motors we use are:
     - NEO
-        - We almost exclusively use these
+        - We motly use these
         - Versatile
-        - Encoders are built into these
         - Used for drivetrains and other subsystems which require a lot of torque
     - NEO Vortex
         - Very similar to normal NEOs
@@ -38,6 +37,9 @@ We have significant overlap with senac training. If you want more details on sen
 - The motor controllers we typically use are:
     - SparkMaxes
     - SparkFlexes
+
+!!! note
+    All brushless motors have built-in encoders.
 
 ![SparkMax](SparkMax.png)
 
