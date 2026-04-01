@@ -1,12 +1,12 @@
 ## uv
 
-uv is a python package manager that simplifies the process of installing dependencies and running development servers.
+uv is a Python package manager that simplifies the process of installing dependencies and running development servers.
 
 ### Installing uv
 If you do not have uv installed, go to [the uv documentation](https://docs.astral.sh/uv/getting-started/installation/) and follow the instructions for your OS. This will also install Python 3 onto your machine.
 
 ### Source Code
-Clone the [training docs repo](https://github.com/DeepBlueRobotics/training>) from Github, with your preferred method.
+Clone the [training docs repo](https://github.com/DeepBlueRobotics/training>) from GitHub, with your preferred method.
 
 ### Python Dependencies
 This site uses the MkDocs Python package to convert Markdown files to a website, and a few more packages to provide additional functionality and theming. You can install all the necessary dependencies by running `uv sync` in your terminal while in the root directory of this repo.
