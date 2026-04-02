@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: pip install mkdocs mkdocs-material
+      - run: pip install mkdocs mkdocs-material mdx_math
 
       - run: mkdocs build
 
