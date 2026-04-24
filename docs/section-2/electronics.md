@@ -24,7 +24,7 @@ We have significant overlap with SENAC training. If you want more details on SEN
 - Gears and planetary gearboxes can be used to make the motor turn with more torque or turn faster
 - The motors we use are:
     - NEO
-        - We motly use these
+        - We mostly use these
         - Versatile
         - Used for drivetrains and other subsystems which require a lot of torque
     - NEO Vortex

@@ -50,7 +50,6 @@ There are also configurations set so that if a motor gets too hot, the motor wil
 ### Wrong robot behavior (SmartDashboard/ShuffleBoard & OutlineViewer)
 However, just looking at driver logs may not help. What if the code does not crash at all, but the behavior is wrong? There is a chance that the data may be wrong, so you can check what data is being read in real-time using Shuffleboard/Smartdashboard.
 WPILib provides the SmartDashboard class which you can use to input and ouput data. They also provide two articles on a general introduction to shuffleboard, so read [the tour](https://docs.wpilib.org/en/stable/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour.html) and [how to display data](https://docs.wpilib.org/en/stable/docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data.html).
-<!--TODO: put elastic stuff -->
 
 Generally in order to initialize a "key" on the SmartDasboard, we do
 `SmartDashboard.putNumber("key name", [insert default value]);`

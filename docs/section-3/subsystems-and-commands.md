@@ -13,26 +13,26 @@ Our robot project structure generally looks something like this:
 src/main
   └──deploy
   |
-  └── robot/
-  |   └── commands/
-  |   |  Drive.java
-  |   |  Climb.java
-  |   |  RunIntake.java
-  |   |  RunEject.java
-  |   |  MoveLift.java
-  |   |  AutonCommands/
-  |
-  |   └── subsystems/
-  |   |   Drivetrain.java
-  |   |   Intake.java
-  |   |   Climber.java
-  |   |   Lift.java
-  |
-  |   Constants.java
-  |   Main.java
-  |   Robot.java
-  |   RobotContainer.java
-  |   Constants.java
+  └──java/org/carlmontrobotics
+    |   └── commands/
+    |   |  TeleopDrive.java
+    |   |  Climb.java
+    |   |  RunIntake.java
+    |   |  RunEject.java
+    |   |  MoveElevator.java
+    |   |  AutonCommands/
+    |
+    |   └── subsystems/
+    |   |   Drivetrain.java
+    |   |   Intake.java
+    |   |   Climber.java
+    |   |   Elevator.java
+    |
+    |   Constants.java
+    |   Main.java
+    |   Robot.java
+    |   RobotContainer.java
+    |   Constants.java
 
 ```
 It's a lot, so let's break it down. It may be helpful if you were to look at our previous year's code and follow along this guide.
