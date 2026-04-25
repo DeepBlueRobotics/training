@@ -1,6 +1,6 @@
-How do you get the robot to move a certain distance? You could try to experimentally find the amount of time and power you need to run to get it to a distance, but that is not going to work for a variable distance or if there is a change in the environmental conditions such as the amount of friction.
+How do you get the robot to move a certain distance? You could try experimenting to find the amount of time and power you need to run to get it to a distance, but that is not going to work for a variable distance or if there is a change in the environmental conditions such as the amount of friction.
 
-How do you get a flywheel to move at a certain velocity? There is no `.setVelocity()` method that allows you to easily control a flywheel.
+How do you get a flywheel to move at an exact velocity? There is no `.setVelocity()` method that allows you to easily control a flywheel.
 
 How do you get an arm to move to a certain position? Again, there is no `.setPosition()` method that can accurately supply the motor with the correct amount of voltage to counteract gravity and other forces.
 

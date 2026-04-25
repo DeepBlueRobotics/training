@@ -15,9 +15,9 @@ First order of business is to add the two other motor controllers (Victor SPX an
 1. Creating instances of them in `Motors.java`
 2. Calling their `set()` methods in `Motors.run()`
 
-Use the `talon` object as an example for the Victor SPX and Spark MAX objects. The Victor SPX class is called `WPI_VictorSPX` and is located in the `com.ctre.phoenix.motorcontrol.can` package, while the Spark Max class is called `CANSparkMax` and is located in the `com.revrobotics` package.
+Use the `talon` object as an example for the Victor SPX and Spark MAX objects. The Victor SPX class is called `WPI_VictorSPX` and is located in the `com.ctre.phoenix.motorcontrol.can` package, while the Spark Max class is called `SparkMax` and is located in the `com.revrobotics` package.
 
-Once you're done with that, do not deploy from your computer. Follow the instructions in the next page, `Advanced Version Control`, and then pull your branch onto the driver station computer that should be set up and deploy from there.
+Once you're done with that, do not deploy from your computer. Follow the instructions in the next page, `Advanced Version Control`, and then pull your branch onto the driverstation computer that should be set up and deploy from there.
 
 Now, when you deploy the robot code to the practice board and execute the `RunMotor` command, do all of the motor controllers run?
 
@@ -36,7 +36,7 @@ Pass the `Motors` subsystem and a `Joystick` object into the command and have it
 
 Once you are done writing the command, make it the default command of the `Motors` subsystem. Do that by calling `motors.setDefaultCommand()` in `RobotContainer.java` and pass in the left joystick.
 
-Again, commit and push your changes, then pull on the driver station computer and deploy!
+Again, commit and push your changes, then pull on the driverstation computer and deploy!
 
 
 Different section
@@ -48,7 +48,7 @@ Different section
     This part needs:
 
     - a practice electronics board that has a Talon SRX
-    - a computer with driver station software installed
+    - a computer with driverstation software installed
     - a controller connected to the computer  
     - a brushed motor
 
@@ -57,7 +57,7 @@ Clone the [`TrainingRobot`](https://github.com/DeepBlueRobotics/TrainingRobot) r
 !!! note
     Deploying code to the RoboRIO only works on a Windows computer; however, you can still build your code to see if it compiles correctly before moving onto a Windows computer to complete this part.
 
-Once you have that, connect a driver station computer to the RoboRIO and a motor to the Talon, enable, and press the X key on the controller. If the motor runs, then you're all set!
+Once you have that, connect a driverstation computer to the RoboRIO's radio using wifi or an ethernet cable. Enable, and press the button on the controller. If the motor runs, then you're all set!
 
 ## Using WPILib
 

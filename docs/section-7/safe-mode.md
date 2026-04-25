@@ -1,7 +1,7 @@
 Oftentimes, we want to use our robots for outreach programs and have non-robotics students drive them. But how do we make sure that they don't accidentally break the robot? The answer: Safe Mode!
 
 # What is Safe Mode
-Safe mode is a state of the robot where joystick inputs are slowed and any controls we don't want non-robotics people to use are disabled. This often required writing a lot of very similar code every year, so we simplified it into the Lib199 Safe-Mode API, which is contained in the `org.carlmontrobotics.lib199.safeMode` package. There are two ways to enable/disable safe-mode 1) The "Safe Mode" Smart Dashboard value, and 2) The `enable()` and `disable()` functions in the `SafeMode` class.
+Safe mode (also called baby mode) is a state of the robot where joystick inputs are slowed and any controls we don't want non-robotics people to use are disabled. This often required writing a lot of very similar code every year, so we simplified it into the Lib199 Safe-Mode API, which is contained in the `org.carlmontrobotics.lib199.safeMode` package. There are two ways to enable/disable safe-mode 1) The "Safe Mode" Smart Dashboard value, and 2) The `enable()` and `disable()` functions in the `SafeMode` class.
 
 # Checking Safe Mode State
 The robot code can check the sate of safe-mode with the `SafeMode.isEnabled()` function. Additionally, the `SafeMode.onEnabled(Runnable)` and `SafeMode.onDisabled(Runnable)` functions allow functions to be run when the safe-mode state changes. For example:

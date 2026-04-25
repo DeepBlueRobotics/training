@@ -1,5 +1,8 @@
 There are always going to be improvements, fixes, and updates that can be made to our training material. It's up to team members to make these changes. Detailed in this section is how you can help with these efforts.
 
+If you have edited the website, please put the date and your name here:
+>Last Updated: March 28, 2026 by Logan Hunt
+
 ## Setup
 There are two ways to set up your development environment to work on this website, both of which can give you auto-reload of your local changes. 
 

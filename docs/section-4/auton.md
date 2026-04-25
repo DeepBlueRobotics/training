@@ -9,12 +9,12 @@ Before you can code your autonomous period, you'll need to find the answer to a 
 
 Once you've successfully written code for the teleop period, it's time to move to autonomous. 
 
-Your autonomous period should consist of two things First, move the robot 2 feet forward. Then, spin the robot around in circles for the remainder of the autonomous period.
+Your autonomous period should consist of two actions: first, move the robot 2 feet forward. Then, spin the robot around in circles for the remainder of the autonomous period.
 
 More requirements for autonomous:
 
 - it must use a command group (look in the documentation if you forgot what that is) to run the autonomous period, with one command for moving and the other for spinning
 - it can only use the encoder values to tell the command whether or not you have traveled far enough
-- it should not overshoot by a wide margin, but as long as it goes past 2 feet it's acceptable
+- it should not overshoot or undershoot by a wide margin, but as long as it goes around 2 feet it's acceptable
 
 Good luck! Again, once you're done, check in with a veteran programmer and then run your code on a robot!
