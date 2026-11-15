@@ -5,7 +5,7 @@ description = "Training project with documentation built using MkDocs"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "mkdocs-material>=9.7.6",
+    "mkdocs-material>=9.7.7",
     "pymdown-extensions>=11.0.1",
     "python-markdown-math>=0.9",
 ]
